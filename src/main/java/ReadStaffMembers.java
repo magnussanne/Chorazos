@@ -78,7 +78,6 @@ public class ReadStaffMembers {
              }
 
              fis.close();
-
 		 } catch (FileNotFoundException e) {
             e.printStackTrace();
 		 } catch (IOException e) {
