@@ -19,7 +19,7 @@ public class ReadStaffMembers {
 		 	System.out.println(staffList);
 	    }
 	 private static List getStaffDetails() {
-		 List staffList = new ArrayList;
+		 List staffList = new ArrayList();
 		 FileInputStream fis = null;
 		 Workbook workbook = new XSSFWorkbook(fis);
 		 
