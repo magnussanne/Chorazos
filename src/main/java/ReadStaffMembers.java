@@ -65,7 +65,7 @@ public class ReadStaffMembers {
 
                                  if (f.equals("Dagon Studies"))
                                      focus = Focus.DS;
-                                 else if(f.equals("CS")) {
+                                 else {
                                      focus = Focus.CS;
                                  }
                              }

@@ -39,7 +39,7 @@ public class Student implements Interface.Student {
         String out = "Name: " + getName();
         out += ", Number: " + getNumber();
         out += ", Focus: " + getFocus();
-        return out;
+        return out + "\n";
     }
 
     public static void main(String args[]) {
