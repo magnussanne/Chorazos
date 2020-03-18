@@ -13,38 +13,51 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ReadStaffMembers {
-	 public static void main(String[] args) throws IOException {
-	        String excelFilePath = "Books.xlsx";
-	        FileInputStream inputStream = new FileInputStream(new File(excelFilePath));
-	         
-	        Workbook workbook = new XSSFWorkbook(inputStream);
-	        Sheet firstSheet = workbook.getSheetAt(0);
-	        Iterator<Row> iterator = firstSheet.iterator();
-	         
-	        while (iterator.hasNext()) {
-	            Row nextRow = iterator.next();
-	            Iterator<Cell> cellIterator = nextRow.cellIterator();
-	             
-	            while (cellIterator.hasNext()) {
-	                Cell cell = cellIterator.next();
-	                 
-	                switch (cell.getCellType()) {
-	                    case Cell.CELL_TYPE_STRING:
-	                        System.out.print(cell.getStringCellValue());
-	                        break;
-	                    case Cell.CELL_TYPE_BOOLEAN:
-	                        System.out.print(cell.getBooleanCellValue());
-	                        break;
-	                    case Cell.CELL_TYPE_NUMERIC:
-	                        System.out.print(cell.getNumericCellValue());
-	                        break;
-	                }
-	                System.out.print(" - ");
-	            }
-	            System.out.println();
-	        }
-	         
-	        workbook.close();
-	        inputStream.close();
+	private static final String File_Path = "StaffMembers.xlsx";
+	 public static void main(String[] args){
+		 	List staffList = getStaffDetails();
+		 	System.out.println(staffList);
 	    }
+	 private static List getStaffDetails() {
+		 List staffList = new ArrayList;
+		 FileInputStream fis = null;
+		 Workbook workbook = new XSSFWorkbook(fis);
+		 
+         int numberOfSheets = workbook.getNumberOfSheets();
+
+         for (int i = 0; i < numberOfSheets; i++) {
+             Sheet sheet = workbook.getSheetAt(i);
+             Iterator rowIterator = sheet.iterator();
+
+             while (rowIterator.hasNext()) {
+
+                 Staff staff = new Staff();
+                 Row row = rowIterator.next();
+                 Iterator cellIterator = row.cellIterator();
+
+                 while (cellIterator.hasNext()) {
+
+                     Cell cell = cellIterator.next();
+                     if (Cell.CELL_TYPE_STRING == cell.getCellType()) {
+
+                         if (cell.getColumnIndex() == 0) {
+                        	 staff.setStaffMember(cell.getStringCellValue());
+                         }
+                         else if (cell.getColumnIndex() == 1) {
+                        	 staff.setResearchActivity(cell.getStringCellValue());
+                         }
+                         else if (cell.getColumnIndex() == 2) {
+                        	 staff.setResearchArea(cell.getStringCellValue());
+                         }
+                         else if (cell.getColumnIndex() == 3) {
+                        	 staff.setSpecialFocus(cell.getStringCellValue());
+                         }
+                     }
+                 }
+                 staffList.add(staff);
+             }
+         }
+         fis.close();
+         return staffList;
+	 }
 }
