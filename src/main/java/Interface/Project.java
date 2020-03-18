@@ -1,4 +1,4 @@
-package Interface;
+package main.java.Interface;
 
 public interface Project {
     String getName();

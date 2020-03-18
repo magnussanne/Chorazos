@@ -1,4 +1,4 @@
-package Chorazos;
+package main.java.Objects;
 public class Staff {
 	
 	private String staffMember;
