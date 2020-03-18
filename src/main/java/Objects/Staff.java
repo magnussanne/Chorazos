@@ -1,4 +1,4 @@
-package main.java.Objects;
+package Objects;
 public class Staff {
 	
 	private String staffMember;

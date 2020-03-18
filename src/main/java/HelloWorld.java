@@ -1,4 +1,4 @@
-package main.java;
+package Interface;
 
 public class HelloWorld {
     public static void main(String[] args) {

@@ -1,4 +1,4 @@
-package main.java.Interface;
+package Interface;
 
 public enum Focus {
     CS, DS
