@@ -37,17 +37,12 @@ public class Student implements Interface.Student {
 
     public String toString() {
         String out = "Name: " + getName();
-        out += ", Number: " + getNumber();
-        out += ", Focus: " + getFocus();
-        return out + "\n";
+        out += "\tNumber: " + getNumber();
+        return out + "\tFocus: " + getFocus();
     }
 
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         Student s = new Student("John Smith", 12345, Focus.CS);
-
-        System.out.println("Name: " + s.getName());
-        System.out.println("Number: " + s.getNumber());
-        System.out.println("Focus: " + s.getFocus());
-        System.out.println("String: " + s.toString());
+        System.out.println(s.toString());
     }
 }

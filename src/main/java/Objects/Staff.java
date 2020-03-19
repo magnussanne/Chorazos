@@ -5,34 +5,62 @@ import Interface.Project;
 
 public class Staff implements Interface.Staff {
 	
-	private String staffMember;
-	private String researchActivity;
-	private String researchArea;
-	private Focus specialFocus;
+	private String name;
+	private String[] activity;
+	private String[] area;
+	private Focus focus;
 	private Project[] projects;
 	
-	public Staff(String staffMember, String researchActivity, String researchArea, Focus specialFocus){
-			this.staffMember = staffMember;
-			this.researchActivity = researchActivity;
-			this.researchArea = researchArea;
-			this.specialFocus = specialFocus;
+	public Staff(String name, String activity, String area, Focus focus){
+			this.name = name;
+			setActivity(activity);
+			setArea(area);
+			this.focus = focus;
 	}
 
 	public String getName() {
-		return staffMember;
+		return name;
 	}
 
 	public String getActivity(int index) {
-		return researchActivity;
+		return activity[index];
+	}
+
+	private String getActivity() {
+		String out = "";
+
+		for(String s : activity) {
+			out += s + ", ";
+		}
+
+		return out.substring(0, out.length()-2);
+	}
+
+	private void setActivity(String activity) {
+		this.activity = activity.split(", ");
 	}
 
 	public String getArea(int index) {
-		return researchArea;
+		return area[index];
+	}
+
+	private String getArea() {
+		String out = "";
+
+		for(String s : area) {
+			out += s + ", ";
+		}
+
+		return out.substring(0, out.length()-2);
+	}
+
+	private void setArea(String area) {
+		this.area = area.split(", ");
 	}
 
 	public Focus getFocus() {
-		return specialFocus;
-	};
+		return focus;
+	}
 
 	public Project getProject(int index) {
 		return projects[index];
@@ -40,11 +68,14 @@ public class Staff implements Interface.Staff {
 
 	@Override
 	public String toString() {
-		return "name: " +staffMember+ ", Research Activity: "+researchActivity+ ", Research Area: "+researchArea+ ", Special Focus: "+specialFocus +"\n";
+		String out = "Name: " + getName();
+		out += "\tActivity: " + getActivity();
+		out += "\tArea: " + getArea();
+		return out + "\tFocus: " + getFocus();
 	}
 
 	public static void main(String[] args) {
-		Staff s = new Staff("John", "Java", "", Focus.CS);
+		Staff s = new Staff("John", "Java, MatLab, Lisp", "Artificial Intelligence", Focus.CS);
 		System.out.println(s.toString());
 	}
 }
