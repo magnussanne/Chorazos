@@ -14,7 +14,7 @@ public class Staff implements Interface.Staff {
 	private String[] activity;
 	private String[] area;
 	private Focus focus;
-	private List<Project> projects = new ArrayList<>();
+	private List<Project> projects = new ArrayList<>(ng );
 	
 	public Staff(String name, String activity, String area, Focus focus){
 			this.name = name;
