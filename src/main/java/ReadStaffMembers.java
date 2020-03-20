@@ -22,7 +22,7 @@ public class ReadStaffMembers {
         System.out.println(staffList);
 	}
 
-	 private static List getStaffDetails() throws IOException {
+	 public static List getStaffDetails() throws IOException {
 		 List staffList = new ArrayList();
 		 FileInputStream fis = null;
 
