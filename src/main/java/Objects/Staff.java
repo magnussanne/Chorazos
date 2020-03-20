@@ -68,10 +68,10 @@ public class Staff implements Interface.Staff {
 
 	@Override
 	public String toString() {
-		String out = "Name: " + getName();
-		out += "\tActivity: " + getActivity();
-		out += "\tArea: " + getArea();
-		return out + "\tFocus: " + getFocus();
+		String out = "Name: " + getName() +"\n";
+		out += "Activity: " + getActivity()+"\n";
+		out += "Area: " + getArea()+"\n";
+		return out + "Focus: " + getFocus()+"\n";
 	}
 
 	public static void main(String[] args) {
