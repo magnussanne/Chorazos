@@ -79,8 +79,14 @@ public class Staff implements Interface.Staff {
 
 	private void createProjects() {
 		String fullTitle;
-		String[] titleStart = {"using excel to analys patterns in ", "security analysis of ",
-				"using rfid to improve ", "using ai to streamline ", "worshipping cthulu in ", "view of dagon in "};
+		String[] titleStart = {
+				"Using excel to analys patterns in ",
+				"Security analysis of ",
+				"Using rfid to improve ",
+				"Using ai to streamline ",
+				"Worshipping cthulu in ",
+				"View of dagon in "
+		};
 
 		int i = rand.nextInt(Number_Templates);
 		fullTitle = titleStart[i] + area[0];
@@ -105,7 +111,7 @@ public class Staff implements Interface.Staff {
 			projects.add(project3);
 		}
 
-		if (area.length > 1) {
+		if (area.length > 2) {
 			i = rand.nextInt(Number_Templates);
 			fullTitle = titleStart[i] + area[1];
 			Project project2 = new Project(fullTitle, focus);
@@ -118,7 +124,6 @@ public class Staff implements Interface.Staff {
 
 			projects.add(project3);
 		} else {
-
 			i = rand.nextInt(Number_Templates);
 			fullTitle = titleStart[i] + area[0];
 			Project project2 = new Project(fullTitle, focus);

@@ -21,5 +21,8 @@ public class run {
         for(Student s : students) {
             s.setProjects(projects, Number_Preferences);
         }
+
+        Student s = students.get(50);
+        System.out.println(s.toString());
     }
 }
