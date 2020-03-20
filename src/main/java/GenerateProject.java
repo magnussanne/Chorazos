@@ -22,9 +22,9 @@ public class GenerateProject {
         return SINGLE;
     }
 
-    private GenerateProject(){
-    }
-    public static void main(String args[]){
+    private GenerateProject(){}
+
+    public static void main(String args[]) throws IOException {
         writeProjectsToSpreadsheet(ReadStaffMembers.getStaffDetails());
     }
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
