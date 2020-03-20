@@ -140,10 +140,16 @@ public class Staff implements Interface.Staff {
 
 	@Override
 	public String toString() {
-		String out = "Name: " + getName() +"\n";
-		out += "Activity: " + getActivity()+"\n";
-		out += "Area: " + getArea()+"\n";
-		return out + "Focus: " + getFocus()+"\n";
+		String out = "Name: " + getName();
+		out += "\tActivity: " + getActivity();
+		out += "\tArea: " + getArea();
+		out += "\tFocus: " + getFocus();
+
+		for(Project p : projects) {
+			out += "\t" + p.getTitle();
+		}
+
+		return out + "\n";
 	}
 
 	public static void main(String[] args) {
