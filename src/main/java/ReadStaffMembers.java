@@ -15,7 +15,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ReadStaffMembers {
-    private static final String File_Path = "src/main/resources/staff_input.xlsx";
+    private static final String FilePath = "src/main/resources/staff_input.xlsx";
 
     public static void main(String[] args) throws IOException {
         List<Staff> staffList = getStaffDetails();
@@ -28,7 +28,7 @@ public class ReadStaffMembers {
         FileInputStream fis = null;
 
         try {
-            fis = new FileInputStream(File_Path);
+            fis = new FileInputStream(FilePath);
             Workbook workbook = new XSSFWorkbook(fis);
 
             int numberOfSheets = workbook.getNumberOfSheets();
