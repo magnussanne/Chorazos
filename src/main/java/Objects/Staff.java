@@ -80,7 +80,7 @@ public class Staff implements Interface.Staff {
 	private void createProjects() {
 		String fullTitle;
 		String[] titleStart = {
-				"Using excel to analys patterns in ",
+				"Using excel to analyse patterns in ",
 				"Security analysis of ",
 				"Using rfid to improve ",
 				"Using ai to streamline ",

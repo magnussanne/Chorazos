@@ -17,7 +17,7 @@ public class run {
         for(Staff s : staff) {
             projects.addAll(s.getProjects());
         }
-
+        GenerateProject.writeProjectsToSpreadsheet(staff);
         for(Student s : students) {
             s.setProjects(projects, Number_Preferences);
         }

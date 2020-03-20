@@ -6,6 +6,7 @@ import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import Interface.Focus;
 import Objects.Staff;
+import Objects.Project;
 
 import java.io.FileOutputStream;
 import java.io.FileNotFoundException;
@@ -25,7 +26,7 @@ public class GenerateProject {
     private GenerateProject(){}
 
     public static void main(String args[]) throws IOException {
-        writeProjectsToSpreadsheet(ReadStaffMembers.getStaffDetails());
+
     }
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         Workbook workbook = new XSSFWorkbook();
