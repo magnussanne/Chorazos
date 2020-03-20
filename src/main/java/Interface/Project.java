@@ -1,7 +1,6 @@
 package Interface;
 
 public interface Project {
-    String getName();
-    Float getLikability();
+    String getTitle();
     Focus getFocus();
 }
