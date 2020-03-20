@@ -25,11 +25,11 @@ public class ReadStaffMembers {
 
     public static List getStaffDetails() throws IOException {
         List<Staff> staffList = new ArrayList();
-        FileInputStream fis = null;
+        FileInputStream input = null;
 
         try {
-            fis = new FileInputStream(FilePath);
-            Workbook workbook = new XSSFWorkbook(fis);
+            input = new FileInputStream(FilePath);
+            Workbook workbook = new XSSFWorkbook(input);
 
             int numberOfSheets = workbook.getNumberOfSheets();
 
@@ -75,7 +75,7 @@ public class ReadStaffMembers {
                 }
             }
 
-            fis.close();
+            input.close();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
