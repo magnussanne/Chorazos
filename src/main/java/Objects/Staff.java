@@ -116,6 +116,7 @@ public class Staff implements Interface.Staff {
 
 		for(Project p : projects) {
 			out += "\t" + p.getTitle();
+			out += "\t" + p.getFocus();
 		}
 
 		return out + "\n";

@@ -26,5 +26,6 @@ public class run {
         }
 
         GenerateProject.writeProjectsToSpreadsheet(staff);
+        GenerateStudentPref.writeStudentPrefToSpreadsheet(students);
     }
 }
