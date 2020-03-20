@@ -24,5 +24,6 @@ public class run {
 
         Student s = students.get(50);
         System.out.println(s.toString());
+        GenerateStudentPref.writeStudentPrefToSpreadsheet(students);
     }
 }

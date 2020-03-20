@@ -25,9 +25,6 @@ public class GenerateProject {
 
     private GenerateProject(){}
 
-    public static void main(String args[]) throws IOException {
-
-    }
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         Workbook workbook = new XSSFWorkbook();
         Sheet staffSheet = workbook.createSheet("Staff");
@@ -37,6 +34,8 @@ public class GenerateProject {
             Row row = staffSheet.createRow(rowIndex++);
             int cellIndex = 0;
             row.createCell(cellIndex++).setCellValue(staff.getName());
+            row.createCell(cellIndex++).setCellValue(staff.getProject(0).getTitle());
+            row.createCell(cellIndex++).setCellValue(staff.getProject(0).getFocus().toString());
         }
         try {
             FileOutputStream output = new FileOutputStream(FilePath);
