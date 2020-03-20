@@ -3,7 +3,7 @@ package Interface;
 import java.util.Random;
 
 public enum Focus {
-    CS, DS;
+    CS, DS, CSDS;
 
     public static Focus getFocus() {
         Random rand = new Random();
