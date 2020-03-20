@@ -50,7 +50,6 @@ public class ReadStaffMembers {
                          String activity = "";
                          String area = "";
                          Focus focus = null;
-                         if (Cell.CELL_TYPE_STRING == cell.getCellType()) {
                              if (cell.getColumnIndex() == 0) {
                                  name = cell.getStringCellValue();
                              }
@@ -69,7 +68,6 @@ public class ReadStaffMembers {
                                      focus = Focus.CS;
                                  }
                              }
-                         }
 
                          staff = new Staff(name, activity, area, focus);
                          staffList.add(staff);
