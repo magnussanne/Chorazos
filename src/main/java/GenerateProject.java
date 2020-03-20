@@ -25,10 +25,9 @@ public class GenerateProject {
     private GenerateProject(){
     }
     public static void main(String args[]){
-        List<Staff> staffList = new ArrayList();
-        writeProjectsToSpreadsheet(staffList);
+        writeProjectsToSpreadsheet(ReadStaffMembers.getStaffDetails());
     }
-    public static void writeProjectsToSpreadsheet(List staffList){
+    public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         Workbook workbook = new XSSFWorkbook();
         Sheet staffSheet = workbook.createSheet("Staff");
 
