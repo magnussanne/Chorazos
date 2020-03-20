@@ -4,6 +4,7 @@ import Objects.Student;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class run {
@@ -17,12 +18,13 @@ public class run {
         for(Staff s : staff) {
             projects.addAll(s.getProjects());
         }
-        GenerateProject.writeProjectsToSpreadsheet(staff);
+
+        Collections.shuffle(projects);
+
         for(Student s : students) {
             s.setProjects(projects, Number_Preferences);
         }
 
-        Student s = students.get(50);
-        System.out.println(s.toString());
+        GenerateProject.writeProjectsToSpreadsheet(staff);
     }
 }

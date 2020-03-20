@@ -25,9 +25,8 @@ public class GenerateProject {
 
     private GenerateProject(){}
 
-    public static void main(String args[]) throws IOException {
-
-    }
+    public static void main(String args[]) throws IOException {}
+    
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         Workbook workbook = new XSSFWorkbook();
         Sheet staffSheet = workbook.createSheet("Staff");

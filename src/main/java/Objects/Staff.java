@@ -7,7 +7,6 @@ import java.util.List;
 import java.util.Random;
 
 public class Staff implements Interface.Staff {
-	private static final int Number_Templates = 6;
 	private Random rand = new Random();
 	
 	private String name;
@@ -88,53 +87,23 @@ public class Staff implements Interface.Staff {
 				"View of dagon in "
 		};
 
-		int i = rand.nextInt(Number_Templates);
-		fullTitle = titleStart[i] + area[0];
-		Project project1 = new Project(fullTitle, focus);
+		int numberProjects = rand.nextInt(5) + 1;
 
-		projects.add(project1);
+		for(int count=0; count<numberProjects; count++) {
+			Project p;
 
-		i += Number_Templates / 3;
-		i %= Number_Templates;
+			int template = rand.nextInt(titleStart.length);
+			int activityIndex = rand.nextInt(activity.length);
+			String title = titleStart[template] + activity[activityIndex];
 
-		if (area.length > 1) {
-			i = rand.nextInt(Number_Templates);
-			fullTitle = titleStart[i] + area[1];
-			Project project2 = new Project(fullTitle, focus);
+			int f = rand.nextInt(2);
+			if(f == 0) {
+				p = new Project(title, focus);
+			} else {
+				p = new Project(title, Focus.CSDS);
+			}
 
-			projects.add(project2);
-
-			i = rand.nextInt(Number_Templates);
-			fullTitle = titleStart[i] + area[0];
-			Project project3 = new Project(fullTitle, focus);
-
-			projects.add(project3);
-		}
-
-		if (area.length > 2) {
-			i = rand.nextInt(Number_Templates);
-			fullTitle = titleStart[i] + area[1];
-			Project project2 = new Project(fullTitle, focus);
-
-			projects.add(project2);
-
-			i = rand.nextInt(Number_Templates);
-			fullTitle = titleStart[i] + area[2];
-			Project project3 = new Project(fullTitle, focus);
-
-			projects.add(project3);
-		} else {
-			i = rand.nextInt(Number_Templates);
-			fullTitle = titleStart[i] + area[0];
-			Project project2 = new Project(fullTitle, focus);
-
-			projects.add(project2);
-
-			i = rand.nextInt(Number_Templates);
-			fullTitle = titleStart[i] + area[0];
-			Project project3 = new Project(fullTitle, focus);
-
-			projects.add(project3);
+			projects.add(p);
 		}
 	}
 
