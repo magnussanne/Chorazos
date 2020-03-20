@@ -71,6 +71,11 @@ public class Staff implements Interface.Staff {
 		return projects;
 	}
 
+	public static void addProjects(){
+		CreateProjects create = new CreateProjects();
+		this. projects = create.createProjects(area, focus);
+	}
+
 	@Override
 	public String toString() {
 		String out = "Name: " + getName();
