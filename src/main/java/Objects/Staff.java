@@ -1,7 +1,8 @@
 package Objects;
 
 import Interface.Focus;
-import Interface.Project;
+
+import java.util.List;
 
 public class Staff implements Interface.Staff {
 	
@@ -9,7 +10,7 @@ public class Staff implements Interface.Staff {
 	private String[] activity;
 	private String[] area;
 	private Focus focus;
-	private Project[] projects;
+	private List<Project> projects;
 	
 	public Staff(String name, String activity, String area, Focus focus){
 			this.name = name;
@@ -63,7 +64,11 @@ public class Staff implements Interface.Staff {
 	}
 
 	public Project getProject(int index) {
-		return projects[index];
+		return projects.get(index);
+	}
+
+	public List<Project> getProjects() {
+		return projects;
 	}
 
 	@Override
