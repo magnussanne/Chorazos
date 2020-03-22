@@ -17,15 +17,8 @@ import java.util.List;
 
 public class GenerateStudentPref {
     private static final String FilePath = "src/main/resources/studentPref.xlsx";
-    private static final GenerateStudentPref SINGLE = new GenerateStudentPref();
 
-    public static GenerateStudentPref getSingle() {
-        return SINGLE;
-    }
-
-    private GenerateStudentPref(){}
-
-    public static void writeStudentPrefToSpreadsheet(List<Student> studentList){
+    public static void writeStudentPrefToSpreadsheet(List<Student> studentList, int limit){
         Workbook workbook = new XSSFWorkbook();
         Sheet studentSheet = workbook.createSheet("Student");
 
@@ -46,6 +39,9 @@ public class GenerateStudentPref {
             row.createCell(cellIndex++).setCellValue(student.getPreference(7).getTitle());
             row.createCell(cellIndex++).setCellValue(student.getPreference(8).getTitle());
             row.createCell(cellIndex++).setCellValue(student.getPreference(9).getTitle());
+            if(rowIndex == limit){
+                break;
+            }
         }
         try {
             FileOutputStream output = new FileOutputStream(FilePath);

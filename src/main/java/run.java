@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+
 public class run {
     private static final int Number_Preferences = 10;
 
@@ -26,6 +27,6 @@ public class run {
         }
 
         GenerateProject.writeProjectsToSpreadsheet(staff);
-        GenerateStudentPref.writeStudentPrefToSpreadsheet(students);
+        GenerateStudentPref.writeStudentPrefToSpreadsheet(students, 60);
     }
 }

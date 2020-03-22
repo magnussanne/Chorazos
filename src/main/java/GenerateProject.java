@@ -17,13 +17,6 @@ import java.util.List;
 
 public class GenerateProject {
     private static final String FilePath = "src/main/resources/projects.xlsx";
-    private static final GenerateProject SINGLE = new GenerateProject();
-
-    public static GenerateProject getSingle() {
-        return SINGLE;
-    }
-
-    private GenerateProject(){}
 
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         Workbook workbook = new XSSFWorkbook();

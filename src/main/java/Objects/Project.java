@@ -32,7 +32,7 @@ public class Project implements Interface.Project {
     }
 
     public static void main(String[] args) {
-        Project p = new Project("Creating an AI to cause mayham", Focus.CS);
+        Project p = new Project("Creating an AI to cause mayhem", Focus.CS);
         System.out.println(p.toString());
     }
 }
