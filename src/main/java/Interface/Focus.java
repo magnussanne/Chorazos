@@ -15,4 +15,14 @@ public enum Focus {
         else
             return DS;
     }
+
+    public static Focus getFocus(String f) {
+        if(f.equals("CS")) {
+            return CS;
+        } else if(f.equals("DS")) {
+            return DS;
+        } else {
+            return CSDS;
+        }
+    }
 }
