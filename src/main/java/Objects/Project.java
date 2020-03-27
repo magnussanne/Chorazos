@@ -2,13 +2,18 @@ package Objects;
 
 import Interface.Focus;
 
+import java.util.UUID;
+
 import static Interface.Focus.CSDS;
+import static java.util.UUID.randomUUID;
 
 public class Project implements Interface.Project {
+    private UUID id;
     private String title;
     private Focus focus;
 
     public Project(String title, Focus focus) {
+        this.id = randomUUID();
         this.title = title;
         this.focus = focus;
     }
@@ -16,6 +21,10 @@ public class Project implements Interface.Project {
     public Project(String title) {
         this.title = title;
         this.focus = CSDS;
+    }
+
+    public UUID getId() {
+        return this.id;
     }
 
     public String getTitle() {
@@ -27,8 +36,7 @@ public class Project implements Interface.Project {
     }
 
     public String toString() {
-        String out = "Title: " + getTitle();
-        return out + "\tFocus: " + getFocus() + "\n";
+        return getId() + "," + getTitle() + "," + getFocus();
     }
 
     public static void main(String[] args) {

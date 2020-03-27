@@ -36,7 +36,7 @@ public class Staff implements Interface.Staff {
 		String out = "";
 
 		for(String s : activity) {
-			out += s + ", ";
+			out += s + "; ";
 		}
 
 		return out.substring(0, out.length()-2);
@@ -54,7 +54,7 @@ public class Staff implements Interface.Staff {
 		String out = "";
 
 		for(String s : area) {
-			out += s + ", ";
+			out += s + "; ";
 		}
 
 		return out.substring(0, out.length()-2);
@@ -109,17 +109,16 @@ public class Staff implements Interface.Staff {
 
 	@Override
 	public String toString() {
-		String out = "Name: " + getName();
-		out += "\tActivity: " + getActivity();
-		out += "\tArea: " + getArea();
-		out += "\tFocus: " + getFocus();
+		String out = getName() + ", ";
+		out += getArea() + ", ";
+		out += getActivity() + ", ";
+		out += getFocus();
 
 		for(Project p : projects) {
-			out += "\t" + p.getTitle();
-			out += "\t" + p.getFocus();
+			out += "," + p.getId();
 		}
 
-		return out + "\n";
+		return out;
 	}
 
 	public static void main(String[] args) {

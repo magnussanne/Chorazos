@@ -37,15 +37,13 @@ public class Student implements Interface.Student {
     }
 
     public String toString() {
-        String out = "Name: " + getName();
-        out += "\tNumber: " + getNumber();
-        out += "\tFocus: " + getFocus();
+        String out = getName() + "," + getNumber() + "," + getFocus();
 
         for(Project p : preference) {
-            out += "\t" + p.getTitle();
+            out += "," + p.getId();
         }
 
-        return out + "\n";
+        return out;
     }
 
     public void setProjects(List<Project> projects, int numberPreferences) {

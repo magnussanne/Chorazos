@@ -1,4 +1,5 @@
 import Functions.CreateStudents;
+import IO.Output.CSV.WriteToCSVFile;
 import IO.Output.Excel.GenerateProject;
 import IO.Output.Excel.GenerateStudentPref;
 import IO.Input.ReadStaffMembers;
@@ -32,5 +33,9 @@ public class run {
 
         GenerateProject.writeProjectsToSpreadsheet(staff);
         GenerateStudentPref.writeStudentPrefToSpreadsheet(students, 60);
+
+        WriteToCSVFile.Write(staff, "staff.csv");
+        WriteToCSVFile.Write(projects, "project.csv");
+        WriteToCSVFile.Write(students, "student.csv");
     }
 }
