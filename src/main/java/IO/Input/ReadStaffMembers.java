@@ -1,3 +1,5 @@
+package IO.Input;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -15,7 +17,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class ReadStaffMembers {
-    private static final String FilePath = "src/main/resources/staff_input.xlsx";
+    private static final String FilePath = "src/main/resources/input/staff_input.xlsx";
 
     public static void main(String[] args) throws IOException {
         List<Staff> staffList = getStaffDetails();

@@ -1,3 +1,5 @@
+package Functions;
+
 import Interface.Focus;
 import Objects.Student;
 
@@ -9,8 +11,8 @@ import java.util.Random;
 import java.util.Scanner;
 
 public class CreateStudents {
-    private static final String First_Names = "src/main/resources/firstname.txt";
-    private static final String Surnames = "src/main/resources/surname.txt";
+    private static final String First_Names = "src/main/resources/input/firstname.txt";
+    private static final String Surnames = "src/main/resources/input/surname.txt";
     private static final int Number_Students = 500;
     private static final int Staring_Student_Number = 20216952;
 
