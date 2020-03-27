@@ -76,6 +76,10 @@ public class Staff implements Interface.Staff {
 		return projects;
 	}
 
+	public void addProject(Project p) {
+		projects.add(p);
+	}
+
 	private void createProjects() {
 		String fullTitle;
 		String[] titleStart = {

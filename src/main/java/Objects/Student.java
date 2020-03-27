@@ -46,6 +46,10 @@ public class Student implements Interface.Student {
         return out;
     }
 
+    public void addPreference(Project project) {
+        preference.add(project);
+    }
+
     public void setProjects(List<Project> projects, int numberPreferences) {
         for(int i=0; i<numberPreferences; i++) {
             Project p = projects.get(randomNumber(projects.size()));
