@@ -1,3 +1,5 @@
+package IO.Output.Excel;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -16,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class GenerateStudentPref {
-    private static final String FilePath = "src/main/resources/studentPref.xlsx";
+    private static final String FilePath = "src/main/resources/output/studentPref.xlsx";
 
     public static void writeStudentPrefToSpreadsheet(List<Student> studentList, int limit){
         Workbook workbook = new XSSFWorkbook();

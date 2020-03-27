@@ -1,3 +1,5 @@
+package IO.Output.Excel;
+
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -16,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class GenerateProject {
-    private static final String FilePath = "src/main/resources/projects.xlsx";
+    private static final String FilePath = "src/main/resources/output/projects.xlsx";
 
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         Workbook workbook = new XSSFWorkbook();
