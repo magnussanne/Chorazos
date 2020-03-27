@@ -20,12 +20,12 @@ public class ReadStaffMembers {
     private static final String FilePath = "src/main/resources/input/staff_input.xlsx";
 
     public static void main(String[] args) throws IOException {
-        List<Staff> staffList = getStaffDetails();
+        List<Staff> staffList = getStaffDetails(1000);
         Staff s = staffList.get(2);
         System.out.println(s.toString());
     }
 
-    public static List getStaffDetails() throws IOException {
+    public static List getStaffDetails(int NumberStaff) throws IOException {
         List<Staff> staffList = new ArrayList();
         FileInputStream input = null;
 
@@ -40,7 +40,7 @@ public class ReadStaffMembers {
                 Sheet sheet = workbook.getSheetAt(i);
                 Iterator rowIterator = sheet.iterator();
 
-                while (rowIterator.hasNext()) {
+                for(int count=0; count<NumberStaff && rowIterator.hasNext(); count++) {
                     Staff staff;
                     String name = "";
                     String activity = "";

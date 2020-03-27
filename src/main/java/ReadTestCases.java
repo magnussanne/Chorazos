@@ -7,7 +7,7 @@ import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class test {
+public class ReadTestCases {
     public static void main(String[] args) throws FileNotFoundException {
         List<Staff> staffList = new ArrayList<>();
         List<Student> studentList = new ArrayList<>();

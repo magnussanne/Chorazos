@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class GenerateStudentPref {
-    private static final String FilePath = "src/main/resources/output/studentPref.xlsx";
+    private static final String FilePath = "src/main/resources/input/studentPref.xlsx";
 
     public static void writeStudentPrefToSpreadsheet(List<Student> studentList, int limit){
         //creating a workbook to write to

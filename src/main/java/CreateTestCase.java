@@ -13,12 +13,13 @@ import java.util.Collections;
 import java.util.List;
 
 
-public class run {
+public class CreateTestCase {
+    private static final int Number_Students = 500;
     private static final int Number_Preferences = 10;
 
     public static void main(String[] args) throws IOException {
-        List<Staff> staff = ReadStaffMembers.getStaffDetails();
-        List<Student> students = CreateStudents.createStudents();
+        List<Staff> staff = ReadStaffMembers.getStaffDetails(Number_Students/2);
+        List<Student> students = CreateStudents.createStudents(Number_Students);
         List<Project> projects = new ArrayList<>();
 
         for(Staff s : staff) {

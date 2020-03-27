@@ -18,7 +18,7 @@ import java.util.Iterator;
 import java.util.List;
 
 public class GenerateProject {
-    private static final String FilePath = "src/main/resources/output/projects.xlsx";
+    private static final String FilePath = "src/main/resources/input/projects.xlsx";
 
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
         //creating a workbook to write too
