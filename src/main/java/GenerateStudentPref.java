@@ -19,7 +19,9 @@ public class GenerateStudentPref {
     private static final String FilePath = "src/main/resources/studentPref.xlsx";
 
     public static void writeStudentPrefToSpreadsheet(List<Student> studentList, int limit){
+        //creating a workbook to write to
         Workbook workbook = new XSSFWorkbook();
+        //creating a sheet inside the workbook
         Sheet studentSheet = workbook.createSheet("Student");
 
         int rowIndex = 0;
@@ -38,7 +40,7 @@ public class GenerateStudentPref {
             row.createCell(cellIndex++).setCellValue(student.getPreference(6).getTitle());
             row.createCell(cellIndex++).setCellValue(student.getPreference(7).getTitle());
             row.createCell(cellIndex++).setCellValue(student.getPreference(8).getTitle());
-            row.createCell(cellIndex++).setCellValue(student.getPreference(9).getTitle());
+            row.createCell(cellIndex).setCellValue(student.getPreference(9).getTitle());
             if(rowIndex == limit){
                 break;
             }
@@ -50,8 +52,10 @@ public class GenerateStudentPref {
 
             System.out.println(FilePath + " successful");
         } catch (FileNotFoundException e) {
+            System.out.println("Error: file not found");
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Error: operation failed");
             e.printStackTrace();
         }
     }

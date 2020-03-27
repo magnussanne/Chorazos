@@ -19,7 +19,9 @@ public class GenerateProject {
     private static final String FilePath = "src/main/resources/projects.xlsx";
 
     public static void writeProjectsToSpreadsheet(List<Staff> staffList){
+        //creating a workbook to write too
         Workbook workbook = new XSSFWorkbook();
+        //creating a sheet inside the workbook
         Sheet staffSheet = workbook.createSheet("Staff");
 
         int rowIndex = 0;
@@ -28,7 +30,7 @@ public class GenerateProject {
             int cellIndex = 0;
             row.createCell(cellIndex++).setCellValue(staff.getName());
             row.createCell(cellIndex++).setCellValue(staff.getProject(0).getTitle());
-            row.createCell(cellIndex++).setCellValue(staff.getProject(0).getFocus().toString());
+            row.createCell(cellIndex).setCellValue(staff.getProject(0).getFocus().toString());
         }
         try {
             FileOutputStream output = new FileOutputStream(FilePath);
@@ -37,8 +39,10 @@ public class GenerateProject {
 
             System.out.println(FilePath + " successful");
         } catch (FileNotFoundException e) {
+            System.out.println("Error: file not found");
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Error: operation failed");
             e.printStackTrace();
         }
     }

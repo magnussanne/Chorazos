@@ -29,8 +29,9 @@ public class ReadStaffMembers {
 
         try {
             input = new FileInputStream(FilePath);
+            //creating a workbook containing the input file to read from
             Workbook workbook = new XSSFWorkbook(input);
-
+            //making sure the program reads from each sheet inside the workbook
             int numberOfSheets = workbook.getNumberOfSheets();
 
             for (int i = 0; i < numberOfSheets; i++) {
@@ -77,8 +78,10 @@ public class ReadStaffMembers {
 
             input.close();
         } catch (FileNotFoundException e) {
+            System.out.println("Error: file not found");
             e.printStackTrace();
         } catch (IOException e) {
+            System.out.println("Error: operation failed");
             e.printStackTrace();
         }
 
