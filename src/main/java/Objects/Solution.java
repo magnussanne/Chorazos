@@ -1,8 +1,31 @@
 package Objects;
 
-public class Solution implements Interface.Solution{
+import java.util.List;
+import java.util.Random;
+
+public class Solution implements Interface.Solution {
+    private static Random rand = new Random();
+
+    private static List<Project> projectList;
     private Student student;
     private Project project;
+
+    public Solution(Student student, List<Project> projectList) {
+        this.student = student;
+        this.projectList = projectList;
+    }
+
+    public Solution(Student student) {
+        this.student = student;
+    }
+
+    public void modify() {
+        if(project != null)
+            projectList.add(project);
+
+        int index = rand.nextInt(projectList.size());
+        project = projectList.get(index);
+    }
 
     @Override
     public void setStudent(Student student) {
