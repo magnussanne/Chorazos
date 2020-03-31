@@ -13,10 +13,12 @@ public class Solution implements Interface.Solution {
     public Solution(Student student, List<Project> projectList) {
         this.student = student;
         this.projectList = projectList;
+        modify();
     }
 
     public Solution(Student student) {
         this.student = student;
+        modify();
     }
 
     public void modify() {
