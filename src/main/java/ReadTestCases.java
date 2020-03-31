@@ -3,10 +3,10 @@ import Objects.Solution;
 import Objects.Staff;
 import Objects.Student;
 import IO.Input.CSV.*;
+import org.apache.poi.ss.formula.functions.T;
 
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
+import java.util.*;
 
 public class ReadTestCases {
     public static void main(String[] args) throws FileNotFoundException {
@@ -33,7 +33,7 @@ public class ReadTestCases {
         }
 
         for(Solution s : solutionsList) {
-            System.out.println(s.getStudent().getName() + "\t" + s.getProject().getTitle() + "\t" + s.getEnergy());
+            System.out.println(s.toString());
         }
     }
 }

@@ -53,4 +53,9 @@ public class Solution implements Interface.Solution {
     public float getEnergy() {
         return 0;
     }
+
+    @Override
+    public String toString() {
+        return getStudent().getName() + ", " + getProject().getTitle() + ", " + getEnergy();
+    }
 }
