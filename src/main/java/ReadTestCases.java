@@ -1,4 +1,5 @@
 import Objects.Project;
+import Objects.Solution;
 import Objects.Staff;
 import Objects.Student;
 import IO.Input.CSV.*;
@@ -17,8 +18,22 @@ public class ReadTestCases {
         ReadStaff.Read( "staff.csv", staffList, projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
 
-        System.out.println(staffList.toString());
-        System.out.println(studentList.toString());
-        System.out.println(projectList.toString());
+        List<Solution> solutionsList = new ArrayList<>();
+
+        for(int i=0; i<studentList.size(); i++) {
+            Solution s;
+
+            if(i == 0) {
+                s = new Solution(studentList.get(i), projectList);
+            } else {
+                s = new Solution(studentList.get(i));
+            }
+
+            solutionsList.add(s);
+        }
+
+        for(Solution s : solutionsList) {
+            System.out.println(s.getStudent().getName() + "\t" + s.getProject().getTitle() + "\t" + s.getEnergy());
+        }
     }
 }
