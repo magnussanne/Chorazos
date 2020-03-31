@@ -26,7 +26,7 @@ public class Solution implements Interface.Solution {
             projectList.add(project);
 
         int index = rand.nextInt(projectList.size());
-        project = projectList.get(index);
+        project = projectList.remove(index);
     }
 
     @Override
