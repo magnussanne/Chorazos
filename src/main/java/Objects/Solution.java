@@ -16,17 +16,12 @@ public class Solution implements Interface.Solution {
         modify();
     }
 
-    public Solution(Student student) {
-        this.student = student;
-        modify();
-    }
-
     public void modify() {
         if(project != null)
             projectList.add(project);
 
         int index = rand.nextInt(projectList.size());
-        project = projectList.remove(index);
+        project = projectList.get(index);
     }
 
     @Override

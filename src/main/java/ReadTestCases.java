@@ -20,16 +20,8 @@ public class ReadTestCases {
 
         List<Solution> solutionsList = new ArrayList<>();
 
-        for(int i=0; i<studentList.size(); i++) {
-            Solution s;
-
-            if(i == 0) {
-                s = new Solution(studentList.get(i), projectList);
-            } else {
-                s = new Solution(studentList.get(i));
-            }
-
-            solutionsList.add(s);
+        for(Student s : studentList) {
+            solutionsList.add(new Solution(s, projectList));
         }
 
         for(Solution s : solutionsList) {
