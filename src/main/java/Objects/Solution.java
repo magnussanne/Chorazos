@@ -39,8 +39,14 @@ public class Solution implements Interface.Solution {
     }
 
     @Override
-    public float getEnergy() {
-        return 0;
+    public double getEnergy() {
+        int weight = 1;
+        double energy = 0;
+
+        energy += hcProjectAllocation() * weight;
+        energy += hcStream() * weight;
+
+        return energy;
     }
 
     @Override
