@@ -21,7 +21,7 @@ public class ReadTestCases {
         List<Solution> solutionsList = new ArrayList<>();
 
         for(Student s : studentList) {
-            solutionsList.add(new Solution(s, projectList));
+            solutionsList.add(new Solution(s, projectList, solutionsList));
         }
 
         for(Solution s : solutionsList) {
