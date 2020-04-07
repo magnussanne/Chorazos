@@ -12,6 +12,7 @@ public class Student implements Interface.Student {
     private String name;
     private int number;
     private Focus study;
+    private double GPA;
     private List<Project> preference = new ArrayList<>();
 
     public Student(String name, int number, Focus study) {
@@ -32,12 +33,18 @@ public class Student implements Interface.Student {
         return study;
     }
 
+    public double getGPA() {
+        Random randGPA = new Random();
+        GPA = 3.5*randGPA.nextDouble()+2.0;
+        return GPA;
+    }
+
     public Project getPreference(int index) {
         return preference.get(index);
     }
 
     public String toString() {
-        String out = getName() + "," + getNumber() + "," + getFocus();
+        String out = getName() + "," + getNumber() + "," + getFocus() + "," + getGPA();
 
         for(Project p : preference) {
             out += "," + p.getId();
@@ -75,16 +82,5 @@ public class Student implements Interface.Student {
         } while (0 > num || num > 4);
 
         return (int) Math.round(num*max*0.25);
-    }
-
-    public static void main(String[] args) {
-        List<Project> p = new ArrayList();
-        p.add(new Project("t1", Focus.DS));
-        p.add(new Project("t2", Focus.CS));
-        p.add(new Project("t3"));
-
-        Student s = new Student("John Smith", 12345, Focus.CS);
-        s.setProjects(p, 2);
-        System.out.println(s.toString());
     }
 }

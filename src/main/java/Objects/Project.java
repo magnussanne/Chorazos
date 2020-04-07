@@ -45,8 +45,4 @@ public class Project implements Interface.Project {
         return getId() + "," + getTitle() + "," + getFocus();
     }
 
-    public static void main(String[] args) {
-        Project p = new Project("Creating an AI to cause mayhem", Focus.CS);
-        System.out.println(p.toString());
-    }
 }

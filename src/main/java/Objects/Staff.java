@@ -124,13 +124,4 @@ public class Staff implements Interface.Staff {
 
 		return out;
 	}
-
-	public static void main(String[] args) {
-		Staff s = new Staff("John", "Java, MatLab, Lisp", "Artificial Intelligence", Focus.CS);
-		System.out.println(s.toString());
-
-		for(Project p : s.getProjects()) {
-			System.out.println(p.toString());
-		}
-	}
 }
