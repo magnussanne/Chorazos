@@ -4,6 +4,8 @@ import java.util.List;
 import java.util.Random;
 
 public class Solution implements Interface.Solution {
+    private final static int MAX_ENERGY_PENALTY = 1;
+
     private static Random rand = new Random();
 
     private static List<Project> projectList;
@@ -42,5 +44,14 @@ public class Solution implements Interface.Solution {
     @Override
     public String toString() {
         return getStudent().getName() + ", " + getProject().getTitle() + ", " + getEnergy();
+    }
+
+    //  Tests if the student is in the correct stream to do the project
+    private int constraintSteam() {
+        if(student.getFocus().isCompatible(project.getFocus())) {
+            return 0;
+        } else {
+            return MAX_ENERGY_PENALTY;
+        }
     }
 }

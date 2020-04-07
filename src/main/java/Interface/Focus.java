@@ -25,4 +25,12 @@ public enum Focus {
             return CSDS;
         }
     }
+
+    public boolean isCompatible(Focus f) {
+        if(this == f || f == Focus.CSDS) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 }
