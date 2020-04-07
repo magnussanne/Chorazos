@@ -25,18 +25,8 @@ public class Solution implements Interface.Solution {
     }
 
     @Override
-    public void setStudent(Student student) {
-
-    }
-
-    @Override
     public Student getStudent() {
         return student;
-    }
-
-    @Override
-    public void setProject(Project project) {
-
     }
 
     @Override
