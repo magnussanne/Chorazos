@@ -27,17 +27,16 @@ public class ReadTestCases {
             System.out.println(s.toString());
         }
 
-        SolutionPermutation initialSolution = new SolutionPermutation(solutionList);
+        SolutionPermutation curr = new SolutionPermutation(solutionList);
+        double e1=curr.getEnergy();
 
-        for(int i=0; i<1000; i++) {
-            SolutionPermutation newSolution = new SolutionPermutation(initialSolution.getList());
-            newSolution.modify(NUMBER_CHANGES);
+        for(int i=INITIAL_TEMPERATURE; i>0; i-=TEMPERATURE_CHANGE) {
+            curr.modify(NUMBER_CHANGES);
 
-            System.out.println(initialSolution.getList().toString() + "->" + newSolution.getList().toString());
+            double e0 = e1;
+            e1 = curr.getEnergy();
 
-            if(newSolution.getEnergy() < initialSolution.getEnergy()) {
-                initialSolution = newSolution;
-            }
+            System.out.println(e0 + "->" + e1);
         }
     }
 }

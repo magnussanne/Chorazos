@@ -1,21 +1,20 @@
 package Objects;
 
 import Objects.Solution;
+import org.apache.xmlbeans.impl.xb.xmlconfig.Extensionconfig;
 
+import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
-public class SolutionPermutation {
+public class SolutionPermutation implements Interface.SolutionPermutation {
     private List<Solution> solutionList;
     private double energy;
 
     public SolutionPermutation(List<Solution> solutionList) {
         this.solutionList = solutionList;
         energy = getEnergy();
-    }
-
-    public List getList() {
-        return solutionList;
     }
 
     public double getEnergy() {
