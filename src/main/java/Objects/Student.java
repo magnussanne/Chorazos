@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.Random;
 
+
 import static Interface.Focus.CSDS;
 
 public class Student implements Interface.Student {
@@ -15,10 +16,13 @@ public class Student implements Interface.Student {
     private double GPA;
     private List<Project> preference = new ArrayList<>();
 
+
     public Student(String name, int number, Focus study) {
         this.name = name;
         this.number = number;
         this.study = study;
+        Random randGPA = new Random();
+        this.GPA = 2.0*randGPA.nextDouble()+2.0;
     }
 
     public String getName() {
@@ -33,11 +37,7 @@ public class Student implements Interface.Student {
         return study;
     }
 
-    public double getGPA() {
-        Random randGPA = new Random();
-        GPA = 3.5*randGPA.nextDouble()+2.0;
-        return GPA;
-    }
+    public double getGPA() { return GPA; }
 
     public Project getPreference(int index) {
         return preference.get(index);

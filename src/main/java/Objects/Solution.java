@@ -41,6 +41,6 @@ public class Solution implements Interface.Solution {
 
     @Override
     public String toString() {
-        return getStudent().getName() + ", " + getProject().getTitle() + ", " + getEnergy();
+        return getStudent().getName() + ", " + getStudent().getGPA() + ", " + getProject().getTitle() + ", " + getEnergy();
     }
 }
