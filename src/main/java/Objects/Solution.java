@@ -2,6 +2,7 @@ package Objects;
 
 import java.util.List;
 import java.util.Random;
+import java.text.DecimalFormat;
 
 public class Solution implements Interface.Solution {
     private final static int MAX_ENERGY_PENALTY = 1;
@@ -48,10 +49,10 @@ public class Solution implements Interface.Solution {
 
         return energy;
     }
-
+    private static DecimalFormat df = new DecimalFormat("#.##");
     @Override
     public String toString() {
-        return getStudent().getName() + ", " + getStudent().getGPA() + ", " + getProject().getTitle() + ", " + getEnergy();
+        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + getEnergy();
     }
 
     //  Tests if the student is in the correct stream to do the project
