@@ -73,8 +73,9 @@ public class Solution implements Interface.Solution {
                 index = i;
         }
 
-        return ((double) index ) /
-                11;
+        //  Max GPA is 4.1, and max index value is 11. 4.1*11 gives 45.1,
+        //  which we divide with to get a value between 1 and 0
+        return ((double) index * student.getGPA() ) / 45.1;
     }
 
     //  Tests if the project is allocated to multiple people
