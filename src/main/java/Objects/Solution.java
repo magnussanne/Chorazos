@@ -53,7 +53,7 @@ public class Solution implements Interface.Solution {
 
     @Override
     public String toString() {
-        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + getEnergy();
+        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + df.format(getEnergy());
     }
 
     //  Tests if the student is in the correct stream to do the project
@@ -73,8 +73,7 @@ public class Solution implements Interface.Solution {
                 index = i;
         }
 
-        return ((double) index ) /
-                11;
+        return ((double) index ) / 11;
     }
 
     //  Tests if the project is allocated to multiple people

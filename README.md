@@ -30,3 +30,15 @@ no student or project ever repeats itself so this is a valid solution. We create
 list in Solutions, so all solutions can only choose a project from a single list and is a
 solution chooses a project, it is removed from the list so no other solutions can choose it
 to ensure a valid solution, this is implemented in the modify() function.
+
+Assignment 4:
+We added hard and soft constraints to our solution class as well as adding GPA to students. 
+If a hard constraint is broken then 1, the maximum value of energy, is returned, this means 
+the solution is invalid. If no hard constraint is broken the energy functions returns the 
+number of preference of the project assign to a student and multiplies it by their GPA, then
+divides by 45.1 to get the energy of the student. The value 45.1 comes from multiplying the 
+maximum possible value of a GPA with 11, the maximum possible preference index for a student.
+We divided by this value to ensure that the energy value is between 0 and 1 and therefore the
+fitness is 1 - the energy value.
+
+Note: CreateTestCase must be ran before ReadTestCase file is ran.
