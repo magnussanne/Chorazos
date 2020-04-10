@@ -29,14 +29,17 @@ public class ReadTestCases {
 
         SolutionPermutation curr = new SolutionPermutation(solutionList);
         double e1=curr.getEnergy();
+        double f1=curr.getFitness();
 
         for(int i=INITIAL_TEMPERATURE; i>0; i-=TEMPERATURE_CHANGE) {
             curr.modify(NUMBER_CHANGES);
 
             double e0 = e1;
+            double f0 = f1;
             e1 = curr.getEnergy();
+            f1 = curr.getFitness();
 
-            System.out.println(e0 + "->" + e1);
+            System.out.println(e0 + "->" + e1 + "\t" + f0 + "->" + f1);
         }
     }
 }

@@ -5,8 +5,7 @@ import java.util.Random;
 import java.text.DecimalFormat;
 
 public class Solution implements Interface.Solution {
-    private final static int MAX_ENERGY_PENALTY = 1;
-
+    private static DecimalFormat df = new DecimalFormat("#.##");
     private static Random rand = new Random();
 
     private static List<Project> projectList;
@@ -47,7 +46,11 @@ public class Solution implements Interface.Solution {
 
         return scPreference();
     }
-    private static DecimalFormat df = new DecimalFormat("#.##");
+
+    public double getFitness() {
+        return 1 - getEnergy();
+    }
+
     @Override
     public String toString() {
         return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + getEnergy();

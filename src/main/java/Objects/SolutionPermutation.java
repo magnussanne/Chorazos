@@ -27,6 +27,16 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         return energy;
     }
 
+    public double getFitness() {
+        double fitness = 0;
+
+        for(Solution s : solutionList) {
+            fitness += s.getFitness();
+        }
+
+        return fitness;
+    }
+
     public void modify(int NUMBER_CHANGES) {
         Random rand = new Random();
 
