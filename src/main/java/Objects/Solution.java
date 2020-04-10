@@ -69,7 +69,8 @@ public class Solution implements Interface.Solution {
                 index = i;
         }
 
-        return ((double) index ) / 11;
+        return ((double) index ) /
+                11;
     }
 
     //  Tests if the project is allocated to multiple people
