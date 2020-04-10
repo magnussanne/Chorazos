@@ -44,7 +44,7 @@ public class Solution implements Interface.Solution {
             return 1;
         }
 
-        return scPreference();
+        return ((double) scPreference() * student.getGPA()) / 45.1;
     }
 
     public double getFitness() {
@@ -65,7 +65,7 @@ public class Solution implements Interface.Solution {
         }
     }
 
-    private double scPreference(){
+    private int scPreference(){
         int index = 11;
         int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
@@ -73,8 +73,7 @@ public class Solution implements Interface.Solution {
                 index = i;
         }
 
-        return ((double) index ) /
-                11;
+        return index;
     }
 
     //  Tests if the project is allocated to multiple people
