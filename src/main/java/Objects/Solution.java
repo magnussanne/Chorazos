@@ -40,14 +40,11 @@ public class Solution implements Interface.Solution {
 
     @Override
     public double getEnergy() {
-        int weight = 1;
-        double energy = 0;
+        if(hcProjectAllocation() || hcStream()) {
+            return 1;
+        }
 
-        energy += hcProjectAllocation() * weight;
-        energy += hcStream() * weight;
-        energy += scPreference() * weight;
-
-        return energy;
+        return scPreference();
     }
 
     @Override
@@ -56,15 +53,15 @@ public class Solution implements Interface.Solution {
     }
 
     //  Tests if the student is in the correct stream to do the project
-    private int hcStream() {
+    private boolean hcStream() {
         if(student.getFocus().isCompatible(project.getFocus())) {
-            return 0;
+            return false;
         } else {
-            return MAX_ENERGY_PENALTY;
+            return true;
         }
     }
 
-    private int scPreference(){
+    private double scPreference(){
         int index = 11;
         int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
@@ -72,19 +69,22 @@ public class Solution implements Interface.Solution {
                 index = i;
         }
 
-        return index;
+        return ((double) index ) / 11;
     }
 
     //  Tests if the project is allocated to multiple people
-    private int hcProjectAllocation() {
+    private boolean hcProjectAllocation() {
         int count = 0;
 
         for(Solution s : solutionList) {
             if(s.getProject() == getProject()) {
-                count ++;
+                count++;
             }
         }
 
-        return (count-1) * MAX_ENERGY_PENALTY;
+        if(count > 1)
+            return true;
+        else
+            return false;
     }
 }
