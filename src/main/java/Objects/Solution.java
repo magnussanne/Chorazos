@@ -45,6 +45,7 @@ public class Solution implements Interface.Solution {
 
         energy += hcProjectAllocation() * weight;
         energy += hcStream() * weight;
+        energy += scPreference() * weight;
 
         return energy;
     }
@@ -61,6 +62,17 @@ public class Solution implements Interface.Solution {
         } else {
             return MAX_ENERGY_PENALTY;
         }
+    }
+
+    private int scPreference(){
+        int index = 11;
+        int noOfProjects = 10;
+        for(int i = 0; i < noOfProjects; i++){
+            if(project == student.getPreference(i))
+                index = i;
+        }
+
+        return index;
     }
 
     //  Tests if the project is allocated to multiple people
