@@ -23,20 +23,10 @@ public class ReadTestCases {
             solutionList.add(new Solution(s, projectList));
         }
 
-        for(Solution s : solutionList) {
-            System.out.println(s.toString());
-        }
-
         SolutionPermutation s0 = new SolutionPermutation(solutionList);
+        SolutionPermutation s1 = new SolutionPermutation(s0);
+        s1.modify(10);
 
-        for(int i=0; i<100; i++) {
-            SolutionPermutation s1 = new SolutionPermutation(s0);
-            s1.modify(10);
-
-            System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
-            if(s1.getEnergy() < s0.getEnergy()) {
-                s0 = s1;
-            }
-        }
+        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
     }
 }

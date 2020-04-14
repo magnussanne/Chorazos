@@ -23,7 +23,7 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         double energy = 0;
 
         for(Solution s : solutionList) {
-            energy += s.getEnergy();
+            energy += s.getEnergy(solutionList);
         }
 
         return energy;
@@ -33,7 +33,7 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         double fitness = 0;
 
         for(Solution s : solutionList) {
-            fitness += s.getFitness();
+            fitness += s.getFitness(solutionList);
         }
 
         return fitness;

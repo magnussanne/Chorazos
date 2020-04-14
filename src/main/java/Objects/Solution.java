@@ -9,14 +9,17 @@ public class Solution implements Interface.Solution {
     private static Random rand = new Random();
 
     private static List<Project> projectList;
-    private static List<Solution> solutionList;
     private Student student;
     private Project project;
 
-    public Solution(Student student, List<Project> projectList, List<Solution> solutionList) {
+    public Solution(Solution other) {
+        this.student = other.getStudent();
+        this.project = other.getProject();
+    }
+
+    public Solution(Student student, List<Project> projectList) {
         this.student = student;
-        this.projectList = projectList;
-        this.solutionList = solutionList;
+        Solution.projectList = projectList;
         modify();
     }
 
@@ -39,21 +42,22 @@ public class Solution implements Interface.Solution {
     }
 
     @Override
-    public double getEnergy() {
-        if(hcProjectAllocation() || hcStream()) {
+    public double getEnergy(List<Solution> solutionList) {
+        if(hcStream() || hcProjectAllocation(solutionList)) {
             return 1;
         }
 
         return ((double) scPreference() * student.getGPA()) / 45.1;
     }
 
-    public double getFitness() {
-        return 1 - getEnergy();
+    @Override
+    public double getFitness(List<Solution> solutionList) {
+        return 1 - getEnergy(solutionList);
     }
 
     @Override
     public String toString() {
-        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + df.format(getEnergy());
+        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle();
     }
 
     //  Tests if the student is in the correct stream to do the project
@@ -65,19 +69,8 @@ public class Solution implements Interface.Solution {
         }
     }
 
-    private int scPreference(){
-        int index = 11;
-        int noOfProjects = 10;
-        for(int i = 0; i < noOfProjects; i++){
-            if(project == student.getPreference(i))
-                index = i;
-        }
-
-        return index;
-    }
-
     //  Tests if the project is allocated to multiple people
-    private boolean hcProjectAllocation() {
+    private boolean hcProjectAllocation(List<Solution> solutionList) {
         int count = 0;
 
         for(Solution s : solutionList) {
@@ -90,5 +83,16 @@ public class Solution implements Interface.Solution {
             return true;
         else
             return false;
+    }
+
+    private int scPreference(){
+        int index = 11;
+        int noOfProjects = 10;
+        for(int i = 0; i < noOfProjects; i++){
+            if(project == student.getPreference(i))
+                index = i;
+        }
+
+        return index;
     }
 }
