@@ -20,26 +20,23 @@ public class ReadTestCases {
         ReadStudents.Read("student.csv", studentList, projectList);
 
         for(Student s : studentList) {
-            solutionList.add(new Solution(s, projectList, solutionList));
+            solutionList.add(new Solution(s, projectList));
         }
 
         for(Solution s : solutionList) {
             System.out.println(s.toString());
         }
 
-        SolutionPermutation curr = new SolutionPermutation(solutionList);
-        double e1=curr.getEnergy();
-        double f1=curr.getFitness();
+        SolutionPermutation s0 = new SolutionPermutation(solutionList);
 
-        for(int i=INITIAL_TEMPERATURE; i>0; i-=TEMPERATURE_CHANGE) {
-            curr.modify(NUMBER_CHANGES);
+        for(int i=0; i<100; i++) {
+            SolutionPermutation s1 = new SolutionPermutation(s0);
+            s1.modify(10);
 
-            double e0 = e1;
-            double f0 = f1;
-            e1 = curr.getEnergy();
-            f1 = curr.getFitness();
-
-            System.out.println(e0 + "->" + e1 + "\t" + f0 + "->" + f1);
+            System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+            if(s1.getEnergy() < s0.getEnergy()) {
+                s0 = s1;
+            }
         }
     }
 }

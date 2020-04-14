@@ -9,14 +9,17 @@ public class Solution implements Interface.Solution {
     private static Random rand = new Random();
 
     private static List<Project> projectList;
-    private static List<Solution> solutionList;
     private Student student;
     private Project project;
 
-    public Solution(Student student, List<Project> projectList, List<Solution> solutionList) {
+    public Solution(Solution other) {
+        this.student = other.getStudent();
+        this.project = other.getProject();
+    }
+
+    public Solution(Student student, List<Project> projectList) {
         this.student = student;
-        this.projectList = projectList;
-        this.solutionList = solutionList;
+        Solution.projectList = projectList;
         modify();
     }
 
@@ -40,7 +43,7 @@ public class Solution implements Interface.Solution {
 
     @Override
     public double getEnergy() {
-        if(hcProjectAllocation() || hcStream()) {
+        if(hcStream()) {
             return 1;
         }
 
@@ -74,21 +77,5 @@ public class Solution implements Interface.Solution {
         }
 
         return index;
-    }
-
-    //  Tests if the project is allocated to multiple people
-    private boolean hcProjectAllocation() {
-        int count = 0;
-
-        for(Solution s : solutionList) {
-            if(s.getProject() == getProject()) {
-                count++;
-            }
-        }
-
-        if(count > 1)
-            return true;
-        else
-            return false;
     }
 }

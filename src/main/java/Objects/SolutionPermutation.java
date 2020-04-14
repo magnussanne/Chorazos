@@ -1,20 +1,22 @@
 package Objects;
 
-import Objects.Solution;
-import org.apache.xmlbeans.impl.xb.xmlconfig.Extensionconfig;
-
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.Random;
 
 public class SolutionPermutation implements Interface.SolutionPermutation {
     private List<Solution> solutionList;
-    private double energy;
+
+    public SolutionPermutation(SolutionPermutation other) {
+        solutionList = new ArrayList<>();
+
+        for(Solution s : other.getSolutionList()) {
+            solutionList.add(new Solution(s));
+        }
+    }
 
     public SolutionPermutation(List<Solution> solutionList) {
         this.solutionList = solutionList;
-        energy = getEnergy();
     }
 
     public double getEnergy() {
@@ -44,5 +46,9 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
             int r = rand.nextInt(solutionList.size());
             solutionList.get(r).modify();
         }
+    }
+
+    public List<Solution> getSolutionList() {
+        return solutionList;
     }
 }
