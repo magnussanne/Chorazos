@@ -44,7 +44,7 @@ public class Solution implements Interface.Solution {
             return 1;
         }
 
-        return scPreference();
+        return ((double) scPreference() * student.getGPA()) / 45.1;
     }
 
     public double getFitness() {
@@ -53,7 +53,7 @@ public class Solution implements Interface.Solution {
 
     @Override
     public String toString() {
-        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + getEnergy();
+        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getTitle() + ", " + df.format(getEnergy());
     }
 
     //  Tests if the student is in the correct stream to do the project
@@ -65,7 +65,7 @@ public class Solution implements Interface.Solution {
         }
     }
 
-    private double scPreference(){
+    private int scPreference(){
         int index = 11;
         int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
@@ -73,9 +73,7 @@ public class Solution implements Interface.Solution {
                 index = i;
         }
 
-        //  Max GPA is 4.1, and max index value is 11. 4.1*11 gives 45.1,
-        //  which we divide with to get a value between 1 and 0
-        return ((double) index * student.getGPA() ) / 45.1;
+        return index;
     }
 
     //  Tests if the project is allocated to multiple people
