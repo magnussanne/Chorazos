@@ -18,10 +18,10 @@ public class Search {
     private static List<SolutionPermutation> solutionPermList = new ArrayList<>();
     public SolutionPermutation hillClimb(SolutionPermutation s0) {
         SolutionPermutation s1 = new SolutionPermutation(s0);
-        for(int i =0; i<100; i++) {
+        for(int is=0; i<100; i++) {
             s1.modify(10);
             solutionPermList.add(s1);
-            System.out.println(s1.getEnergy());
+            //System.out.println(s1.getEnergy());
         }
         return findMinEnergy(solutionPermList);
     }
@@ -29,8 +29,9 @@ public class Search {
        SolutionPermutation curr = solutionPermList.get(0);
         for(SolutionPermutation s : solutionPermList) {
            if(s.getEnergy() < curr.getEnergy()) {
-                s = curr;
+                curr = s;
            }
+            System.out.println(s.getEnergy());
        }
         return curr;
     }

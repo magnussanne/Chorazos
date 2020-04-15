@@ -39,7 +39,7 @@ public class ReadTestCases {
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
         Search search = new Search();
-        s1 = search.hillClimb(s0);
+        s0 = search.hillClimb(s1);
         System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
     }
 }
