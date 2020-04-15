@@ -22,7 +22,6 @@ public class Search {
             SolutionPermutation s1 = new SolutionPermutation(s0);
             s1.modify(10);
             solutionPermList.add(s1);
-            System.out.println(s1.getEnergy());
         }
         return findMinEnergy(solutionPermList);
     }
@@ -31,7 +30,6 @@ public class Search {
         for(SolutionPermutation s : solutionPermList) {
            if(s.getEnergy() < curr.getEnergy()) {
                 curr = s;
-
            }
        }
         return curr;
