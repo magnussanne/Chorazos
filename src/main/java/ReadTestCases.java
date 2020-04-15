@@ -1,3 +1,4 @@
+import Functions.Search;
 import Objects.*;
 import IO.Input.CSV.*;
 
@@ -36,5 +37,9 @@ public class ReadTestCases {
         preferenceArray = s1.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
+
+        Search search = new Search();
+        s1 = search.hillClimb(s0);
+        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
     }
 }
