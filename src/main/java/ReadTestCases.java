@@ -29,9 +29,19 @@ public class ReadTestCases {
 
         SolutionPermutation s0 = new SolutionPermutation(solutionList);
         SolutionPermutation s1 = new SolutionPermutation(s0);
-        s1.modify(10);
 
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+        Search search = new Search();
+        int runLoop = 0;
+
+        while(runLoop == 0) {
+            s1 = search.hillClimb(s0);
+            System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+            if(s0 == s1)
+                runLoop = 1;
+            else{
+                s0 = s1;
+            }
+        }
 
         int[] preferenceArray = new int[3];
         preferenceArray = s1.getPreferenceInfo();
@@ -41,5 +51,6 @@ public class ReadTestCases {
         Search search = new Search();
             s1 = search.hillClimb(s0);
             System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+
     }
 }
