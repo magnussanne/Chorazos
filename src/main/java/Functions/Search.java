@@ -5,11 +5,13 @@ import IO.Input.CSV.ReadStaff;
 import IO.Input.CSV.ReadStudents;
 import Objects.Solution;
 import Objects.SolutionPermutation;
+
 import Objects.Student;
 
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Collections;
 
 public class Search {
     private static List<Solution> solutionList = new ArrayList<>();
@@ -19,19 +21,17 @@ public class Search {
         for(int i =0; i<100; i++) {
             s1.modify(10);
             solutionPermList.add(s1);
-
+            System.out.println(s1.getEnergy());
         }
-        System.out.println(solutionPermList);
-        return s0;
+        return findMinEnergy(solutionPermList);
     }
-    public static void main(String[] args) throws FileNotFoundException {
-        SolutionPermutation s0 = new SolutionPermutation(solutionList);
-        SolutionPermutation s1 = new SolutionPermutation(s0);
-        for(int i =0; i<100; i++) {
-            s1.modify(10);
-            solutionPermList.add(s1);
-
-        }
-        
+   public static SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
+       SolutionPermutation curr = solutionPermList.get(0);
+        for(SolutionPermutation s : solutionPermList) {
+           if(s.getEnergy() < curr.getEnergy()) {
+                s = curr;
+           }
+       }
+        return curr;
     }
 }
