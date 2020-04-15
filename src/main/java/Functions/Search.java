@@ -1,17 +1,10 @@
 package Functions;
 
-import IO.Input.CSV.ReadProjects;
-import IO.Input.CSV.ReadStaff;
-import IO.Input.CSV.ReadStudents;
 import Objects.Solution;
 import Objects.SolutionPermutation;
 
-import Objects.Student;
-
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collections;
 
 public class Search {
     private static List<Solution> solutionList = new ArrayList<>();
@@ -19,9 +12,8 @@ public class Search {
     public SolutionPermutation hillClimb(SolutionPermutation s0) {
         for(int i =0; i<100; i++) {
             SolutionPermutation s1 = new SolutionPermutation(s0);
-            s1.modify(10);
+            s1.modify(50);
             solutionPermList.add(s1);
-            //System.out.println(s1.getEnergy());
         }
         return findMinEnergy(solutionPermList);
     }
@@ -31,7 +23,6 @@ public class Search {
            if(s.getEnergy() < curr.getEnergy()) {
                 curr = s;
            }
-            System.out.println(s.getEnergy());
        }
         return curr;
     }

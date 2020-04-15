@@ -20,10 +20,10 @@ public class ReadTestCases {
 
     public static void main(String[] args) throws FileNotFoundException {
         ReadProjects.Read("project.csv", projectList);
-        ReadStaff.Read( "staff.csv", staffList, projectList);
+        ReadStaff.Read("staff.csv", staffList, projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
 
-        for(Student s : studentList) {
+        for (Student s : studentList) {
             solutionList.add(new Solution(s, projectList));
         }
 
@@ -39,7 +39,7 @@ public class ReadTestCases {
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
         Search search = new Search();
-        s0 = search.hillClimb(s1);
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+            s1 = search.hillClimb(s0);
+            System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
     }
 }
