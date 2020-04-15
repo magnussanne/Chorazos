@@ -18,11 +18,6 @@ public class CreateStudents {
     private static Scanner sc;
     private static Random rand = new Random();
 
-    public static void main(String[] args) throws FileNotFoundException {
-        List<Student> students = createStudents(500);
-        System.out.println(students);
-    }
-
     public static List createStudents(int NumberStudents) throws FileNotFoundException {
         List<String> firstname = getNames(First_Names);
         List<String> surnames = getNames(Surnames);

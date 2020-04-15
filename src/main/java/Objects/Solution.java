@@ -15,6 +15,7 @@ public class Solution implements Interface.Solution {
     public Solution(Solution other) {
         this.student = other.getStudent();
         this.project = other.getProject();
+        this.projectList = other.getProjectList();
     }
 
     public Solution(Student student, List<Project> projectList) {
@@ -39,6 +40,10 @@ public class Solution implements Interface.Solution {
     @Override
     public Project getProject() {
         return project;
+    }
+
+    public static List<Project> getProjectList() {
+        return projectList;
     }
 
     @Override
