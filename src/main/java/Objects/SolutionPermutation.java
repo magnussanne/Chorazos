@@ -39,6 +39,29 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         return fitness;
     }
 
+    public int[] getPreferenceInfo(){
+        int[] preferenceArray;
+        preferenceArray = new int[3];
+        preferenceArray[0] = 0; // the average preference
+        preferenceArray[1] = 0; // the number of students who received one of their preferences
+        preferenceArray[2] = 0; // the number of students who did not receive one of their preferences
+
+        int pref = 0;
+        for(Solution s : solutionList){
+            pref = s.scPreference();
+            if(pref == 11)
+                preferenceArray[2]++;
+            else{
+                preferenceArray[0] += pref;
+                preferenceArray[1]++;
+            }
+        }
+
+        preferenceArray[0] /= preferenceArray[1];
+
+        return preferenceArray;
+    }
+
     public void modify(int NUMBER_CHANGES) {
         Random rand = new Random();
 

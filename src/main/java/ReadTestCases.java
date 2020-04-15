@@ -8,11 +8,14 @@ public class ReadTestCases {
     public static int NUMBER_CHANGES = 5;
     public static int INITIAL_TEMPERATURE = 100;
     public static int TEMPERATURE_CHANGE = 10;
+    private int[] preferenceArray;
 
     private static List<Staff> staffList = new ArrayList<>();
     private static List<Student> studentList = new ArrayList<>();
     private static List<Project> projectList = new ArrayList<>();
     private static List<Solution> solutionList = new ArrayList<>();
+    private SolutionPermutation s1;
+
 
     public static void main(String[] args) throws FileNotFoundException {
         ReadProjects.Read("project.csv", projectList);
@@ -28,5 +31,10 @@ public class ReadTestCases {
         s1.modify(10);
 
         System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+
+        int[] preferenceArray = new int[3];
+        preferenceArray = s1.getPreferenceInfo();
+        System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
+                " while " + preferenceArray[2] + " students did not get any of their choices");
     }
 }

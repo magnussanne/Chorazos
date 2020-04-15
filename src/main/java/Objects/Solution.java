@@ -12,6 +12,8 @@ public class Solution implements Interface.Solution {
     private Student student;
     private Project project;
 
+    private int[] preferenceArray;
+
     public Solution(Solution other) {
         this.student = other.getStudent();
         this.project = other.getProject();
@@ -55,6 +57,7 @@ public class Solution implements Interface.Solution {
         return ((double) scPreference() * student.getGPA()) / 45.1;
     }
 
+
     @Override
     public double getFitness(List<Solution> solutionList) {
         return 1 - getEnergy(solutionList);
@@ -90,7 +93,7 @@ public class Solution implements Interface.Solution {
             return false;
     }
 
-    private int scPreference(){
+    public int scPreference(){
         int index = 11;
         int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
