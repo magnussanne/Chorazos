@@ -63,7 +63,7 @@ public class Student implements Interface.Student {
             int num;
             do {
                  num = (int) Math.round(rand.nextGaussian() * 108 + 325);
-            } while(num < 0 || num > 749);
+            } while(num < 0 || num > projects.size()-1);
 
             Project p = projects.get(num);
 
