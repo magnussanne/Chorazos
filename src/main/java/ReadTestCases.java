@@ -20,10 +20,10 @@ public class ReadTestCases {
 
     public static void main(String[] args) throws FileNotFoundException {
         ReadProjects.Read("project.csv", projectList);
-        ReadStaff.Read( "staff.csv", staffList, projectList);
+        ReadStaff.Read("staff.csv", staffList, projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
 
-        for(Student s : studentList) {
+        for (Student s : studentList) {
             solutionList.add(new Solution(s, projectList));
         }
 
@@ -47,7 +47,5 @@ public class ReadTestCases {
         preferenceArray = s1.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
-
-
     }
 }
