@@ -25,11 +25,15 @@ public class ReadTestCases {
         ReadStudents.Read("student.csv", studentList, projectList);
 
         for (Student s : studentList) {
-            solutionList.add(new Solution(s, projectList));
+            solutionList.add(new Solution(s, projectList, solutionList));
         }
 
         SolutionPermutation s0 = new SolutionPermutation(solutionList);
+
+        /*
+
         SolutionPermutation s1 = new SolutionPermutation(s0);
+
 
         Search search = new Search();
         int runLoop = 0;
@@ -53,8 +57,14 @@ public class ReadTestCases {
         s1 = search.hillClimb(s0);
         System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
 
+        */
+
         SimulatedAnnealing annealing = new SimulatedAnnealing();
-        s1 = annealing.solve(s0);
+        SolutionPermutation s1 = annealing.solve(s0);
         System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+
+        int[] preferenceArray = s1.getPreferenceInfo();
+        System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
+                " while " + preferenceArray[2] + " students did not get any of their choices");
     }
 }

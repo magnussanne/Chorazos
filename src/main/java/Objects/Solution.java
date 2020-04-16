@@ -18,16 +18,16 @@ public class Solution implements Interface.Solution {
         this.projectList = other.getProjectList();
     }
 
-    public Solution(Student student, List<Project> projectList) {
+    public Solution(Student student, List<Project> projectList, List<Solution> solutionList) {
         this.student = student;
         Solution.projectList = projectList;
-        modify();
+
+        do {
+            modify();
+        } while(invalid(solutionList));
     }
 
     public void modify() {
-        if(project != null)
-            projectList.add(project);
-
         int index = rand.nextInt(projectList.size());
         project = projectList.get(index);
     }
@@ -56,10 +56,6 @@ public class Solution implements Interface.Solution {
 
     @Override
     public double getEnergy(List<Solution> solutionList) {
-        if(invalid(solutionList)) {
-            return 1;
-        }
-
         return (((double) scPreference() * student.getGPA()) / 45.1)/2;
     }
 

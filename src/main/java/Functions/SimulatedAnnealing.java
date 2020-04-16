@@ -3,24 +3,25 @@ package Functions;
 import Objects.SolutionPermutation;
 
 public class SimulatedAnnealing {
-    private double InitialTemp = 5000;
+    private double InitialTemp = 50000;
+    private double tempChange = 0.3;
 
 
     public SolutionPermutation solve(SolutionPermutation s0) {
         double currentEnergy = s0.getEnergy();
         double temp = InitialTemp;
 
-        while(s0.invalid()) {
+        while(temp > 1 || currentEnergy > 20) {
             s0 = modify(s0, temp);
             currentEnergy = s0.getEnergy();
-            temp = temp * 0.03;
-            System.out.println(s0.getEnergy());
+            temp = temp * tempChange;
+            System.out.println(currentEnergy);
         }
 
         return s0;
     }
 
-    private SolutionPermutation modify(SolutionPermutation s0, double temp) {
+    public SolutionPermutation modify(SolutionPermutation s0, double temp) {
         int numberChanges = 30;
 
         for(int count=0; true; count++) {
