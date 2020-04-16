@@ -1,4 +1,5 @@
 import Functions.Search;
+import Functions.SimulatedAnnealing;
 import Objects.*;
 import IO.Input.CSV.*;
 
@@ -28,18 +29,18 @@ public class ReadTestCases {
         }
 
         SolutionPermutation s0 = new SolutionPermutation(solutionList);
-        SolutionPermutation s1 = new SolutionPermutation(s0);
-        s1.modify(10);
 
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+        int[] preferenceArray = s0.getPreferenceInfo();
+        System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
+                " while " + preferenceArray[2] + " students did not get any of their choices");
 
-        int[] preferenceArray = new int[3];
+        SimulatedAnnealing SA = new SimulatedAnnealing();
+        SolutionPermutation s1 = SA.solve(s0, 300);
+
         preferenceArray = s1.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
-        Search search = new Search();
-        s1 = search.hillClimb(s0);
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+        System.out.println(s0.getEnergy() + " <---> " + s1.getEnergy());
     }
 }

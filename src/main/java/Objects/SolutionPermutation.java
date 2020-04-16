@@ -19,6 +19,15 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         this.solutionList = solutionList;
     }
 
+    public boolean invalid() {
+        for(Solution s : solutionList) {
+            if (s.invalid(solutionList))
+                return true;
+        }
+
+        return false;
+    }
+
     public double getEnergy() {
         double energy = 0;
 

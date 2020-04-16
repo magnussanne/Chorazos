@@ -12,8 +12,6 @@ public class Solution implements Interface.Solution {
     private Student student;
     private Project project;
 
-    private int[] preferenceArray;
-
     public Solution(Solution other) {
         this.student = other.getStudent();
         this.project = other.getProject();
@@ -48,13 +46,21 @@ public class Solution implements Interface.Solution {
         return projectList;
     }
 
+    public boolean invalid(List<Solution> solutionList) {
+        if(hcStream() || hcProjectAllocation(solutionList)) {
+            return true;
+        }
+
+        return false;
+    }
+
     @Override
     public double getEnergy(List<Solution> solutionList) {
-        if(hcStream() || hcProjectAllocation(solutionList)) {
+        if(invalid(solutionList)) {
             return 1;
         }
 
-        return ((double) scPreference() * student.getGPA()) / 45.1;
+        return (((double) scPreference() * student.getGPA()) / 45.1)/2;
     }
 
 

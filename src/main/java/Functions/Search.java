@@ -12,26 +12,44 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Search {
-    private static List<Solution> solutionList = new ArrayList<>();
-    private static List<SolutionPermutation> solutionPermList = new ArrayList<>();
-    public SolutionPermutation hillClimb(SolutionPermutation s0) {
-        SolutionPermutation s1 = new SolutionPermutation(s0);
-        for(int i =0; i<100; i++) {
-            s1.modify(10);
-            solutionPermList.add(s1);
+    private List<Solution> solutionList = new ArrayList<>();
 
+    public SolutionPermutation hillClimb(SolutionPermutation s0) {
+        for(int lastChange = 0; lastChange < 100000; lastChange++) {
+            SolutionPermutation s1 = lowestEnergy(createList(s0));
+
+            if(s1.getEnergy() < s0.getEnergy()) {
+                s0 = s1;
+                lastChange = 0;
+            }
         }
-        System.out.println(solutionPermList);
+
         return s0;
     }
-    public static void main(String[] args) throws FileNotFoundException {
-        SolutionPermutation s0 = new SolutionPermutation(solutionList);
-        SolutionPermutation s1 = new SolutionPermutation(s0);
-        for(int i =0; i<100; i++) {
-            s1.modify(10);
-            solutionPermList.add(s1);
 
+    public List<SolutionPermutation> createList(SolutionPermutation s0) {
+        List<SolutionPermutation> solutionPermList = new ArrayList<>();
+
+        for(int i=0; i<50; i++) {
+            SolutionPermutation s1 = new SolutionPermutation(s0);
+            s1.modify(20);
+            solutionPermList.add(s1);
         }
-        
+
+        return solutionPermList;
+    }
+
+    public SolutionPermutation lowestEnergy(List<SolutionPermutation> solutionPermList) {
+        SolutionPermutation s0 = solutionPermList.remove(0);
+        double minEnergy = s0.getEnergy();
+
+        for(SolutionPermutation s : solutionPermList) {
+            if(s.getEnergy() < minEnergy) {
+                minEnergy = s.getEnergy();
+                s0 = s;
+            }
+        }
+
+        return s0;
     }
 }
