@@ -59,7 +59,13 @@ public class Student implements Interface.Student {
 
     public void setProjects(List<Project> projects, int numberPreferences) {
         for(int i=0; i<numberPreferences; i++) {
-            Project p = projects.get(randomNumber(projects.size()));
+            Random rand = new Random();
+            int num;
+            do {
+                 num = (int) Math.round(rand.nextGaussian() * 108 + 325);
+            } while(num < 0 || num > 749);
+
+            Project p = projects.get(num);
 
             if(preference.contains(p)) {
                 i--;
@@ -70,17 +76,5 @@ public class Student implements Interface.Student {
                     i--;
             }
         }
-    }
-
-    private static int randomNumber(int max) {
-        Random rand = new Random();
-        double mean = 2;
-        double num;
-
-        do {
-            num = (rand.nextGaussian() + mean);
-        } while (0 > num || num > 4);
-
-        return (int) Math.round(num*max*0.25);
     }
 }
