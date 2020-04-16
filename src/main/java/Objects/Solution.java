@@ -12,24 +12,22 @@ public class Solution implements Interface.Solution {
     private Student student;
     private Project project;
 
-    private int[] preferenceArray;
-
     public Solution(Solution other) {
         this.student = other.getStudent();
         this.project = other.getProject();
         this.projectList = other.getProjectList();
     }
 
-    public Solution(Student student, List<Project> projectList) {
+    public Solution(Student student, List<Project> projectList, List<Solution> solutionList) {
         this.student = student;
         Solution.projectList = projectList;
-        modify();
+
+        do {
+            modify();
+        } while(invalid(solutionList));
     }
 
     public void modify() {
-        if(project != null)
-            projectList.add(project);
-
         int index = rand.nextInt(projectList.size());
         project = projectList.get(index);
     }
@@ -48,13 +46,17 @@ public class Solution implements Interface.Solution {
         return projectList;
     }
 
-    @Override
-    public double getEnergy(List<Solution> solutionList) {
+    public boolean invalid(List<Solution> solutionList) {
         if(hcStream() || hcProjectAllocation(solutionList)) {
-            return 1;
+            return true;
         }
 
-        return ((double) scPreference() * student.getGPA()) / 45.1;
+        return false;
+    }
+
+    @Override
+    public double getEnergy(List<Solution> solutionList) {
+        return (((double) scPreference() * student.getGPA()) / 90.2)/2;
     }
 
 
@@ -94,7 +96,7 @@ public class Solution implements Interface.Solution {
     }
 
     public int scPreference(){
-        int index = 11;
+        int index = 20;
         int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
             if(project == student.getPreference(i))

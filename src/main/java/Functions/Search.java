@@ -17,13 +17,13 @@ public class Search {
         }
         return findMinEnergy(solutionPermList);
     }
-   public static SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
-       SolutionPermutation curr = solutionPermList.get(0);
+    public static SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
+        SolutionPermutation curr = solutionPermList.get(0);
         for(SolutionPermutation s : solutionPermList) {
-           if(s.getEnergy() < curr.getEnergy()) {
+            if(s.getEnergy() < curr.getEnergy()) {
                 curr = s;
-           }
-       }
+            }
+        }
         return curr;
     }
 }
