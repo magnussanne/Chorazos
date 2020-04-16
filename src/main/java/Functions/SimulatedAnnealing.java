@@ -6,7 +6,7 @@ public class SimulatedAnnealing {
     private double InitialTemp = 5000;
 
 
-    public SolutionPermutation solve(SolutionPermutation s0, double satisfaction) {
+    public SolutionPermutation solve(SolutionPermutation s0) {
         double currentEnergy = s0.getEnergy();
         double temp = InitialTemp;
 
@@ -20,7 +20,7 @@ public class SimulatedAnnealing {
         return s0;
     }
 
-    public SolutionPermutation modify(SolutionPermutation s0, double temp) {
+    private SolutionPermutation modify(SolutionPermutation s0, double temp) {
         int numberChanges = 30;
 
         for(int count=0; true; count++) {

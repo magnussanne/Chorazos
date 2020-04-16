@@ -21,26 +21,40 @@ public class ReadTestCases {
 
     public static void main(String[] args) throws FileNotFoundException {
         ReadProjects.Read("project.csv", projectList);
-        ReadStaff.Read( "staff.csv", staffList, projectList);
+        ReadStaff.Read("staff.csv", staffList, projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
 
-        for(Student s : studentList) {
+        for (Student s : studentList) {
             solutionList.add(new Solution(s, projectList));
         }
 
         SolutionPermutation s0 = new SolutionPermutation(solutionList);
+        SolutionPermutation s1 = new SolutionPermutation(s0);
 
-        int[] preferenceArray = s0.getPreferenceInfo();
-        System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
-                " while " + preferenceArray[2] + " students did not get any of their choices");
+        Search search = new Search();
+        int runLoop = 0;
 
-        SimulatedAnnealing SA = new SimulatedAnnealing();
-        SolutionPermutation s1 = SA.solve(s0, 300);
+        while(runLoop == 0) {
+            s1 = search.hillClimb(s0);
+            System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+            if(s0 == s1)
+                runLoop = 1;
+            else{
+                s0 = s1;
+            }
+        }
 
+        int[] preferenceArray = new int[3];
         preferenceArray = s1.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
-        System.out.println(s0.getEnergy() + " <---> " + s1.getEnergy());
+        search = new Search();
+        s1 = search.hillClimb(s0);
+        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+
+        SimulatedAnnealing annealing = new SimulatedAnnealing();
+        s1 = annealing.solve(s0);
+        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
     }
 }
