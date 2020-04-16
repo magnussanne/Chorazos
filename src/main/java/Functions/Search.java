@@ -30,7 +30,7 @@ public class Search {
            if(s.getEnergy() < curr.getEnergy()) {
                 curr = s;
            }
-            System.out.println(s.getEnergy());
+
        }
         return curr;
     }
