@@ -53,6 +53,7 @@ public class ReadTestCases {
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
+
         search = new Search();
         s1 = search.hillClimb(s0);
         System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());

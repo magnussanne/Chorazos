@@ -56,7 +56,7 @@ public class Solution implements Interface.Solution {
 
     @Override
     public double getEnergy(List<Solution> solutionList) {
-        return (((double) scPreference() * student.getGPA()) / 45.1)/2;
+        return (((double) scPreference() * student.getGPA()) / 90.2)/2;
     }
 
 
@@ -96,7 +96,7 @@ public class Solution implements Interface.Solution {
     }
 
     public int scPreference(){
-        int index = 11;
+        int index = 20;
         int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
             if(project == student.getPreference(i))
