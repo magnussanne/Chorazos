@@ -3,19 +3,19 @@ package Functions;
 import Objects.SolutionPermutation;
 
 public class SimulatedAnnealing {
-    private double InitialTemp = 50000;
-    private double tempChange = 0.3;
+    private double InitialTemp = 900000;
+    private double tempChange = 0.5;
 
 
     public SolutionPermutation solve(SolutionPermutation s0) {
         double currentEnergy = s0.getEnergy();
         double temp = InitialTemp;
 
-        while(temp > 1 || currentEnergy > 20) {
+        while(temp > 1) {
             s0 = modify(s0, temp);
             currentEnergy = s0.getEnergy();
-            temp = temp * tempChange;
-            System.out.println(currentEnergy);
+            temp -= tempChange;
+            System.out.println(temp + "\t" + currentEnergy);
         }
 
         return s0;
@@ -41,7 +41,8 @@ public class SimulatedAnnealing {
 
             if (probability > Math.random())
                 return s1;
-        }    }
+        }
+    }
 
     private double calculateProbability(double cur, double next, double temp) {
         if(next < cur)

@@ -46,10 +46,9 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         preferenceArray[1] = 0; // the number of students who received one of their preferences
         preferenceArray[2] = 0; // the number of students who did not receive one of their preferences
 
-        int pref = 0;
         for(Solution s : solutionList){
-            pref = s.scPreference();
-            if(pref == 11)
+            int pref = s.scPreference();
+            if(pref > 10)
                 preferenceArray[2]++;
             else{
                 preferenceArray[0] += pref;
