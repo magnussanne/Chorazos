@@ -4,7 +4,7 @@ import Objects.SolutionPermutation;
 
 public class SimulatedAnnealing {
     private double InitialTemp = 900000;
-    private double tempChange = 0.5;
+    private double tempChange = 0.999;
 
 
     public SolutionPermutation solve(SolutionPermutation s0) {
@@ -16,7 +16,7 @@ public class SimulatedAnnealing {
             if(s1.getEnergy() < s0.getEnergy())
                 s0 = s1;
 
-            temp -= tempChange;
+            temp *= tempChange;
         }
 
         return s0;
