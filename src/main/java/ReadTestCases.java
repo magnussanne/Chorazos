@@ -1,4 +1,4 @@
-import Functions.Search;
+import Functions.HillClimbing;
 import Functions.SimulatedAnnealing;
 import Objects.*;
 import IO.Input.CSV.*;
@@ -32,35 +32,20 @@ public class ReadTestCases {
 
         SolutionPermutation s1 = new SolutionPermutation(s0);
 
-        System.out.println("Hillclimbing: \n");
-        Search search = new Search();
-        int runLoop = 0;
+        System.out.println("Hill Climbing:");
+        HillClimbing hill = new HillClimbing();
+        s1 = hill.solve(s0);
 
-        while(runLoop == 0) {
-            s1 = search.hillClimb(s0);
-            System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
-            if(s0 == s1)
-                runLoop = 1;
-            else{
-                s0 = s1;
-            }
-        }
-
-        int[] preferenceArray = new int[3];
-        preferenceArray = s1.getPreferenceInfo();
+        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+        int[] preferenceArray = s1.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
-
-        search = new Search();
-        s1 = search.hillClimb(s0);
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
-
-        System.out.println("\nSimulated Annealing: \n");
+        System.out.println("\nSimulated Annealing:");
         SimulatedAnnealing annealing = new SimulatedAnnealing();
         SolutionPermutation s2 = annealing.solve(s0);
-        System.out.println(s0.getEnergy() + " -> " + s2.getEnergy());
 
+        System.out.println(s0.getEnergy() + " -> " + s2.getEnergy());
         int[] preferenceArray2 = s2.getPreferenceInfo();
         System.out.println(preferenceArray2[1] + " students got an average of their " + preferenceArray2[0] + " choice," +
                 " while " + preferenceArray2[2] + " students did not get any of their choices");
