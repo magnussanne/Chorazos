@@ -42,3 +42,8 @@ We divided by this value to ensure that the energy value is between 0 and 1 and 
 fitness is 1 - the energy value.
 
 Note: CreateTestCase must be ran before ReadTestCase file is ran.
+
+Assignment 5:
+First we implemented a hillclimbing method that can be ran from ReadTestCases. This method takes
+a solution and makes 100 different changes to the solution and then chooses the change with the
+minimum energy to become the new solution. We run this method until a better solution cannot be produced.

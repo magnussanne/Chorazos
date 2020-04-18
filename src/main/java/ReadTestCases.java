@@ -30,11 +30,9 @@ public class ReadTestCases {
 
         SolutionPermutation s0 = new SolutionPermutation(solutionList);
 
-        /*
-
         SolutionPermutation s1 = new SolutionPermutation(s0);
 
-
+        System.out.println("Hillclimbing: \n");
         Search search = new Search();
         int runLoop = 0;
 
@@ -58,14 +56,13 @@ public class ReadTestCases {
         s1 = search.hillClimb(s0);
         System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
 
-        */
-
+        System.out.println("\nSimulated Annealing: \n");
         SimulatedAnnealing annealing = new SimulatedAnnealing();
-        SolutionPermutation s1 = annealing.solve(s0);
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
+        SolutionPermutation s2 = annealing.solve(s0);
+        System.out.println(s0.getEnergy() + " -> " + s2.getEnergy());
 
-        int[] preferenceArray = s1.getPreferenceInfo();
-        System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
-                " while " + preferenceArray[2] + " students did not get any of their choices");
+        int[] preferenceArray2 = s2.getPreferenceInfo();
+        System.out.println(preferenceArray2[1] + " students got an average of their " + preferenceArray2[0] + " choice," +
+                " while " + preferenceArray2[2] + " students did not get any of their choices");
     }
 }

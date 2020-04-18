@@ -8,7 +8,7 @@ public class SimulatedAnnealing {
 
 
     public SolutionPermutation solve(SolutionPermutation s0) {
-        double currentEnergy = s0.getEnergy();
+        double currentEnergy;
         double temp = InitialTemp;
 
         while(temp > 1) {
