@@ -8,14 +8,15 @@ public class SimulatedAnnealing {
 
 
     public SolutionPermutation solve(SolutionPermutation s0) {
-        double currentEnergy;
         double temp = InitialTemp;
 
         while(temp > 1) {
-            s0 = modify(s0, temp);
-            currentEnergy = s0.getEnergy();
+            SolutionPermutation s1 = modify(s0, temp);
+
+            if(s1.getEnergy() < s0.getEnergy())
+                s0 = s1;
+
             temp -= tempChange;
-            System.out.println(temp + "\t" + currentEnergy);
         }
 
         return s0;
