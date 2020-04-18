@@ -47,3 +47,13 @@ Assignment 5:
 First we implemented a hillclimbing method that can be ran from ReadTestCases. This method takes
 a solution and makes 100 different changes to the solution and then chooses the change with the
 minimum energy to become the new solution. We run this method until a better solution cannot be produced.
+The code prints the energy of the best solution. Our simulated annealing method is also ran from ReadTestCases.
+We create random changes in the modify function that are only accepted if the probability of keeping a solution is
+greater then a random number. Our cooling method is implemented in our solve function in the Simulated Annealing
+class.
+
+Note: Simulated Annealing can take a few minutes to run. The energy can be improved if the initial temperature is 
+increased however this took too long to run. We believe that changing how we calculate our energy will improve our solution
+and is something we will look but for this sprint we focused on other issues involving the current assignment.
+
+
