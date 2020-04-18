@@ -14,7 +14,7 @@ import java.util.List;
 
 
 public class CreateTestCase {
-    private static final int Number_Students = 60;
+    private static final int Number_Students = 500;
     private static final int Number_Preferences = 10;
 
     public static void main(String[] args) throws IOException {
@@ -33,7 +33,7 @@ public class CreateTestCase {
         }
 
         GenerateProject.writeProjectsToSpreadsheet(staff);
-        GenerateStudentPref.writeStudentPrefToSpreadsheet(students, 60);
+        GenerateStudentPref.writeStudentPrefToSpreadsheet(students, Number_Students);
 
         WriteToCSVFile.Write(staff, "staff.csv");
         WriteToCSVFile.Write(projects, "project.csv");
