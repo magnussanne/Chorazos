@@ -72,17 +72,22 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         }
     }
 
-    public SolutionPermutation combine(SolutionPermutation other) {
+    public SolutionPermutation combine(SolutionPermutation other, int mutationProbability) {
         SolutionPermutation s1 = new SolutionPermutation(this);
         Random rand = new Random();
+        int r;
 
         for(int i=0; i<s1.size(); i++) {
-            int r = rand.nextInt(2);
+            r = rand.nextInt(2);
 
             if(r == 1) {
                 s1.setGene(i, other.getProject(i));
             }
         }
+
+        r = rand.nextInt(100)+1;
+        if(r < mutationProbability)
+            s1.modify(1);
 
         return s1;
     }

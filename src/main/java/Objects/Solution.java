@@ -27,11 +27,6 @@ public class Solution implements Interface.Solution {
         } while(invalid(solutionList));
     }
 
-    public Solution(Student student, Project project) {
-        this.student = student;
-        this.project = project;
-    }
-
     public void modify() {
         int index = rand.nextInt(projectList.size());
         project = projectList.get(index);
