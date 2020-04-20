@@ -4,6 +4,7 @@ import Interface.Focus;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class SolutionPermutation implements Interface.SolutionPermutation {
@@ -106,5 +107,13 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
 
     public List<Solution> getSolutionList() {
         return solutionList;
+    }
+
+    public boolean compare(SolutionPermutation other) {
+        if(this.getFitness() > other.getFitness()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }
