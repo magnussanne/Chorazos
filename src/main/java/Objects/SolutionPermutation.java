@@ -1,7 +1,10 @@
 package Objects;
 
+import Interface.Focus;
+
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 import java.util.Random;
 
 public class SolutionPermutation implements Interface.SolutionPermutation {
@@ -70,7 +73,47 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         }
     }
 
+    public SolutionPermutation combine(SolutionPermutation other, int mutationProbability) {
+        SolutionPermutation s1 = new SolutionPermutation(this);
+        Random rand = new Random();
+        int r;
+
+        for(int i=0; i<s1.size(); i++) {
+            r = rand.nextInt(2);
+
+            if(r == 1) {
+                s1.setGene(i, other.getProject(i));
+            }
+        }
+
+        r = rand.nextInt(100)+1;
+        if(r < mutationProbability)
+            s1.modify(1);
+
+        return s1;
+    }
+
+    private void setGene(int index, Project project) {
+        solutionList.get(index).setProject(project);
+    }
+
+    public Project getProject(int index) {
+        return solutionList.get(index).getProject();
+    }
+
+    public int size() {
+        return solutionList.size();
+    }
+
     public List<Solution> getSolutionList() {
         return solutionList;
+    }
+
+    public boolean compare(SolutionPermutation other) {
+        if(this.getFitness() > other.getFitness()) {
+            return true;
+        } else {
+            return false;
+        }
     }
 }

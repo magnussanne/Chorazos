@@ -42,6 +42,10 @@ public class Solution implements Interface.Solution {
         return project;
     }
 
+    public void setProject(Project project) {
+        this.project = project;
+    }
+
     public static List<Project> getProjectList() {
         return projectList;
     }
