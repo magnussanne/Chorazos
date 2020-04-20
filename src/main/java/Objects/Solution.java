@@ -27,6 +27,11 @@ public class Solution implements Interface.Solution {
         } while(invalid(solutionList));
     }
 
+    public Solution(Student student, Project project) {
+        this.student = student;
+        this.project = project;
+    }
+
     public void modify() {
         int index = rand.nextInt(projectList.size());
         project = projectList.get(index);
@@ -40,6 +45,10 @@ public class Solution implements Interface.Solution {
     @Override
     public Project getProject() {
         return project;
+    }
+
+    public void setProject(Project project) {
+        this.project = project;
     }
 
     public static List<Project> getProjectList() {
