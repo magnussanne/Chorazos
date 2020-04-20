@@ -24,6 +24,11 @@
             <artifactId>poi-ooxml</artifactId>
             <version>3.10-FINAL</version>
         </dependency>
+        <dependency>
+            <groupId>io.jenetics</groupId>
+            <artifactId>jenetics</artifactId>
+            <version>5.2.0</version>
+        </dependency>
     </dependencies>
 
     <build>
