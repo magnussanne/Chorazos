@@ -31,7 +31,7 @@ public class GeneticAlgorithm {
     }
 
     private void update(List<SolutionPermutation> population) {
-        //  sort(population);
+        population.sort((o1, o2) -> o1.compare(o2));
         cull(population);
         breed(population);
     }
