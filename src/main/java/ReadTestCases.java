@@ -53,6 +53,9 @@ public class ReadTestCases {
 
         System.out.println("\nGenetic Algorithm:");
         GeneticAlgorithm ga = new GeneticAlgorithm();
-        ga.search(studentList, projectList);
+        SolutionPermutation s3 = ga.search(studentList, projectList);
+        int[] preferenceArray3 = s3.getPreferenceInfo();
+        System.out.println(preferenceArray3[1] + " students got an average of their " + preferenceArray3[0] + " choice," +
+                " while " + preferenceArray3[2] + " students did not get any of their choices");
     }
 }
