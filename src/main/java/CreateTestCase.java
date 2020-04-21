@@ -4,6 +4,7 @@ import IO.Output.Excel.GenerateProject;
 import IO.Output.Excel.GenerateStudentPref;
 import IO.Input.ReadStaffMembers;
 import Objects.Project;
+import Objects.SolutionPermutation;
 import Objects.Staff;
 import Objects.Student;
 
@@ -40,3 +41,5 @@ public class CreateTestCase {
         WriteToCSVFile.Write(students, "student.csv");
     }
 }
+
+
