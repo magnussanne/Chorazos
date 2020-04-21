@@ -1,3 +1,4 @@
+import Functions.GeneticAlgorithm;
 import Functions.HillClimbing;
 import Functions.SimulatedAnnealing;
 import Objects.*;
@@ -49,5 +50,9 @@ public class ReadTestCases {
         int[] preferenceArray2 = s2.getPreferenceInfo();
         System.out.println(preferenceArray2[1] + " students got an average of their " + preferenceArray2[0] + " choice," +
                 " while " + preferenceArray2[2] + " students did not get any of their choices");
+
+        System.out.println("\nGenetic Algorithm:");
+        GeneticAlgorithm ga = new GeneticAlgorithm();
+        ga.search(studentList, projectList);
     }
 }
