@@ -115,11 +115,11 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         }
 
         if(getFitness() > other.getFitness()) {
-            return -1;
+            return 1;
         } else if(getFitness() == other.getFitness()) {
             return 0;
         } else {
-            return 1;
+            return -1;
         }
     }
 }
