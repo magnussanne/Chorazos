@@ -15,12 +15,12 @@ public class GeneticAlgorithm {
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
 
         sort(population);
-        System.out.println(population.get(P-1).getFitness() + "\t" + population.get(0).getFitness());
+        System.out.println("Lowest Population Fitness: " + population.get(P-1).getFitness() + "\tHighest Population Fitness: " + population.get(0).getFitness());
 
         update(population);
 
         sort(population);
-        System.out.println(population.get(P-1).getFitness() + "\t" + population.get(0).getFitness());
+        System.out.println("Lowest Population Fitness: " + population.get(P-1).getFitness() + "\tHighest Population Fitness: " + population.get(0).getFitness());
         return population.get(P-1);
     }
 
@@ -55,7 +55,7 @@ public class GeneticAlgorithm {
 
         for(int i=0; i<numberToCull; i++) {
             population.remove(population.size()-1);
-        }s
+        }
     }
 
     private void breed(List<SolutionPermutation> population) {
