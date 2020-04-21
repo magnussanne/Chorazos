@@ -13,6 +13,19 @@ public class GeneticAlgorithm {
     private final int R = 10;       //  Stop after R iterations without improvement
     private final int E = 5;        //  % Chance of mutation
 
+    public SolutionPermutation search(List<Student> studentList, List<Project> projectList) {
+        List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
+
+        sort(population);
+        System.out.println(population.get(0).getFitness() + "\t" + population.get(population.size()-1).getFitness());
+
+        update(population);
+
+        sort(population);
+        System.out.println(population.get(0).getFitness() + "\t" + population.get(population.size()-1).getFitness());
+        return population.get(0);
+    }
+
     public List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> populationList = new ArrayList<>();
 
@@ -31,9 +44,13 @@ public class GeneticAlgorithm {
     }
 
     private void update(List<SolutionPermutation> population) {
-        population.sort((o1, o2) -> o1.compare(o2));
+        sort(population);
         cull(population);
         breed(population);
+    }
+
+    private void sort(List<SolutionPermutation> population) {
+        population.sort((o1, o2) -> o1.compare(o2));
     }
 
     private void cull(List<SolutionPermutation> population) {
