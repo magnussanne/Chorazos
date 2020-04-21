@@ -21,6 +21,27 @@ public class GeneticAlgorithm {
 
         sort(population);
         System.out.println("Lowest Population Fitness: " + population.get(P-1).getFitness() + "\tHighest Population Fitness: " + population.get(0).getFitness());
+
+        int j = 0;
+        SolutionPermutation temp = population.get(P-1);
+
+        while(j < R){
+
+            temp = population.get(P-1);
+
+            sort(population);
+            System.out.println(population.get(0).getFitness() + "\t" + population.get(population.size()-1).getFitness());
+
+            update(population);
+
+            if(temp.getFitness() > population.get(population.size() - 1).getFitness()){
+                j++;
+            }
+            else{
+                j = 0;
+            }
+        }
+
         return population.get(P-1);
     }
 
