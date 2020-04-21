@@ -9,8 +9,8 @@ import java.util.*;
 
 public class GeneticAlgorithm {
     private final int P = 1000; //  Population size
-    private final int M = 10;   //  Cull bottom M%
-    private final int N = 10;   //  Mate top N%
+    private final double M = 0.1;   //  Cull bottom M%
+    private final double N = 0.1;   //  Mate top N%
     private final int R = 10;   //  Stop after R iterations without improvement
 
     public List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
@@ -28,5 +28,14 @@ public class GeneticAlgorithm {
         }
 
         return populationList;
+    }
+
+    private void cull(List<SolutionPermutation> population) {
+        //  sort();
+        int numberToCull = (int) (population.size() * M);
+
+        for(int i=0; i<numberToCull; i++) {
+            population.remove(population.size()-1);
+        }
     }
 }
