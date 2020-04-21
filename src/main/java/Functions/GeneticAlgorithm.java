@@ -38,7 +38,7 @@ public class GeneticAlgorithm {
 
         for(int i=0; i<numberToCull; i++) {
             population.remove(population.size()-1);
-        }
+        }s
     }
 
     private void breed(List<SolutionPermutation> population) {
