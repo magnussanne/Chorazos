@@ -17,13 +17,13 @@ public class GeneticAlgorithm {
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
 
         sort(population);
-        System.out.println(population.get(0).getFitness() + "\t" + population.get(population.size()-1).getFitness());
+        System.out.println(population.get(P-1).getFitness() + "\t" + population.get(0).getFitness());
 
         update(population);
 
         sort(population);
-        System.out.println(population.get(0).getFitness() + "\t" + population.get(population.size()-1).getFitness());
-        return population.get(0);
+        System.out.println(population.get(P-1).getFitness() + "\t" + population.get(0).getFitness());
+        return population.get(P-1);
     }
 
     public List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
