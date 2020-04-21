@@ -2,8 +2,6 @@ package Functions;
 
 import Objects.*;
 
-import java.util.ArrayList;
-import java.util.List;
 import java.util.*;
 
 public class GeneticAlgorithm {
@@ -35,7 +33,6 @@ public class GeneticAlgorithm {
             for (Student s : studentList) {
                 solutionList.add(new Solution(s, projectList, solutionList));
             }
-
             SolutionPermutation sp = new SolutionPermutation(solutionList);
             populationList.add(sp);
         }
@@ -58,7 +55,7 @@ public class GeneticAlgorithm {
 
         for(int i=0; i<numberToCull; i++) {
             population.remove(population.size()-1);
-        }
+        }s
     }
 
     private void breed(List<SolutionPermutation> population) {
