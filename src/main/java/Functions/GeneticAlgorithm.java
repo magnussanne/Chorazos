@@ -2,9 +2,6 @@ package Functions;
 
 import Objects.*;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.io.FileNotFoundException;
 import java.util.*;
 
 public class GeneticAlgorithm {
@@ -23,7 +20,7 @@ public class GeneticAlgorithm {
                 SolutionPermutation sp = new SolutionPermutation(solutionList);
                 populationList.add(sp);
             }
-
             return populationList;
         }
+
 }

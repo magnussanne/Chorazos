@@ -109,11 +109,17 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         return solutionList;
     }
 
-    public boolean compare(SolutionPermutation other) {
-        if(this.getFitness() > other.getFitness()) {
-            return true;
+    public int compare(SolutionPermutation other) {
+        if(getFitness() == 0 || other.getFitness() == 0) {
+            return 0;
+        }
+
+        if(getFitness() > other.getFitness()) {
+            return 1;
+        } else if(getFitness() == other.getFitness()) {
+            return 0;
         } else {
-            return false;
+            return -1;
         }
     }
 }
