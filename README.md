@@ -73,6 +73,7 @@ At first we used the default values of M, N, R, E, and P, but after we got our c
 optimise the results we got.
 For each of the values, we ran the code, changed a single value, ran the code again, and if the result was better we kept the
 change. This is a manual hill climb approach to these values.
+We have generated a solution in the generatedSolution chorazos/generatedSolution
 
 Note: we have added instructions for running the code at the top of the readme
 
