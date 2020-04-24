@@ -4,6 +4,10 @@ Magnus Sanne 17323853
 Conor Dunne 17379526
 Gearoid Lynch 17459176
 
+To Run:
+First run CreateTestCases in chorazos\src\main\java\CreateTestCase.java
+Then run ReadTestCases in chorazos\src\main\java\ReadTestCases.java
+
 Assignment 1:
 To generate the test files we read the data from the staff members spreadsheet and generated projects by 
 assigning a general statement to one of the staff members research areas, for example "An app that...". 
@@ -55,5 +59,22 @@ class.
 Note: Simulated Annealing can take a few minutes to run. The energy can be improved if the initial temperature is 
 increased however this took too long to run. We believe that changing how we calculate our energy will improve our solution
 and is something we will look but for this sprint we focused on other issues involving the current assignment.
+
+Assignment 6:
+This week we created the genetic algorithms class. We had it create a list of solution permutations, this is our population.
+We created a function to sort that list so we could get the top percent to breed and the bottom percent to cull.
+It then culls the bottom M percent to make space for the new solutions.
+To breed/combine two permutations we first either mutated or didn't mutate each one based on the probability E,
+then it goes through the list of students and chooses the project from one of the solution permutations randomly.
+It picks two random permutations from the top N percent and and breeds a new permutation, it does this until
+the population is back at the original size. It will repeat this process until it doesn't make a new best solution
+permutation in R iterations.
+At first we used the default values of M, N, R, E, and P, but after we got our code working we changed these values to
+optimise the results we got.
+For each of the values, we ran the code, changed a single value, ran the code again, and if the result was better we kept the
+change. This is a manual hill climb approach to these values.
+
+Note: we have added instructions for running the code at the top of the readme
+
 
 
