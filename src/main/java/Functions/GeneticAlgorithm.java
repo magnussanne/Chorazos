@@ -6,10 +6,11 @@ import java.util.*;
 
 public class GeneticAlgorithm {
     private final int P = 1000;     //  Population size
-    private final double M = 0.1;   //  Cull bottom M%
-    private final double N = 0.1;   //  Mate top N%
-    private final int R = 10;       //  Stop after R iterations without improvement
-    private final int E = 5;        //  % Chance of mutation
+    private final double M = 0.325;   //  Cull bottom M%
+    private final double N = 1;   //  Mate top N%
+    private final int R = 15;       //  Stop after R iterations without improvement
+    private final int E = 15;        //  % Chance of mutation
+
 
     public SolutionPermutation search(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
