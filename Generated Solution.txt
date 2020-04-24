@@ -1,0 +1,502 @@
+486 students got an average of their 2 choice, while 14 students did not get any of their choices
+Student Name, Student GPA, Project UUID, Project Title
+JOYCE PATTERSON, 3.33, f036f509-ab92-4dca-a5e9-b57f71be802b, Using rfid to improve pouting on camera
+ROGER GREEN, 2.04, ea236a80-e8ab-4b5f-bfc9-56c390d403ef, Security analysis of testing scientific theories
+ROGER HAYES, 2.1, 7635a8e0-a737-45f8-b420-cefdd0969e65, Security analysis of writing mystery stories
+JIMMY WOOD, 3.5, 8efba10a-6cbf-44ac-a713-2d153d4a7df1, View of dagon in performing magic tricks
+WAYNE RUSSELL, 2.94, 2bfabdb6-45bb-4c44-8d1f-19fedec27b9f, Using ai to streamline starring in Hollywood movies
+HAROLD PEREZ, 3.79, 33df5355-a727-4c05-a4b8-55965be4d1ad, Using rfid to improve adopting children
+ANNE BAKER, 3.34, 3e5ab9c2-241e-4aeb-895f-b5bcb1b37642, Using rfid to improve writing about manly pursuits
+RANDY GRAY, 2.7, 57050823-815b-45ce-af92-08ee9f1ae6a9, Using rfid to improve singing melancholy songs
+THOMAS PRICE, 2.48, b8043b73-b811-41bd-90f1-c5affa0fbe69, Using ai to streamline driving around America
+GRACE SANDERS, 2.35, 2df4f898-3657-47f6-b120-8e2cdc333d57, Using ai to streamline working out
+LOUIS ADAMS, 3.54, 5f20a8f0-5b66-4bc0-a4bc-f57e975ce7c5, Security analysis of making idealistic movies
+ANNA MORRIS, 3.28, e86713a3-1916-43fc-8b6c-1b20bcb57490, Using rfid to improve starring in Hollywood movies
+JUDY WASHINGTON, 3.51, e9ab401e-0508-471d-ba0e-f78929f56eb3, Using ai to streamline painting dark pictures
+PAUL ROGERS, 2.26, b53a0dff-9372-4082-8134-0ced9b7c987d, Security analysis of chasing old women
+STEPHANIE WRIGHT, 3.06, 1202e59f-b6d8-4dec-b3e4-3bba22d38532, Using ai to streamline giving speeches
+SHARON WILLIAMS, 3.36, f036f509-ab92-4dca-a5e9-b57f71be802b, Using rfid to improve pouting on camera
+DONALD THOMPSON, 2.23, 6d408262-385c-4c3e-a344-16ce1411a607, Using rfid to improve hunting wabbits
+WALTER PHILLIPS, 2.25, dcf734b1-28f0-45ed-9241-8e78215c6318, Using excel to analyse patterns in building giant walls
+GREGORY KING, 2.13, 68d3240a-8aa0-4498-b2bb-a99210808d88, Using ai to streamline starring in TV shows
+LAWRENCE SCOTT, 3.36, bba8099b-d1ea-4f15-8c77-ab2916efc172, View of dagon in starring in romantic comedies
+KEITH BAKER, 2.25, 8c91a0e3-816c-479f-b0bf-786566eae36d, Worshipping cthulu in making prank calls
+GEORGE CARTER, 3.39, 752f4501-095d-4395-863b-1fb9ed6e4f8c, Security analysis of telling affable jokes
+DALE SMITH, 3.09, 8a5164d2-55a8-4db3-889d-e866f50f337e, View of dagon in singing pop songs
+LARRY BELL, 3.72, 106a7388-3ca8-4063-889e-3de1a2cc5ce2, Using excel to analyse patterns in eating the inedible
+RONALD JOHNSON, 3.74, c651a4b3-236a-4c34-94a2-0b6415d46aba, Using rfid to improve starring in indy movies
+DONNA HILL, 3.4, e6c950a5-888d-4f52-892e-82663252be9f, Using rfid to improve drawing political cartoons
+WILLIE MOORE, 2.08, dd95d419-34f0-4735-af8c-5405f4363bb6, Using rfid to improve chasing terrorists
+RYAN ROGERS, 3.73, e6b142e3-ea9d-43c5-b176-ae01024b5c1a, Using excel to analyse patterns in giving speeches
+RUSSELL JONES, 3.82, 78153fa8-4a35-4366-916e-ef4291917b4a, Security analysis of ranting about liberals
+FRANK ALLEN, 3.26, 5eb5a88d-e5f2-480a-b04f-d964c7ea97e1, Security analysis of writing experimental songs
+BRENDA MORRIS, 3.84, 8fc49106-7517-4db5-b554-ba7b299b1f40, Worshipping cthulu in starring in musical comedies
+JOE BUTLER, 3.41, f15540ff-3937-407b-bb24-60d3d7f63852, Using rfid to improve dating centrefolds
+STEVEN THOMPSON, 2.76, f076ac5a-12d5-4d81-b548-0bae3f1a2604, View of dagon in making threatening phone calls
+DOROTHY PERRY, 3.75, bb8363c5-0759-49e1-9fd4-259e9d25c352, View of dagon in promoting yellow journalism
+EARL WILSON, 2.61, b53a0dff-9372-4082-8134-0ced9b7c987d, Security analysis of chasing old women
+VINCENT HUGHES, 2.86, d825d208-e81c-4579-a4b0-1f70c073a157, Security analysis of playing grungy music
+JUDY ALLEN, 3.96, ee23d2d8-afa5-473d-8318-a84216ae3b57, Using ai to streamline campaigning for democracy
+CHRIS PRICE, 3.23, 619f5f67-7060-4e78-853a-dfa68ced9e38, Using excel to analyse patterns in gyrating hips
+GLENN CLARK, 2.19, daf0f09d-9522-4045-ae3a-e091fa9b77aa, View of dagon in starring in romantic comedies
+JUSTIN COLLINS, 2.54, 6d2e5c81-1261-403a-9faa-48d3c9b26553, Using excel to analyse patterns in starring in Hollywood movies
+JUDITH PETERSON, 2.99, fd8fba7d-c562-490a-bdce-2be321489213, Using ai to streamline laughing maniacally
+TONY FOSTER, 2.32, 7635a8e0-a737-45f8-b420-cefdd0969e65, Security analysis of writing mystery stories
+MICHELLE RIVERA, 2.38, 92053d9a-ccb2-46cf-ae1c-94840f791165, Using excel to analyse patterns in writing beat fiction
+JOSEPH HARRIS, 3.13, f036f509-ab92-4dca-a5e9-b57f71be802b, Using rfid to improve pouting on camera
+GARY CARTER, 3.69, 8d01cc7d-6b89-4489-9f0a-6f0d9e842c83, Worshipping cthulu in campaigning for the senate
+LAWRENCE PARKER, 2.87, 9051a999-c0c3-4805-b005-1889084f2718, View of dagon in playing soccer
+JANE GRAY, 3.11, 2428149b-2407-4132-9d6e-ff78c5dd389f, Using rfid to improve exploring darkest Africa
+AMY WALKER, 3.5, d6e0d923-0b47-4408-8211-31ee330660b3, Worshipping cthulu in designing modern buildings
+ANDREW MARTINEZ, 2.66, cca38eb7-f93a-4a16-98cb-959ea5e42bac, Worshipping cthulu in running an empire
+NATHAN JAMES, 2.92, 481c2ccb-a1af-495c-b2b7-2766708164ad, Using ai to streamline running an empire
+RALPH ROBERTS, 2.83, 7a7865a3-ea34-402a-ae6a-3d9f28cb3d6a, View of dagon in smuggling contraband
+ANDREW HOWARD, 3.24, 3ebc4c6d-3472-463d-a03e-205ddd3edd6e, Using rfid to improve singing middle-of-the-road songs
+LORI PERRY, 2.67, 8e7b7c0a-2689-4986-a600-30b3efed909f, Using ai to streamline hitting home runs
+HOWARD BROOKS, 3.93, 5cb2f43c-06d3-4476-943c-1a2841c430a2, Using rfid to improve representing the disenfranchised
+HARRY WILLIAMS, 3.51, 5f9102ee-997d-4043-acb9-5ff30caa83ba, Using excel to analyse patterns in starring in romantic comedies
+KENNETH COLEMAN, 2.73, a70b4aa1-2872-4641-ab4b-06cbfa3fc070, Using rfid to improve eluding FBI profilers
+ROBIN SCOTT, 3.43, f959991c-1aa8-45bf-abd0-cdd021d1e06e, Using rfid to improve pursuing criminals
+LAURA ADAMS, 3.4, 46a58883-ab7d-4467-8e9f-779fef4a6f64, Using rfid to improve pretending to fight
+MELISSA PERRY, 2.19, 72257529-3e7b-46d9-9747-5179e37477d4, Worshipping cthulu in recording pop songs
+JENNIFER RUSSELL, 3.18, 2513d716-893d-4844-8aa0-2c6391f8a92e, Security analysis of seducing women
+SEAN WILSON, 3.32, 73ccf34a-6d6b-4ca1-9aae-42278474f8d3, Using ai to streamline making Italian movies
+SARAH GRIFFIN, 3.07, 98527ead-227d-4cc4-a7f6-26f58b9e253b, Security analysis of spreading philosophy
+THERESA WHITE, 2.93, c37cc401-39a3-4d9d-8af6-c4a6a33d462c, Using rfid to improve starring in action movies
+STEPHANIE ADAMS, 2.03, f95f8378-3c64-4702-a3d3-3ab0843a0d57, Using rfid to improve punching out Nazis
+RUTH BELL, 2.87, 23938fc8-8477-4954-bcec-10a54bbc5b6e, Worshipping cthulu in eating a box of chocolates
+JACQUELINE GRIFFIN, 3.8, 073439ac-bd02-490a-88d3-72b992fb6121, View of dagon in designing modern buildings
+CHRISTINA DAVIS, 3.31, 3de5061f-8471-4cdf-bd48-ee5ff43ee89f, Using rfid to improve writing mystery stories
+KATHRYN GRAY, 3.03, 3b74f803-29e9-42f6-8fd5-a4878a3fc1fe, Using excel to analyse patterns in telling affable jokes
+DOROTHY RUSSELL, 2.57, 5cb2f43c-06d3-4476-943c-1a2841c430a2, Using rfid to improve representing the disenfranchised
+DENISE DIAZ, 3.69, 073a866e-0c54-4c1f-b12c-adac01291b9b, Using rfid to improve promoting the Dark Side
+GLADYS JENKINS, 3.87, ffb2dd58-b184-4644-95c8-528704009e5d, Using excel to analyse patterns in teaching the next generation
+CHRISTINA BROWN, 2.72, 8e2c7e22-22e3-4a76-a412-3c64b0ee7eee, Using excel to analyse patterns in eating bugs
+ANTONIO SIMMONS, 2.14, b1c73732-b7ee-4545-9123-8443ff135bdd, Security analysis of making dumb comedies
+KIM LEE, 2.26, fa139cc9-7cf4-4e6c-b857-ac4f773e6e4b, Worshipping cthulu in spitting while speaking
+RODNEY BAKER, 2.16, 87372afa-db89-468f-af81-aa3453e5f6a1, Security analysis of chasing interns
+BONNIE BARNES, 3.73, 905ffabd-668a-4e74-a351-9b9e1785c078, Worshipping cthulu in avoiding paparazzi
+DANNY THOMPSON, 3.99, 15a7277f-fdbb-42f2-add1-a074b47f7b01, Using ai to streamline seducing emperors
+EDNA PRICE, 2.16, 708ad2c2-c0b5-4a92-8dd6-ff61f0fdf66d, View of dagon in womanizing
+JOAN SMITH, 3.95, 8fc95c0b-4dcb-4c53-9582-936e99ff6f20, Using excel to analyse patterns in writing pop songs
+ANNA CARTER, 3.24, 2a715d5c-1446-446c-8127-0a60eedefe32, Using ai to streamline hunting raccoons
+RACHEL THOMAS, 2.2, 0efbb25e-0e1d-43d2-809c-ea252cda210d, Using excel to analyse patterns in watching TV
+CAROL MORGAN, 2.96, fa139cc9-7cf4-4e6c-b857-ac4f773e6e4b, Worshipping cthulu in spitting while speaking
+ANN CAMPBELL, 2.26, 921e948b-ebd4-4b59-83f5-8261d5993aaf, View of dagon in writing comedy
+RYAN NELSON, 3.75, 1e9449c1-de36-456c-8e98-6b4fa1a4dc53, Using rfid to improve studying symbols
+RACHEL WILSON, 2.12, 10db94cb-6efb-411b-ab8d-b25660ffcbd3, Using excel to analyse patterns in eluding capture
+CONNIE PEREZ, 3.06, 87c3f7cc-1771-4787-89af-eb438a85a4a5, Using ai to streamline maintaining a secret identity
+BOBBY BAILEY, 2.75, 6275c40e-0080-4ba3-88b5-2cb35002cf7b, Security analysis of promoting Heliocentrism
+DEBORAH BAILEY, 2.04, 5cb2f43c-06d3-4476-943c-1a2841c430a2, Using rfid to improve representing the disenfranchised
+JOSE DAVIS, 2.39, 8c91a0e3-816c-479f-b0bf-786566eae36d, Worshipping cthulu in making prank calls
+MARY ANDERSON, 3.47, b4d7c339-e9b9-47a8-ab6a-d1192c07c807, Using excel to analyse patterns in killing murderers
+GARY HUGHES, 2.84, 2a715d5c-1446-446c-8127-0a60eedefe32, Using ai to streamline hunting raccoons
+VICTOR WASHINGTON, 2.46, f1be9e66-6f2a-4e81-80dc-c6fff0e41b5c, Using rfid to improve doing stand-up
+PHYLLIS MURPHY, 3.51, 543c9ee9-a4cd-47dc-be57-e6064dec72f1, Using ai to streamline running for the senate
+RACHEL EDWARDS, 2.13, cb3d1184-e988-4a95-b3df-a539c0fab5e2, Using excel to analyse patterns in starring in madcap comedies
+FRED SIMMONS, 3.76, b90ab90c-46be-45bd-8a32-d89a1aa1c23c, Security analysis of revelling in blood spatter
+EDITH MILLER, 2.5, 6e4de9bf-6df3-4d73-aff5-49f004870da7, Using excel to analyse patterns in writing plays about the middle classes
+CHRISTOPHER GREEN, 3.58, 8fc95c0b-4dcb-4c53-9582-936e99ff6f20, Using excel to analyse patterns in writing pop songs
+CURTIS ADAMS, 2.31, 2174088b-e707-4ccd-bf8f-13397869eafe, Security analysis of sucking roots
+EARL COLEMAN, 3.37, 9db2ced2-6dd1-493d-aa0b-72960d47243f, Using rfid to improve chasing old women
+ROBERT COX, 2.7, f13b1aaf-c86a-41c4-820e-8e05dc9d2de7, Worshipping cthulu in singing opera arias
+DIANA GONZALEZ, 3.29, 2a9e73be-1ad5-46bf-9292-7f398ec4c632, Using rfid to improve composing classical music
+JESSICA MURPHY, 2.29, 13172f02-454f-41cd-a22a-7ac17923b7d8, Using rfid to improve studying the cosmos
+DENNIS JOHNSON, 3.52, baa38261-0736-4b46-8a6f-f8121d31fc10, Using ai to streamline writing epic poetry
+CHRIS WILLIAMS, 2.77, 7b465d22-f61e-49e3-83d9-af7419c1670b, Using excel to analyse patterns in starring in action movies
+LISA ROSS, 3.06, 98021e37-cef4-42b5-8a66-ff5852b2ec08, View of dagon in promoting Objectivism
+TRACY BARNES, 3.82, 92053d9a-ccb2-46cf-ae1c-94840f791165, Using excel to analyse patterns in writing beat fiction
+JEFF KING, 3.06, 57f301b9-6b27-4e78-97a8-0223bc9f6ac3, Using ai to streamline starring in Hollywood movies
+JASON WARD, 2.64, 2513d716-893d-4844-8aa0-2c6391f8a92e, Security analysis of seducing women
+BETTY GONZALEZ, 2.91, 72257529-3e7b-46d9-9747-5179e37477d4, Worshipping cthulu in recording pop songs
+RALPH RODRIGUEZ, 3.85, 53566c3c-f805-47fb-84ff-8dc27d3a78a1, Using excel to analyse patterns in falling gracefully
+ANNIE NELSON, 3.7, f15540ff-3937-407b-bb24-60d3d7f63852, Using rfid to improve dating centrefolds
+ROBERT BARNES, 3.61, f5d132b0-9ff9-4fda-b2e5-83e5b2ee4767, Using ai to streamline selling fried chicken
+JOSEPH MARTIN, 3.85, e8121034-e12e-4f7f-9308-e9c2241ac22c, Using excel to analyse patterns in singing middle-of-the-road songs
+JESSE MILLER, 2.65, 6c085c26-66f5-4f0f-a049-c9365bb955a3, Worshipping cthulu in performing magic tricks
+ROSE GARCIA, 2.13, 0efbb25e-0e1d-43d2-809c-ea252cda210d, Using excel to analyse patterns in watching TV
+KEVIN GREEN, 2.89, 01a6d33c-e7d5-4c8f-86c9-da9f7a66a0dd, Security analysis of promoting big business
+TINA GREEN, 3.39, e6c950a5-888d-4f52-892e-82663252be9f, Using rfid to improve drawing political cartoons
+MATTHEW PRICE, 2.34, c6a64a4f-f939-4a1e-92fc-dbde48afac86, Security analysis of revolutionizing physics
+PAUL POWELL, 3.09, 7b4293d6-df94-423e-a8bd-2f2064c9d25a, Worshipping cthulu in singing rock songs
+PATRICIA WALKER, 2.53, 1e9449c1-de36-456c-8e98-6b4fa1a4dc53, Using rfid to improve studying symbols
+CHERYL SCOTT, 3.42, f15540ff-3937-407b-bb24-60d3d7f63852, Using rfid to improve dating centrefolds
+NORMAN KING, 2.39, 65b94f9f-63d8-4e30-9441-9be3a6c2f831, Using ai to streamline piloting the lunar module
+HEATHER PEREZ, 2.41, c141a962-fb07-4d75-a274-24f24da5cd89, Worshipping cthulu in starring in romantic comedies
+RICHARD LONG, 3.47, 07549fa5-09d8-42a5-87a7-c3180e76d57e, Using excel to analyse patterns in coasting on past glories
+HARRY GONZALEZ, 2.07, 2329cf6d-b2d4-410a-94ba-2dc289db7997, Worshipping cthulu in designing modern buildings
+MARILYN MORGAN, 3.59, 38ec9035-b5bd-4128-a399-46158cab59f1, Security analysis of campaigning for the senate
+CARMEN HERNANDEZ, 3.37, 02ed8f2e-e9c1-495d-adad-a10a17296659, Using rfid to improve studying genetics
+PAUL PERRY, 2.43, cd46b201-e2d8-453b-b73d-349a63a9f7ea, Worshipping cthulu in winning boxing matches
+FRANK ALLEN, 3.68, 16bb5354-5a0a-42e5-8d64-553dd59e7146, Using ai to streamline campaigning for democracy
+ROBIN ALLEN, 3.67, 835e0fe5-48d0-4ed5-9384-e6b4eb7a2f56, Using ai to streamline writing plays
+DOUGLAS NELSON, 2.91, 2b8deeeb-182c-4b29-aeb5-7dfc77cd7059, View of dagon in fighting with the mob
+TAMMY JOHNSON, 2.25, f77e46e2-7fc2-4439-b5cc-63afd0c6df46, Worshipping cthulu in promoting conservative values
+FLORENCE TAYLOR, 3.66, 8e7b7c0a-2689-4986-a600-30b3efed909f, Using ai to streamline hitting home runs
+RACHEL TORRES, 2.01, ad3d0d89-cca6-4b08-ad12-b0667e288999, Security analysis of rescuing kids
+JUAN ANDERSON, 2.29, 481c2ccb-a1af-495c-b2b7-2766708164ad, Using ai to streamline running an empire
+PAMELA STEWART, 2.8, bba8099b-d1ea-4f15-8c77-ab2916efc172, View of dagon in starring in romantic comedies
+NORMAN COOK, 3.42, 58607fce-d427-40a4-aff6-dd58e5d51965, Security analysis of starring in Hollywood movies
+BILLY LOPEZ, 3.71, d9e3d750-7a4c-4a5a-9de0-74edac4d05c0, Worshipping cthulu in promoting boxing fights
+CLARENCE JACKSON, 2.08, f076ac5a-12d5-4d81-b548-0bae3f1a2604, View of dagon in making threatening phone calls
+JEREMY JENKINS, 3.8, fa139cc9-7cf4-4e6c-b857-ac4f773e6e4b, Worshipping cthulu in spitting while speaking
+JASON MURPHY, 2.47, 8d01cc7d-6b89-4489-9f0a-6f0d9e842c83, Worshipping cthulu in campaigning for the senate
+LUIS SANCHEZ, 2.2, 6e4de9bf-6df3-4d73-aff5-49f004870da7, Using excel to analyse patterns in writing plays about the middle classes
+HENRY HALL, 3.62, 5f0e92fb-5fbf-463b-a34c-6c2e4571c961, Using excel to analyse patterns in writing compelling dialogue
+DIANE HUGHES, 2.03, 3917fe64-7c31-43c4-a371-12579f801eea, Using rfid to improve writing about manly pursuits
+DEBORAH EDWARDS, 3.26, e86713a3-1916-43fc-8b6c-1b20bcb57490, Using rfid to improve starring in Hollywood movies
+DEBORAH MARTINEZ, 3.55, 9db2ced2-6dd1-493d-aa0b-72960d47243f, Using rfid to improve chasing old women
+ROGER MOORE, 3.91, b9c3592c-0aac-4229-a234-f5887b5632c6, Using rfid to improve writing modern poetry
+SUSAN COLEMAN, 3.78, 742f55d5-5a4a-482c-a54a-23c4e9bc6d4b, View of dagon in campaigning for the presidency
+JOE FOSTER, 2.9, 653ce2a3-afd1-44da-bca8-3d0297b1a46d, Using rfid to improve tracking down fugitives
+GRACE BRYANT, 3.54, f076ac5a-12d5-4d81-b548-0bae3f1a2604, View of dagon in making threatening phone calls
+JESSICA PHILLIPS, 3.97, 09878288-9b0b-4f99-b0ee-9fb5726e2df7, Worshipping cthulu in ranting about politics
+ANDREA BROOKS, 2.95, 649b1233-3522-4458-b766-9828fd854d7a, Using excel to analyse patterns in starring in comedies
+JAMES CLARK, 2.28, a4d41fc7-d680-4486-bdb2-c53de34d7b73, Using rfid to improve convicting criminals
+LEONARD NELSON, 2.03, 5eb5a88d-e5f2-480a-b04f-d964c7ea97e1, Security analysis of writing experimental songs
+ADAM WASHINGTON, 2.59, 5265477a-0782-4e1b-a22c-c2cf4d70c78a, Worshipping cthulu in working out
+SAMUEL MITCHELL, 3.38, 599cb8b7-c9c3-46b3-aad7-f43cc6dac0b2, Using ai to streamline playing grungy music
+FLORENCE ALEXANDER, 2.4, a89db680-bd64-48d6-9ee1-7860874173c7, Worshipping cthulu in starring in action movies
+TAMMY DAVIS, 3.27, 41988aa4-2531-40dc-a9b6-b0b43e08887c, Worshipping cthulu in making dumb comedies
+KATHY LONG, 2.24, f260cb44-caab-41d7-bfea-9ed5c04d4ad5, Using excel to analyse patterns in fighting with the mob
+SYLVIA PHILLIPS, 3.28, fa139cc9-7cf4-4e6c-b857-ac4f773e6e4b, Worshipping cthulu in spitting while speaking
+DAVID WATSON, 2.94, 9a693328-84b9-41cc-bd2a-5b91572df196, Using excel to analyse patterns in starring in action movies
+LAURA RODRIGUEZ, 3.49, 53566c3c-f805-47fb-84ff-8dc27d3a78a1, Using excel to analyse patterns in falling gracefully
+PHILIP COOPER, 2.86, 8d3c3d0f-281c-4e8a-a201-dbc6d81d9227, Using rfid to improve womanizing
+GREGORY WARD, 2.62, 8c91a0e3-816c-479f-b0bf-786566eae36d, Worshipping cthulu in making prank calls
+GLADYS JAMES, 3.66, e94dace7-1c1e-4c27-817b-5d85589be16f, Worshipping cthulu in drawing whimsical cartoons
+LORI COOK, 3.79, e8121034-e12e-4f7f-9308-e9c2241ac22c, Using excel to analyse patterns in singing middle-of-the-road songs
+DOROTHY SMITH, 2.14, 0dc2f841-b350-4e84-a26f-6f836589bdca, Using excel to analyse patterns in winning cycling races
+RUSSELL GRIFFIN, 2.49, 369fa8ca-2ee6-4d24-93dc-66227afe8aef, View of dagon in doing stand-up
+JACK NELSON, 2.54, 41988aa4-2531-40dc-a9b6-b0b43e08887c, Worshipping cthulu in making dumb comedies
+DOUGLAS ROSS, 3.69, e7802658-2601-4fc4-b9b2-faf6af6702d5, Security analysis of starring in romantic comedies
+HENRY GRAY, 2.86, eba46bbf-dd36-4b01-bc32-be40401fbf8d, Using ai to streamline making witty remarks
+JUDITH RICHARDSON, 2.41, 8e7b7c0a-2689-4986-a600-30b3efed909f, Using ai to streamline hitting home runs
+JOHNNY HARRIS, 3.19, 921e948b-ebd4-4b59-83f5-8261d5993aaf, View of dagon in writing comedy
+BRYAN BRYANT, 3.58, 13172f02-454f-41cd-a22a-7ac17923b7d8, Using rfid to improve studying the cosmos
+JUDITH WRIGHT, 3.64, f35aa5f4-be19-46d0-992e-eae652c4523c, Security analysis of surviving in the 25th century
+VINCENT BARNES, 3.72, eeae7fb2-1fb0-44e7-b157-19e3e063cd08, Using excel to analyse patterns in promoting conservative values
+BRENDA HAYES, 3.44, eeae7fb2-1fb0-44e7-b157-19e3e063cd08, Using excel to analyse patterns in promoting conservative values
+JACQUELINE PEREZ, 3.93, cd46b201-e2d8-453b-b73d-349a63a9f7ea, Worshipping cthulu in winning boxing matches
+AARON BAILEY, 3.63, aa8c9d75-f899-4dd8-bb9f-2b0b1a5086e6, Using excel to analyse patterns in avoiding growing old
+JUDITH PRICE, 3.24, 5c0e7bfd-d0b7-483f-8bc4-c10b56ff470d, Worshipping cthulu in womanizing
+STEVEN BARNES, 2.42, 232596e7-8d18-4ce0-9f33-58d2f822d8d1, Using excel to analyse patterns in surviving in the 25th century
+WILLIE WHITE, 2.56, 9a693328-84b9-41cc-bd2a-5b91572df196, Using excel to analyse patterns in starring in action movies
+BETTY WASHINGTON, 3.9, 65b94f9f-63d8-4e30-9441-9be3a6c2f831, Using ai to streamline piloting the lunar module
+CHRISTINE MURPHY, 3.66, 575567d3-3cb8-42dc-bd0d-4a9fa4bcbd48, Using rfid to improve gadding about town
+BILLY SANCHEZ, 2.45, 037854ee-d492-4843-a716-17801b9c6888, View of dagon in performing kung-fu moves
+MARGARET HUGHES, 2.4, 2a7b3a5e-3644-4d59-9770-3bbd2dd929a4, Using excel to analyse patterns in hunting raccoons
+EDITH REED, 2.56, fcf23231-732f-4b85-843b-63a31a85a668, Using excel to analyse patterns in selling consumer goods
+GARY RODRIGUEZ, 3.22, f1be9e66-6f2a-4e81-80dc-c6fff0e41b5c, Using rfid to improve doing stand-up
+BRUCE WASHINGTON, 2.83, b147d49f-bbd1-4881-a93f-9813c8398491, Using rfid to improve recording pop songs
+ALLEN RICHARDSON, 2.12, b8043b73-b811-41bd-90f1-c5affa0fbe69, Using ai to streamline driving around America
+JOSE ROGERS, 2.76, fd8fba7d-c562-490a-bdce-2be321489213, Using ai to streamline laughing maniacally
+CRYSTAL PERRY, 3.6, 6f630426-8c47-4cac-b5af-fdf25f434396, Worshipping cthulu in promoting evolutionary theory
+WILLIAM RICHARDSON, 3.93, b2f45364-e88f-4929-9a52-56356a227050, Using rfid to improve seducing emperors
+HAROLD WRIGHT, 3.81, 0dc2f841-b350-4e84-a26f-6f836589bdca, Using excel to analyse patterns in winning cycling races
+HEATHER SANDERS, 2.38, 57b5d4f1-19ee-4ac5-9dfe-98861c9e5edf, Security analysis of making bad movie choices
+DAVID MORGAN, 2.99, 53566c3c-f805-47fb-84ff-8dc27d3a78a1, Using excel to analyse patterns in falling gracefully
+PEGGY GARCIA, 3.66, 5af1cf66-a1b1-4e6c-ad40-cf931ec5d0a1, Security analysis of exploring darkest Africa
+JOE MOORE, 2.78, 554d91cf-2972-4478-8d6b-a6cfe1b5ea68, View of dagon in apprehending criminals
+CURTIS BROWN, 3.41, 369fa8ca-2ee6-4d24-93dc-66227afe8aef, View of dagon in doing stand-up
+GLORIA BAILEY, 3.19, 1e9449c1-de36-456c-8e98-6b4fa1a4dc53, Using rfid to improve studying symbols
+BRUCE WALKER, 3.45, 1e9449c1-de36-456c-8e98-6b4fa1a4dc53, Using rfid to improve studying symbols
+ROSE RIVERA, 3.8, 94c372ef-79d5-489a-8dd0-aaaa16b30876, Security analysis of directing weird movies
+VIRGINIA WRIGHT, 2.86, 8c91a0e3-816c-479f-b0bf-786566eae36d, Worshipping cthulu in making prank calls
+LOIS LONG, 2.18, e540d7b0-1022-4437-842c-4f9167a4c089, Security analysis of starring in romantic comedies
+CRYSTAL BARNES, 2.54, 9db2ced2-6dd1-493d-aa0b-72960d47243f, Using rfid to improve chasing old women
+DANIEL BUTLER, 2.03, ad3d0d89-cca6-4b08-ad12-b0667e288999, Security analysis of rescuing kids
+BONNIE BENNETT, 3.04, 5f20a8f0-5b66-4bc0-a4bc-f57e975ce7c5, Security analysis of making idealistic movies
+ALAN HILL, 3.6, 81e41af0-cb3d-4a1a-8434-6c9391bd9110, Using ai to streamline terrorizing employees
+KATHLEEN PRICE, 3.32, 57b5d4f1-19ee-4ac5-9dfe-98861c9e5edf, Security analysis of making bad movie choices
+JOYCE NELSON, 3.58, e6c950a5-888d-4f52-892e-82663252be9f, Using rfid to improve drawing political cartoons
+TRAVIS RODRIGUEZ, 2.91, 94fb67e0-6219-4fbd-84eb-35f200867bab, Worshipping cthulu in making bad movie choices
+ROBERT JONES, 2.03, 3b933a43-6a4d-499f-81a9-80746f5670ac, Using excel to analyse patterns in changing sides
+KEITH CLARK, 3.87, 46a04131-8e7c-427e-984f-f08cd15a6e49, Using excel to analyse patterns in starring in madcap comedies
+ANN PEREZ, 3.87, b53a0dff-9372-4082-8134-0ced9b7c987d, Security analysis of chasing old women
+RUBY WALKER, 2.87, cd46b201-e2d8-453b-b73d-349a63a9f7ea, Worshipping cthulu in winning boxing matches
+PATRICK ALEXANDER, 3.67, 78153fa8-4a35-4366-916e-ef4291917b4a, Security analysis of ranting about liberals
+RUSSELL WASHINGTON, 2.05, 975cc488-c5b3-4166-a1eb-68e90f387a1c, Using ai to streamline studying genetics
+MARIA FOSTER, 2.56, 53194a9b-2d23-4578-bc37-2d672b17ecf5, Worshipping cthulu in studying the cosmos
+GERALD FOSTER, 3.98, 6275c40e-0080-4ba3-88b5-2cb35002cf7b, Security analysis of promoting Heliocentrism
+CARMEN LONG, 2.72, 73ccf34a-6d6b-4ca1-9aae-42278474f8d3, Using ai to streamline making Italian movies
+RITA THOMAS, 3.78, 262d23c5-261f-4a5b-9dba-f2a7aee8c256, Using excel to analyse patterns in writing mystery stories
+SARA FLORES, 2.77, d6e0d923-0b47-4408-8211-31ee330660b3, Worshipping cthulu in designing modern buildings
+JEFFERY WRIGHT, 3.69, d265d34a-1836-4d1c-bd86-fbf778565c89, Using rfid to improve coasting on past glories
+KATHY RIVERA, 2.93, a61a3fa0-77a5-4fa1-a55a-7d316168d50e, Using excel to analyse patterns in building giant walls
+MARIE ALLEN, 3.23, 27c75a39-d211-4692-af3a-4025b6aae8d4, Worshipping cthulu in constructing an ironic public image
+LOUIS TORRES, 2.24, f036f509-ab92-4dca-a5e9-b57f71be802b, Using rfid to improve pouting on camera
+JASON THOMPSON, 2.04, a8d6c5b8-e75d-43bf-9f36-8ca6a1ab9966, Using excel to analyse patterns in coasting on past glories
+BETTY BUTLER, 2.47, 5572ce14-8d18-4cc6-af68-cb944fb3a5c1, Worshipping cthulu in moaning about men
+GLENN CAMPBELL, 2.17, 2e58b48f-3aab-4478-a5b2-4c6338e468ac, Using rfid to improve promoting conservative values
+KATHRYN EVANS, 2.93, aeba768a-64c4-498c-a680-ad5af15590f5, Using excel to analyse patterns in promoting boxing fights
+NATHAN KELLY, 3.75, b8043b73-b811-41bd-90f1-c5affa0fbe69, Using ai to streamline driving around America
+VIRGINIA ROSS, 3.01, 2df4f898-3657-47f6-b120-8e2cdc333d57, Using ai to streamline working out
+BEVERLY HARRIS, 2.2, 2bfabdb6-45bb-4c44-8d1f-19fedec27b9f, Using ai to streamline starring in Hollywood movies
+MARK GREEN, 3.21, 019b67e0-23a8-4662-a803-a0321f64ed07, View of dagon in starring in madcap comedies
+DALE KING, 3.28, 0c804329-a024-47fb-93e4-f5ffd50d5b97, View of dagon in playing guitar
+CAROL JENKINS, 3.1, bdf9ce43-6989-49b4-aa26-bd7e526c0646, Using excel to analyse patterns in killing murderers
+SAMUEL KELLY, 3.37, 27c75a39-d211-4692-af3a-4025b6aae8d4, Worshipping cthulu in constructing an ironic public image
+SHIRLEY WRIGHT, 3.53, 684e2a5c-2b29-4eac-bdd7-d36ff94211e3, View of dagon in ranting about liberals
+RALPH BROWN, 2.49, 4010bc0e-3de7-4454-9413-7e1ff417704c, Security analysis of doing the Charleston
+SUSAN RODRIGUEZ, 2.23, 53566c3c-f805-47fb-84ff-8dc27d3a78a1, Using excel to analyse patterns in falling gracefully
+ANDREW ROBERTS, 3.69, ee23d2d8-afa5-473d-8318-a84216ae3b57, Using ai to streamline campaigning for democracy
+CARL EVANS, 3.19, ce1e3b9d-d5d9-4956-af67-51df1d6b4b58, Security analysis of surviving in the 25th century
+LILLIAN TURNER, 3.43, dd1d65a6-36bd-47c9-bad8-da9ad5015428, Using rfid to improve campaigning for the senate
+JOE BUTLER, 2.19, 5f20a8f0-5b66-4bc0-a4bc-f57e975ce7c5, Security analysis of making idealistic movies
+AMANDA WARD, 3.07, 47d2e156-11c7-4658-80a5-bce2dbf8330f, Using ai to streamline playing quidditch
+HEATHER BELL, 3.19, 412da361-a6a6-4dae-8359-538d4049d6f4, Security analysis of searching for a new world
+ANNA CLARK, 3.44, 1e9449c1-de36-456c-8e98-6b4fa1a4dc53, Using rfid to improve studying symbols
+JUAN MILLER, 3.27, cfd67a61-cdf6-4636-a966-3052e771c0d6, Using ai to streamline ranting about minorities
+ANTONIO EVANS, 2.49, b1c73732-b7ee-4545-9123-8443ff135bdd, Security analysis of making dumb comedies
+LISA SANCHEZ, 3.77, 575567d3-3cb8-42dc-bd0d-4a9fa4bcbd48, Using rfid to improve gadding about town
+ANNE COLEMAN, 3.05, bb8363c5-0759-49e1-9fd4-259e9d25c352, View of dagon in promoting yellow journalism
+SANDRA EDWARDS, 3.86, 44f39910-b31f-43ad-874d-1527c6faa435, View of dagon in moaning about men
+VIRGINIA FLORES, 2.67, 412da361-a6a6-4dae-8359-538d4049d6f4, Security analysis of searching for a new world
+PAMELA CARTER, 3.04, 859fd5e6-aeab-40d3-9e01-b5a221d56d5f, Using excel to analyse patterns in lecturing about climate change
+SARA DAVIS, 2.83, b4d7c339-e9b9-47a8-ab6a-d1192c07c807, Using excel to analyse patterns in killing murderers
+PHILLIP RUSSELL, 3.59, d6e0d923-0b47-4408-8211-31ee330660b3, Worshipping cthulu in designing modern buildings
+AMANDA JOHNSON, 2.13, 8e7b7c0a-2689-4986-a600-30b3efed909f, Using ai to streamline hitting home runs
+SEAN EDWARDS, 3.19, bba8ad6b-c84c-4f2f-9620-8bed320b9ef6, Using excel to analyse patterns in singing romantic songs
+JANICE MORRIS, 3.25, a61a3fa0-77a5-4fa1-a55a-7d316168d50e, Using excel to analyse patterns in building giant walls
+BEVERLY LEWIS, 2.39, 37b932d8-78e2-4f64-8e91-3a5681206fb8, Using excel to analyse patterns in playing classical piano
+PATRICK BROWN, 3.72, 5eb5a88d-e5f2-480a-b04f-d964c7ea97e1, Security analysis of writing experimental songs
+BILLY KELLY, 2.58, 4c0401a6-e5f6-4137-b89e-146b458fae43, View of dagon in starring in action movies
+KEVIN GONZALES, 3.88, 23938fc8-8477-4954-bcec-10a54bbc5b6e, Worshipping cthulu in eating a box of chocolates
+ALAN BRYANT, 2.74, d8652f5b-31c7-40d2-ac21-a6a30a45b473, View of dagon in starring in Hollywood movies
+CHRISTINE GRAY, 2.06, d2f55e23-a301-4189-911d-4a6c2e004d53, Using ai to streamline writing serialized stories
+CHRISTOPHER SCOTT, 3.13, 2a9e73be-1ad5-46bf-9292-7f398ec4c632, Using rfid to improve composing classical music
+DEBORAH DIAZ, 3.25, 23938fc8-8477-4954-bcec-10a54bbc5b6e, Worshipping cthulu in eating a box of chocolates
+PAMELA REED, 2.97, 4c09c48d-f542-4542-a09f-95e1da75ba77, Worshipping cthulu in starring in Hollywood movies
+ARTHUR RIVERA, 2.03, ea8cce01-4d58-4f3d-ae09-5b4fd8db273b, Using ai to streamline maintaining a secret identity
+DONALD CARTER, 3.71, dd95d419-34f0-4735-af8c-5405f4363bb6, Using rfid to improve chasing terrorists
+MANUEL GREEN, 3.14, f15540ff-3937-407b-bb24-60d3d7f63852, Using rfid to improve dating centrefolds
+JUDY PEREZ, 3.9, c495fc28-cc47-4c70-8050-e57eb9651be1, Worshipping cthulu in attacking paparazzi
+CATHERINE JOHNSON, 2.5, 5f20a8f0-5b66-4bc0-a4bc-f57e975ce7c5, Security analysis of making idealistic movies
+PHYLLIS KING, 3.99, 481c2ccb-a1af-495c-b2b7-2766708164ad, Using ai to streamline running an empire
+SANDRA CLARK, 3.19, 0fcd81c5-263f-40b4-a336-972f99a8e83c, View of dagon in defending plaintiffs
+AMY EDWARDS, 3.49, f13b1aaf-c86a-41c4-820e-8e05dc9d2de7, Worshipping cthulu in singing opera arias
+KAREN WRIGHT, 2.9, 2b8deeeb-182c-4b29-aeb5-7dfc77cd7059, View of dagon in fighting with the mob
+FRANCES PATTERSON, 3.11, b834c42e-1f76-4047-b7f8-9f51c8430b46, Using excel to analyse patterns in writing poetry
+LAWRENCE DIAZ, 3.28, 0dc2f841-b350-4e84-a26f-6f836589bdca, Using excel to analyse patterns in winning cycling races
+ERIC MORGAN, 2.25, 92c0557a-349a-43cc-9c3c-a993e246463b, Security analysis of playing aggressive chess
+DANNY RODRIGUEZ, 3.98, b9c3592c-0aac-4229-a234-f5887b5632c6, Using rfid to improve writing modern poetry
+DORIS MILLER, 3.36, 1fcabb49-fa7e-4401-ac5e-29ac49dc1853, Security analysis of selling fried chicken
+JANICE WILSON, 3.7, 35972f70-55ff-43f8-bd3e-20a207086ec5, Using excel to analyse patterns in promoting hair products
+FRANCES SCOTT, 2.67, daf0f09d-9522-4045-ae3a-e091fa9b77aa, View of dagon in starring in romantic comedies
+LOUISE ROGERS, 2.11, b1c73732-b7ee-4545-9123-8443ff135bdd, Security analysis of making dumb comedies
+MARIA PATTERSON, 3.71, cd46b201-e2d8-453b-b73d-349a63a9f7ea, Worshipping cthulu in winning boxing matches
+BRUCE CAMPBELL, 2.02, a70b4aa1-2872-4641-ab4b-06cbfa3fc070, Using rfid to improve eluding FBI profilers
+KATHRYN ADAMS, 3.73, a61a3fa0-77a5-4fa1-a55a-7d316168d50e, Using excel to analyse patterns in building giant walls
+RUSSELL HUGHES, 2.89, 8c91a0e3-816c-479f-b0bf-786566eae36d, Worshipping cthulu in making prank calls
+NICHOLAS TORRES, 2.51, bcdd05b6-2eb5-469a-ace3-dc734957b06e, View of dagon in telling affable jokes
+JOSHUA TAYLOR, 3.4, cca38eb7-f93a-4a16-98cb-959ea5e42bac, Worshipping cthulu in running an empire
+MARIA COLEMAN, 2.41, f260cb44-caab-41d7-bfea-9ed5c04d4ad5, Using excel to analyse patterns in fighting with the mob
+SEAN ADAMS, 3.93, 6d8714cc-85eb-4743-9c26-e125d3db22d9, Using rfid to improve worrying about life
+RODNEY GONZALES, 3, c998dd30-ea6a-4a67-86e8-6954a99937cd, Using excel to analyse patterns in campaigning for democracy
+FRED LONG, 2.3, 61767c0c-5499-47cd-b88e-f05252c77448, Using excel to analyse patterns in hosting a late night chat show
+KATHERINE COX, 3.19, 90cde2ad-dcaf-4a74-bbe4-83c5071f0a76, Using excel to analyse patterns in playing James Bond
+ALLEN RICHARDSON, 2.07, cefcff26-af29-493d-9abf-6e1f6e4a7bd2, View of dagon in singing rock songs
+GEORGE THOMPSON, 3.26, 0238370e-8b04-45ae-9539-4fe33252b2ff, View of dagon in making insipid musicals
+CHRISTINA CAMPBELL, 2.38, b051771b-3b52-4c53-b2d0-c31bf622d191, Using excel to analyse patterns in deep-frying chicken
+PAULA GONZALEZ, 2.38, 007f66d3-55a3-4ea1-b117-9be852c62e63, Security analysis of singing melancholy songs
+JEFF LOPEZ, 2.88, fcf23231-732f-4b85-843b-63a31a85a668, Using excel to analyse patterns in selling consumer goods
+EDITH HILL, 2.7, 708ad2c2-c0b5-4a92-8dd6-ff61f0fdf66d, View of dagon in womanizing
+JASON GONZALES, 2.83, 156570ed-1ce9-4c02-9f7c-b90a8ec2f5be, Worshipping cthulu in writing up case notes
+SARAH COOK, 3.91, 46a58883-ab7d-4467-8e9f-779fef4a6f64, Using rfid to improve pretending to fight
+ANTONIO HAYES, 2.88, 2428149b-2407-4132-9d6e-ff78c5dd389f, Using rfid to improve exploring darkest Africa
+WANDA MARTIN, 3.27, f260cb44-caab-41d7-bfea-9ed5c04d4ad5, Using excel to analyse patterns in fighting with the mob
+MARTHA RICHARDSON, 3.37, 58e25764-7e60-48e1-b2fb-8ba0f4e09d63, Using excel to analyse patterns in directing movies
+DONALD BAKER, 3.99, 9eb3667a-b0a4-41f8-8cf9-3af0efc9de52, Security analysis of running an empire
+WILLIAM SANCHEZ, 2.19, 83e5dc07-ddf9-41ba-92ae-f56a68b7f6d4, Using excel to analyse patterns in starring in action movies
+JANET PHILLIPS, 3.58, 5f9102ee-997d-4043-acb9-5ff30caa83ba, Using excel to analyse patterns in starring in romantic comedies
+CATHERINE SANDERS, 2.74, f95f8378-3c64-4702-a3d3-3ab0843a0d57, Using rfid to improve punching out Nazis
+BRUCE WOOD, 2.84, 81e41af0-cb3d-4a1a-8434-6c9391bd9110, Using ai to streamline terrorizing employees
+ROSA SANDERS, 3.88, 2a715d5c-1446-446c-8127-0a60eedefe32, Using ai to streamline hunting raccoons
+PHYLLIS GRIFFIN, 2.79, a4042a12-87df-473d-8695-104330d394c6, Using rfid to improve offering medical opinions
+NATHAN MURPHY, 2.75, 2df4f898-3657-47f6-b120-8e2cdc333d57, Using ai to streamline working out
+ANDREW HALL, 2.95, 4ca107b7-10e6-4a72-9012-b7a38510322d, Worshipping cthulu in giving speeches
+WILLIAM DAVIS, 3.63, 1d8287da-690b-417c-8410-a82868ad031c, Security analysis of leading revolutions
+SHAWN MURPHY, 2.45, cc29ee49-2a25-4785-bcd6-a48f7f984577, Using excel to analyse patterns in spitting while speaking
+AARON LEE, 3.94, eeae7fb2-1fb0-44e7-b157-19e3e063cd08, Using excel to analyse patterns in promoting conservative values
+PATRICIA GRAY, 3.77, 2a7b3a5e-3644-4d59-9770-3bbd2dd929a4, Using excel to analyse patterns in hunting raccoons
+CHRIS COLLINS, 2.38, bcdd05b6-2eb5-469a-ace3-dc734957b06e, View of dagon in telling affable jokes
+ARTHUR HOWARD, 2.63, 83e5dc07-ddf9-41ba-92ae-f56a68b7f6d4, Using excel to analyse patterns in starring in action movies
+JESSICA MORGAN, 2.12, af8b6351-0666-4661-b633-fde57f7bc245, View of dagon in studying icons
+JEREMY JAMES, 2.28, 6275c40e-0080-4ba3-88b5-2cb35002cf7b, Security analysis of promoting Heliocentrism
+KEITH ROGERS, 2.13, bcdd05b6-2eb5-469a-ace3-dc734957b06e, View of dagon in telling affable jokes
+REBECCA GONZALEZ, 2.48, d4191fe9-ee56-4333-8298-3752f6c67045, Using rfid to improve talking up the economy
+DORIS HILL, 2.93, 369fa8ca-2ee6-4d24-93dc-66227afe8aef, View of dagon in doing stand-up
+ALICE WILSON, 3.55, d9d8949f-0858-4467-84c7-14a22cc8303d, Using excel to analyse patterns in tricking criminals
+MARTHA THOMAS, 2.15, 5c0e7bfd-d0b7-483f-8bc4-c10b56ff470d, Worshipping cthulu in womanizing
+RODNEY FOSTER, 2.63, 1202e59f-b6d8-4dec-b3e4-3bba22d38532, Using ai to streamline giving speeches
+EDWARD BUTLER, 3.84, f036f509-ab92-4dca-a5e9-b57f71be802b, Using rfid to improve pouting on camera
+MARTHA BRYANT, 3.65, e36c6f15-f1f4-445d-a040-45aff7e79403, View of dagon in painting melancholy pictures
+LAWRENCE COOPER, 3.72, 458c0a4b-75cd-4fbe-aac7-ee3ce9854f5b, Worshipping cthulu in campaigning for democracy
+CAROLYN PERRY, 3.13, c6a64a4f-f939-4a1e-92fc-dbde48afac86, Security analysis of revolutionizing physics
+PHILLIP ANDERSON, 3.35, b4bca1be-ca40-48c1-b98c-42d24ee59acf, Worshipping cthulu in starring in indy movies
+TAMMY EDWARDS, 2.95, 8d01cc7d-6b89-4489-9f0a-6f0d9e842c83, Worshipping cthulu in campaigning for the senate
+SEAN LONG, 3.03, 5e84fb35-cf9a-42dd-94c8-4ff32553a535, Worshipping cthulu in performing magic tricks
+LINDA RICHARDSON, 3.54, a8d6c5b8-e75d-43bf-9f36-8ca6a1ab9966, Using excel to analyse patterns in coasting on past glories
+JAMES WILLIAMS, 2.25, 2206038d-0aa4-4f82-ae2c-2cee12e6de0a, View of dagon in teaching the next generation
+BETTY EVANS, 2.48, 02da5159-7fdf-4078-84e0-3bd8b414e6d9, Using excel to analyse patterns in struggling with modern times
+GLADYS THOMAS, 2.69, 7abce8c9-2738-49c6-8fbd-aa802a7c0b0e, View of dagon in ranting about politics
+CINDY PARKER, 2.29, 5af1cf66-a1b1-4e6c-ad40-cf931ec5d0a1, Security analysis of exploring darkest Africa
+EDNA COX, 3.2, 27c75a39-d211-4692-af3a-4025b6aae8d4, Worshipping cthulu in constructing an ironic public image
+GREGORY HALL, 3.11, 98021e37-cef4-42b5-8a66-ff5852b2ec08, View of dagon in promoting Objectivism
+LARRY ALEXANDER, 2.03, 3a721a1a-2f85-437e-b9b5-7ce5aa90582d, Using rfid to improve reading braille
+ROSA TAYLOR, 3.69, 55e9dd42-8cca-483d-95ad-6992d8dd6768, Using ai to streamline singing country music
+GRACE JONES, 3.91, 16b9c07e-bec5-4552-9f09-e2c651fe35f3, Using ai to streamline promoting feminism
+HOWARD MITCHELL, 2.15, 02ed8f2e-e9c1-495d-adad-a10a17296659, Using rfid to improve studying genetics
+TRAVIS RICHARDSON, 3.68, 905ffabd-668a-4e74-a351-9b9e1785c078, Worshipping cthulu in avoiding paparazzi
+ASHLEY ALLEN, 3.78, c495fc28-cc47-4c70-8050-e57eb9651be1, Worshipping cthulu in attacking paparazzi
+DANIEL PRICE, 3.91, daf0f09d-9522-4045-ae3a-e091fa9b77aa, View of dagon in starring in romantic comedies
+JOSE LONG, 2.04, 913fa19c-7032-4881-a45c-30f8e7ac5f52, Using excel to analyse patterns in writing about social problems
+JEREMY CARTER, 3.89, 7da0ee84-9db8-4161-b3da-6a0dd1d782d8, Security analysis of singing experimental songs
+SYLVIA POWELL, 3.22, 01a6d33c-e7d5-4c8f-86c9-da9f7a66a0dd, Security analysis of promoting big business
+MARIE COLEMAN, 3.51, 19e5ba71-dafe-457b-9a93-6b8eb2680e9a, Using ai to streamline complaining about life
+TIFFANY MARTINEZ, 3.78, 65b94f9f-63d8-4e30-9441-9be3a6c2f831, Using ai to streamline piloting the lunar module
+TIMOTHY BAILEY, 2.86, 708ad2c2-c0b5-4a92-8dd6-ff61f0fdf66d, View of dagon in womanizing
+SAMUEL CAMPBELL, 3.22, f51ffb14-40c9-44cb-8e2d-07d41caf0090, Using ai to streamline writing modern poetry
+JEFF HERNANDEZ, 3.67, e5ca420f-4f96-4ce1-9434-cc274d0b75c1, Worshipping cthulu in playing grungy music
+CLARENCE SANDERS, 2.23, 98021e37-cef4-42b5-8a66-ff5852b2ec08, View of dagon in promoting Objectivism
+DONALD MOORE, 2.99, 6275c40e-0080-4ba3-88b5-2cb35002cf7b, Security analysis of promoting Heliocentrism
+EDNA SMITH, 3.36, e8121034-e12e-4f7f-9308-e9c2241ac22c, Using excel to analyse patterns in singing middle-of-the-road songs
+LILLIAN MORRIS, 2.44, e6b142e3-ea9d-43c5-b176-ae01024b5c1a, Using excel to analyse patterns in giving speeches
+KATHLEEN HARRIS, 2.49, 2bfabdb6-45bb-4c44-8d1f-19fedec27b9f, Using ai to streamline starring in Hollywood movies
+JESSICA LOPEZ, 3.89, 5572ce14-8d18-4cc6-af68-cb944fb3a5c1, Worshipping cthulu in moaning about men
+LISA COLLINS, 2.3, 38cdb724-9242-4bb0-ba19-5f6871ccfd35, Using ai to streamline campaigning for the senate
+TONY HOWARD, 3.32, 9f9de9c2-e9bd-45dd-904a-3272f3756c75, Worshipping cthulu in driving around America
+STEPHANIE SANCHEZ, 3.76, 7da0ee84-9db8-4161-b3da-6a0dd1d782d8, Security analysis of singing experimental songs
+CRYSTAL HAYES, 3.41, 9db2ced2-6dd1-493d-aa0b-72960d47243f, Using rfid to improve chasing old women
+ALBERT WRIGHT, 3.55, 38ec9035-b5bd-4128-a399-46158cab59f1, Security analysis of campaigning for the senate
+CHRISTOPHER SANCHEZ, 2.22, 619f5f67-7060-4e78-853a-dfa68ced9e38, Using excel to analyse patterns in gyrating hips
+MARTIN MITCHELL, 2.98, 106a7388-3ca8-4063-889e-3de1a2cc5ce2, Using excel to analyse patterns in eating the inedible
+FRANK ROSS, 2.42, 0dc2f841-b350-4e84-a26f-6f836589bdca, Using excel to analyse patterns in winning cycling races
+EMILY RODRIGUEZ, 2.56, d6e0d923-0b47-4408-8211-31ee330660b3, Worshipping cthulu in designing modern buildings
+MARTHA WILLIAMS, 3.01, 575567d3-3cb8-42dc-bd0d-4a9fa4bcbd48, Using rfid to improve gadding about town
+DAWN CARTER, 2.15, c141a962-fb07-4d75-a274-24f24da5cd89, Worshipping cthulu in starring in romantic comedies
+HENRY CLARK, 3.01, 0c804329-a024-47fb-93e4-f5ffd50d5b97, View of dagon in playing guitar
+BILLY NELSON, 3.01, 81e41af0-cb3d-4a1a-8434-6c9391bd9110, Using ai to streamline terrorizing employees
+JAMES ANDERSON, 2.51, 91bb8af5-1306-42d9-bedf-0ee93c37f486, Security analysis of playing rock music
+DIANA DAVIS, 2.81, b70c41f9-63de-4034-b5ca-05e98d2fde16, Worshipping cthulu in defending freedom
+HELEN COLLINS, 2.53, aeba768a-64c4-498c-a680-ad5af15590f5, Using excel to analyse patterns in promoting boxing fights
+ANTONIO LOPEZ, 2.57, 8a7d3190-93bc-4cec-9a33-fa48738e5c1b, Using excel to analyse patterns in starring in Hollywood movies
+JEAN PHILLIPS, 3.95, 55e9dd42-8cca-483d-95ad-6992d8dd6768, Using ai to streamline singing country music
+NORMAN COOK, 3.31, 38cdb724-9242-4bb0-ba19-5f6871ccfd35, Using ai to streamline campaigning for the senate
+CURTIS HALL, 3.16, 485360ea-e38a-4612-9559-35fc1735fe51, Worshipping cthulu in waxing a surfboard
+LISA HOWARD, 2.33, a61a3fa0-77a5-4fa1-a55a-7d316168d50e, Using excel to analyse patterns in building giant walls
+VINCENT ROSS, 2.4, 57050823-815b-45ce-af92-08ee9f1ae6a9, Using rfid to improve singing melancholy songs
+CATHERINE DAVIS, 3.17, 3de5061f-8471-4cdf-bd48-ee5ff43ee89f, Using rfid to improve writing mystery stories
+DALE GRIFFIN, 2.08, 975cc488-c5b3-4166-a1eb-68e90f387a1c, Using ai to streamline studying genetics
+REBECCA LEWIS, 3.54, 5eb5a88d-e5f2-480a-b04f-d964c7ea97e1, Security analysis of writing experimental songs
+AMY RICHARDSON, 2.53, 81e41af0-cb3d-4a1a-8434-6c9391bd9110, Using ai to streamline terrorizing employees
+SANDRA LOPEZ, 2.71, 41988aa4-2531-40dc-a9b6-b0b43e08887c, Worshipping cthulu in making dumb comedies
+MARIE CLARK, 2.22, 51217e31-9517-448f-a091-ccc2f1dd8f79, Using ai to streamline painting soup cans
+TIMOTHY DAVIS, 3.56, b8043b73-b811-41bd-90f1-c5affa0fbe69, Using ai to streamline driving around America
+ALBERT PETERSON, 3.55, 1e9449c1-de36-456c-8e98-6b4fa1a4dc53, Using rfid to improve studying symbols
+CARLOS BROOKS, 2.07, ac0b01ba-7ada-43e7-89c9-5bb6eae4da27, Using excel to analyse patterns in playing quidditch
+WILLIE ROGERS, 2.17, cfd67a61-cdf6-4636-a966-3052e771c0d6, Using ai to streamline ranting about minorities
+MARGARET WARD, 3.33, 27c75a39-d211-4692-af3a-4025b6aae8d4, Worshipping cthulu in constructing an ironic public image
+CAROL RIVERA, 3.49, 38ec9035-b5bd-4128-a399-46158cab59f1, Security analysis of campaigning for the senate
+HENRY WOOD, 3.24, c05a3093-1efa-47b6-bffc-3ec8fb4f630c, Worshipping cthulu in performing street magic
+SHIRLEY FLORES, 2.88, 9eeeb11c-497f-40c3-a0e0-ea9496d38e3a, Using rfid to improve composing classical music
+DAWN JAMES, 2.23, e8121034-e12e-4f7f-9308-e9c2241ac22c, Using excel to analyse patterns in singing middle-of-the-road songs
+GREGORY PERRY, 3.76, 8d01cc7d-6b89-4489-9f0a-6f0d9e842c83, Worshipping cthulu in campaigning for the senate
+JEFF SMITH, 2.53, 59d6624c-e1c4-4b64-8a89-d62baccec761, Using excel to analyse patterns in writing experimental songs
+SHARON PARKER, 3.47, af8b6351-0666-4661-b633-fde57f7bc245, View of dagon in studying icons
+JOSEPH DAVIS, 2.92, 0efbb25e-0e1d-43d2-809c-ea252cda210d, Using excel to analyse patterns in watching TV
+MARTHA ADAMS, 3.85, f51ffb14-40c9-44cb-8e2d-07d41caf0090, Using ai to streamline writing modern poetry
+DIANA WILSON, 2.06, a4042a12-87df-473d-8695-104330d394c6, Using rfid to improve offering medical opinions
+RANDY SMITH, 2.68, 752f4501-095d-4395-863b-1fb9ed6e4f8c, Security analysis of telling affable jokes
+TONY THOMAS, 3.26, 024dfea3-8afe-4ed0-aac6-3525c4510430, Security analysis of writing compelling dialogue
+JUAN ADAMS, 3.56, d265d34a-1836-4d1c-bd86-fbf778565c89, Using rfid to improve coasting on past glories
+BARBARA SMITH, 3.73, 8c91a0e3-816c-479f-b0bf-786566eae36d, Worshipping cthulu in making prank calls
+KAREN RODRIGUEZ, 3.39, 13172f02-454f-41cd-a22a-7ac17923b7d8, Using rfid to improve studying the cosmos
+MARIA WASHINGTON, 2.13, c141a962-fb07-4d75-a274-24f24da5cd89, Worshipping cthulu in starring in romantic comedies
+JEFFREY LEE, 3.68, 91bb8af5-1306-42d9-bedf-0ee93c37f486, Security analysis of playing rock music
+LEONARD WHITE, 2.42, 72257529-3e7b-46d9-9747-5179e37477d4, Worshipping cthulu in recording pop songs
+VINCENT BRYANT, 3.84, 3917fe64-7c31-43c4-a371-12579f801eea, Using rfid to improve writing about manly pursuits
+JOSHUA HOWARD, 2.94, b4d7c339-e9b9-47a8-ab6a-d1192c07c807, Using excel to analyse patterns in killing murderers
+FLORENCE PETERSON, 3.86, 5b77642f-e944-4834-9a1f-9ca4d8711b53, Using ai to streamline collecting fossils
+BRENDA BRYANT, 2.38, 58591f41-40ab-4a49-b80f-dec0a40a8ed0, Security analysis of doing the Kessel run
+HEATHER NELSON, 3.17, cefcff26-af29-493d-9abf-6e1f6e4a7bd2, View of dagon in singing rock songs
+CRYSTAL SMITH, 2.93, 0940bb32-18d6-4035-8250-acba3a88c70b, Worshipping cthulu in singing pop songs
+ANTHONY GRIFFIN, 2.74, 29e4fb42-ea38-47f4-97e5-f4fc2f692808, Worshipping cthulu in running a school for gifted teens
+ANNE PRICE, 2.74, 5c0e7bfd-d0b7-483f-8bc4-c10b56ff470d, Worshipping cthulu in womanizing
+FRANK MORRIS, 3.53, b87fc2b4-1bf6-4e1b-ab7c-9231454e808b, Using excel to analyse patterns in making new wave movies
+KATHY COX, 3.6, 4c38b0bb-1c69-4ac2-bc0e-254b1dcafcc8, View of dagon in writing modern fiction
+EDWARD DAVIS, 3.87, 9b8b762a-dbed-4f86-8aad-3f682cd9012c, Using rfid to improve studying mathematics
+JOYCE BELL, 2.23, 8685198f-ae52-49e7-9608-902af4f670df, Using excel to analyse patterns in ranting about politics
+FRANK LEWIS, 3.89, 25fa6f64-7da2-4f4e-bb47-43541d197789, Using rfid to improve promoting Darwinism
+MARIE PEREZ, 2.1, 37b932d8-78e2-4f64-8e91-3a5681206fb8, Using excel to analyse patterns in playing classical piano
+PEGGY PARKER, 2.17, e0a620ca-c92b-410b-8f01-754b0f6ab331, Using rfid to improve extracting confessions
+MELISSA REED, 3.19, 41988aa4-2531-40dc-a9b6-b0b43e08887c, Worshipping cthulu in making dumb comedies
+GREGORY GONZALEZ, 3.11, 29850f6e-01dd-4e1b-a03b-6cdcca8ad50a, Security analysis of constructing an ironic public image
+VINCENT ROBINSON, 2.07, 5cb2f43c-06d3-4476-943c-1a2841c430a2, Using rfid to improve representing the disenfranchised
+DENISE BAILEY, 2.52, 1831a118-ac13-4ed4-80b4-b7950a4e9301, Security analysis of reporting for The Daily Planet
+DALE ALEXANDER, 3.45, 23938fc8-8477-4954-bcec-10a54bbc5b6e, Worshipping cthulu in eating a box of chocolates
+RUTH CAMPBELL, 2.1, 232596e7-8d18-4ce0-9f33-58d2f822d8d1, Using excel to analyse patterns in surviving in the 25th century
+JOYCE WARD, 2.12, 262d23c5-261f-4a5b-9dba-f2a7aee8c256, Using excel to analyse patterns in writing mystery stories
+KEITH GONZALES, 2.24, 2513d716-893d-4844-8aa0-2c6391f8a92e, Security analysis of seducing women
+EDNA MARTIN, 2.58, 8b9cc2da-29af-49bb-85d4-c2a480ef396b, Using rfid to improve amassing ill-gotten wealth
+JESSICA BROWN, 3.17, f5d132b0-9ff9-4fda-b2e5-83e5b2ee4767, Using ai to streamline selling fried chicken
+LUIS SCOTT, 2.11, 859fd5e6-aeab-40d3-9e01-b5a221d56d5f, Using excel to analyse patterns in lecturing about climate change
+JULIA WOOD, 2.97, 2b210eae-0d67-4944-823e-544b78a1419f, View of dagon in writing political tracts
+PHILIP ROBINSON, 3.36, 719ea2f0-11d6-4762-a9d8-dff7183f00ae, Security analysis of campaigning for the senate
+PEGGY BROOKS, 3.05, 28f66553-07ab-46e5-8616-752e7e08941a, View of dagon in selling consumer goods
+PAMELA HUGHES, 3.45, 53194a9b-2d23-4578-bc37-2d672b17ecf5, Worshipping cthulu in studying the cosmos
+PATRICIA THOMPSON, 3.78, 38cdb724-9242-4bb0-ba19-5f6871ccfd35, Using ai to streamline campaigning for the senate
+PATRICIA JACKSON, 2.97, c37cc401-39a3-4d9d-8af6-c4a6a33d462c, Using rfid to improve starring in action movies
+MICHAEL STEWART, 3.41, 4c0401a6-e5f6-4137-b89e-146b458fae43, View of dagon in starring in action movies
+CLARENCE PEREZ, 2.58, b147d49f-bbd1-4881-a93f-9813c8398491, Using rfid to improve recording pop songs
+JANET MITCHELL, 3.08, 6d84106f-c0a0-4d11-8c08-da1caddd503e, Using ai to streamline playing pranks
+JANE JENKINS, 3.27, 98021e37-cef4-42b5-8a66-ff5852b2ec08, View of dagon in promoting Objectivism
+BONNIE MARTIN, 2.2, 535fe9be-b2b1-4c58-89df-79672df7be12, Worshipping cthulu in starring in Hollywood movies
+DAWN BAILEY, 2.59, b96b0dad-b69c-4be8-b8a7-0a58b4f41120, View of dagon in rescuing aristocrats
+KAREN GREEN, 3.6, eeae7fb2-1fb0-44e7-b157-19e3e063cd08, Using excel to analyse patterns in promoting conservative values
+PHYLLIS PARKER, 3.55, eeae7fb2-1fb0-44e7-b157-19e3e063cd08, Using excel to analyse patterns in promoting conservative values
+JULIE JACKSON, 3.32, 8efba10a-6cbf-44ac-a713-2d153d4a7df1, View of dagon in performing magic tricks
+WENDY KING, 3.76, b6bc2b42-1e87-4294-811e-0bcb0a3ae1c8, View of dagon in starring in madcap comedies
+TONY SMITH, 3.95, 0132f53c-5513-4362-bf83-a2dc7550ad3f, Using excel to analyse patterns in running an empire
+ERIC DAVIS, 2.41, 82781566-5de0-4357-b01e-01ae8975caa9, View of dagon in commanding a whaling ship
+EVELYN PETERSON, 3.97, 0dc2f841-b350-4e84-a26f-6f836589bdca, Using excel to analyse patterns in winning cycling races
+RACHEL LONG, 2.08, eaa42704-b43b-4c26-8cf0-6c68e2b50c8f, Worshipping cthulu in starring in romantic comedies
+JAMES WHITE, 2.78, 91bb8af5-1306-42d9-bedf-0ee93c37f486, Security analysis of playing rock music
+CATHERINE PEREZ, 3.4, d6e0d923-0b47-4408-8211-31ee330660b3, Worshipping cthulu in designing modern buildings
+ANNIE MURPHY, 3.37, 9d75121f-fd73-491c-9f7c-0528eaae4659, Security analysis of hitting home runs
+NICOLE HOWARD, 3.18, dd95d419-34f0-4735-af8c-5405f4363bb6, Using rfid to improve chasing terrorists
+FRED GREEN, 3.16, 57050823-815b-45ce-af92-08ee9f1ae6a9, Using rfid to improve singing melancholy songs
+FRANK JACKSON, 3.26, 6275c40e-0080-4ba3-88b5-2cb35002cf7b, Security analysis of promoting Heliocentrism
+LOUISE HOWARD, 2.09, 4010bc0e-3de7-4454-9413-7e1ff417704c, Security analysis of doing the Charleston
+BRUCE ALLEN, 3.39, dcf734b1-28f0-45ed-9241-8e78215c6318, Using excel to analyse patterns in building giant walls
+DAVID RODRIGUEZ, 3.66, 653ce2a3-afd1-44da-bca8-3d0297b1a46d, Using rfid to improve tracking down fugitives
+SHIRLEY WALKER, 3.89, 99b478a7-26f1-40e5-bf8a-0e4483b25ba9, Using ai to streamline representing the disenfranchised
+LINDA LEE, 2.12, f95f8378-3c64-4702-a3d3-3ab0843a0d57, Using rfid to improve punching out Nazis
+JACK FLORES, 3.93, 5af1cf66-a1b1-4e6c-ad40-cf931ec5d0a1, Security analysis of exploring darkest Africa
+JERRY COLLINS, 2.97, 0dc2f841-b350-4e84-a26f-6f836589bdca, Using excel to analyse patterns in winning cycling races
+FLORENCE HERNANDEZ, 2.53, bdf9ce43-6989-49b4-aa26-bd7e526c0646, Using excel to analyse patterns in killing murderers
+GEORGE ROBERTS, 3.36, 7d5d141d-43b5-4fb8-8cf5-906c88c7719f, Worshipping cthulu in starring in action movies
+TERESA JAMES, 2.24, 8d01cc7d-6b89-4489-9f0a-6f0d9e842c83, Worshipping cthulu in campaigning for the senate
+SHAWN RICHARDSON, 2.56, 9ca3d513-5eec-4582-adbd-2848c7429c94, View of dagon in making witty remarks
+JENNIFER ADAMS, 3.45, 25fa6f64-7da2-4f4e-bb47-43541d197789, Using rfid to improve promoting Darwinism
+DONNA ALEXANDER, 2.8, d265d34a-1836-4d1c-bd86-fbf778565c89, Using rfid to improve coasting on past glories
+ADAM SIMMONS, 3.03, 859fd5e6-aeab-40d3-9e01-b5a221d56d5f, Using excel to analyse patterns in lecturing about climate change
+MARY MARTIN, 2.74, 5cb2f43c-06d3-4476-943c-1a2841c430a2, Using rfid to improve representing the disenfranchised
+DIANA ROGERS, 3.28, ca6ef4b0-8eea-4a57-981d-98dc694ffbe0, View of dagon in shouting in Hollywood movies
+FRANCES HENDERSON, 2.08, 2ec23898-b556-439e-8634-1e7afe9a41d6, Using rfid to improve  launching foreign wars
+ADAM TORRES, 3.43, c37cc401-39a3-4d9d-8af6-c4a6a33d462c, Using rfid to improve starring in action movies
+NICHOLAS BELL, 3.84, aa8c9d75-f899-4dd8-bb9f-2b0b1a5086e6, Using excel to analyse patterns in avoiding growing old
+ASHLEY WILSON, 3.83, 90287353-1c8f-4f7b-8560-727d3dc70f77, Using rfid to improve selling illegal alcohol
+NATHAN BAILEY, 2.9, 41988aa4-2531-40dc-a9b6-b0b43e08887c, Worshipping cthulu in making dumb comedies
+SHARON SMITH, 3.8, 278f0975-4f97-47e9-92ca-1a9a6daf2de4, Security analysis of having meltdowns in public
+HENRY SMITH, 2.49, 74bc7a75-286e-4fd8-ab42-7ee203f002ca, Using excel to analyse patterns in dining with playboy princes
+JANE HAYES, 3.43, b70c41f9-63de-4034-b5ca-05e98d2fde16, Worshipping cthulu in defending freedom
+BEVERLY ROBINSON, 3.34, 2f0db37f-5283-454a-ad1c-785d3ec181d0, Using ai to streamline making dumb comedies
+RODNEY PRICE, 3.63, 3a080264-8748-4aa0-9cf9-9beeb42f0fcc, Worshipping cthulu in writing short stories
+DOROTHY BRYANT, 2.6, f35aa5f4-be19-46d0-992e-eae652c4523c, Security analysis of surviving in the 25th century
+ALBERT ALEXANDER, 3.29, 90cde2ad-dcaf-4a74-bbe4-83c5071f0a76, Using excel to analyse patterns in playing James Bond
+VICTORIA JENKINS, 3.71, e686bf3e-963a-445d-b809-94bd1c9e765b, Using ai to streamline writing about social problems
+ERNEST RICHARDSON, 2.78, 4f22a222-d893-4468-8c51-0569a42f165e, Using rfid to improve waxing a surfboard
+NICOLE WHITE, 3.79, 91bb8af5-1306-42d9-bedf-0ee93c37f486, Security analysis of playing rock music
+SARA FLORES, 3.98, d825d208-e81c-4579-a4b0-1f70c073a157, Security analysis of playing grungy music
