@@ -122,4 +122,13 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
             return 1;
         }
     }
+
+    public String toString() {
+        String out = "Student Name, Student GPA, Project UUID, Project Title\n";
+        for(Solution s : solutionList) {
+            out += s.toString() + "\n";
+        }
+
+        return out;
+    }
 }

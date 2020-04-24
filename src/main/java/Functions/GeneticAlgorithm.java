@@ -14,24 +14,13 @@ public class GeneticAlgorithm {
 
     public SolutionPermutation search(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
-
-        sort(population);
-        System.out.println("Lowest Population Fitness: " + population.get(P-1).getFitness() + "\tHighest Population Fitness: " + population.get(0).getFitness());
-
-        update(population);
-
-        sort(population);
-        System.out.println("Lowest Population Fitness: " + population.get(P-1).getFitness() + "\tHighest Population Fitness: " + population.get(0).getFitness());
-
         SolutionPermutation temp;
-        for(int j=0; j<R; j++){
-            temp = population.get(0);
 
-            sort(population);
-            System.out.println("Lowest Population Fitness: " + population.get(P-1).getFitness() + "\tHighest Population Fitness: " + population.get(0).getFitness());
+        for(int j=0; j<R; j++){
+            temp = population.get(P-1);
             update(population);
 
-            if(temp.getFitness() < population.get(0).getFitness()){
+            if(temp.getFitness() < population.get(P-1).getFitness()) {
                 j = 0;
             }
         }

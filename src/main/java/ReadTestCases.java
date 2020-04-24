@@ -57,5 +57,7 @@ public class ReadTestCases {
         int[] preferenceArray3 = s3.getPreferenceInfo();
         System.out.println(preferenceArray3[1] + " students got an average of their " + preferenceArray3[0] + " choice," +
                 " while " + preferenceArray3[2] + " students did not get any of their choices");
+
+        System.out.println(s3.toString());
     }
 }
