@@ -9,7 +9,7 @@ import java.util.*;
 
 public class ReadTestCases {
     public static int NUMBER_CHANGES = 5;
-    public static int INITIAL_TEMPERATURE = 100;
+    public static int INITIAL_TEMPERATURE = 50;
     public static int TEMPERATURE_CHANGE = 10;
     private int[] preferenceArray;
 
