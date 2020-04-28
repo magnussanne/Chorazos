@@ -3,6 +3,9 @@ import java.awt.*;
 
 public class run {
     public static void main(String[] args) {
+        createGUI();
+    }
+    private static void createGUI(){
         JFrame mainWindow = new JFrame("Chorazos");
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         mainWindow.setSize(720, 500);
