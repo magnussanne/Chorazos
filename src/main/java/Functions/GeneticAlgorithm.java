@@ -11,6 +11,15 @@ public class GeneticAlgorithm {
     private final int R = 15;           //  Stop after R iterations without improvement
     private final int E = 15;           //  % Chance of mutation
 
+    private Visualization visual;
+
+    public GeneticAlgorithm(){
+        visual = null;
+    }
+
+    public GeneticAlgorithm(Visualization visual) {
+        this.visual = visual;
+    }
 
     public SolutionPermutation search(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
@@ -46,6 +55,11 @@ public class GeneticAlgorithm {
 
     private void update(List<SolutionPermutation> population) {
         sort(population);
+
+        if(visual != null) {
+            visual.drawSolution(population.get(P-1));
+        }
+
         cull(population);
         breed(population);
     }
@@ -78,4 +92,6 @@ public class GeneticAlgorithm {
             population.add(mother.combine(father, E));
         }
     }
+
+
 }
