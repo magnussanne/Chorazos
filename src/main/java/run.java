@@ -15,15 +15,29 @@ public class run {
         mainWindow.setVisible(true);
 
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Genetic Algorithm", makePanel("Genetic Algorithm goes here"));
-        tabbedPane.addTab("Simulated Annealing", makePanel("Simulated Annealing goes here"));
-        tabbedPane.addTab("Hill Climbing", makePanel("Hill Climbing goes here"));
+        tabbedPane.addTab("Genetic Algorithm", gaPanel());
+        tabbedPane.addTab("Simulated Annealing", saPanel());
+        tabbedPane.addTab("Hill Climbing", hcPanel());
 
         mainWindow.add(tabbedPane);
     }
-    private static JPanel makePanel(String text) {
+    private static JPanel gaPanel() {
         JPanel container = new JPanel();
-        container.add(new Label(text));
+        container.add(new Label());
+        container.setLayout(new GridLayout(1, 2));
+        container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
+        return container;
+    }
+    private static JPanel saPanel() {
+        JPanel container = new JPanel();
+        container.add(new Label());
+        container.setLayout(new GridLayout(1, 2));
+        container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
+        return container;
+    }
+    private static JPanel hcPanel() {
+        JPanel container = new JPanel();
+        container.add(new Label());
         container.setLayout(new GridLayout(1, 2));
         container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
         return container;
