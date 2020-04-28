@@ -19,7 +19,8 @@ public class Visualization extends JPanel {
 
     private List<Student> studentList;
     private List<Project> projectList;
-    private SolutionPermutation solution;
+    private List<Solution> solution;
+    private int solutionSize;
     private static int Generation;
 
     public Visualization(List<Student> studentList, List<Project> projectList) {
@@ -33,7 +34,11 @@ public class Visualization extends JPanel {
     }
 
     public void drawSolution(SolutionPermutation solution) {
-        this.solution = solution;
+        this.Generation++;
+        this.solution = solution.getSolutionList();
+        this.solutionSize = this.solution.size();
+
+        System.out.println("t");
         repaint();
     }
 
@@ -49,7 +54,7 @@ public class Visualization extends JPanel {
         int projectHeight = (getHeight()-30) / (this.projectList.size()+1);
 
         g.setColor(drawings);
-        g.drawString("Generation: " + this.Generation++, 30, 30);
+        g.drawString("Generation: " + this.Generation, 30, 30);
 
         for(int i=1; i<=this.studentList.size(); i++) {
             g.fillOval(30, studentHeight*i + 30, 3, 3);
@@ -65,18 +70,17 @@ public class Visualization extends JPanel {
     private void connectSolutions(Graphics2D g) {
         int studentHeight = (getHeight()-30) / (this.studentList.size()+1);
         int projectHeight = (getHeight()-30) / (this.projectList.size()+1);
-        int count = 1;
 
-        for(Solution s : this.solution.getSolutionList()) {
+        for(int i=1; i<=solutionSize; i++) {
+            Solution s = this.solution.get(i-1);
             int startX = 30;
             int endX = getWidth()-30;
 
-            int startY = studentHeight * count + 30;
+            int startY = studentHeight * i + 30;
             int endY = projectHeight * (this.projectList.indexOf(s.getProject())+1) + 30;
 
             g.drawLine(startX, startY, endX, endY);
-
-            count++;
+            i++;
         }
     }
 
@@ -87,6 +91,11 @@ public class Visualization extends JPanel {
 
         ReadProjects.Read("project.csv", projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
+        for (Student s : studentList) {
+            solutionList.add(new Solution(s, projectList, solutionList));
+        }
+        SolutionPermutation sp = new SolutionPermutation(solutionList);
+
         Visualization visual = new Visualization(studentList, projectList);
 
         SwingUtilities.invokeLater(() -> {
@@ -100,7 +109,22 @@ public class Visualization extends JPanel {
             frame.setVisible(true);
         });
 
-        GeneticAlgorithm ga = new GeneticAlgorithm(visual);
-        ga.search(studentList, projectList);
+
+        switch (1) {
+            case 0:
+                GeneticAlgorithm ga = new GeneticAlgorithm(visual);
+                ga.search(studentList, projectList);
+                break;
+            case 1:
+                SimulatedAnnealing sa = new SimulatedAnnealing(visual);
+                sa.solve(sp);
+                break;
+            case 2:
+                HillClimbing hc = new HillClimbing(visual);
+                hc.solve(sp);
+                break;
+        }
+
+
     }
 }

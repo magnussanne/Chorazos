@@ -10,6 +10,16 @@ public class HillClimbing {
     private static List<Solution> solutionList = new ArrayList<>();
     private static List<SolutionPermutation> solutionPermList = new ArrayList<>();
 
+    private Visualization visual;
+
+    public HillClimbing(){
+        visual = null;
+    }
+
+    public HillClimbing(Visualization visual) {
+        this.visual = visual;
+    }
+
     public SolutionPermutation solve(SolutionPermutation s0) {
         SolutionPermutation s1;
         int runLoop = 0;
@@ -20,6 +30,10 @@ public class HillClimbing {
                 runLoop = 1;
             else{
                 s0 = s1;
+            }
+
+            if(visual != null) {
+                visual.drawSolution(s1);
             }
         }
 

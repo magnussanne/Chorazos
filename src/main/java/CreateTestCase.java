@@ -15,7 +15,7 @@ import java.util.List;
 
 
 public class CreateTestCase {
-    private static final int Number_Students = 500;
+    private static final int Number_Students = 100;
     private static final int Number_Preferences = 10;
 
     public static void main(String[] args) throws IOException {

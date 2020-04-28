@@ -6,6 +6,15 @@ public class SimulatedAnnealing {
     private double InitialTemp = 900000;
     private double tempChange = 0.999;
 
+    private Visualization visual;
+
+    public SimulatedAnnealing(){
+        visual = null;
+    }
+
+    public SimulatedAnnealing(Visualization visual) {
+        this.visual = visual;
+    }
 
     public SolutionPermutation solve(SolutionPermutation s0) {
         double temp = InitialTemp;
@@ -17,6 +26,10 @@ public class SimulatedAnnealing {
                 s0 = s1;
 
             temp *= tempChange;
+
+            if(visual != null) {
+                visual.drawSolution(s1);
+            }
         }
 
         return s0;
