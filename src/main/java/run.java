@@ -9,7 +9,7 @@ public class run {
     private static void createGUI(){
         JFrame mainWindow = new JFrame("Chorazos");
         mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainWindow.setSize(720, 500);
+        mainWindow.setSize(1000, 720);
         mainWindow.setVisible(true);
 
         JTabbedPane tabbedPane = new JTabbedPane();
@@ -17,17 +17,13 @@ public class run {
         tabbedPane.addTab("Simulated Annealing", makePanel("Simulated Annealing goes here"));
         tabbedPane.addTab("Hill Climbing", makePanel("Hill Climbing goes here"));
 
-        JPanel container = new JPanel();
-        container.setLayout(new GridLayout(1,2));
-        container.add(tabbedPane);
-        container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
-
-        mainWindow.add(container);
+        mainWindow.add(tabbedPane);
     }
     private static JPanel makePanel(String text) {
-        JPanel p = new JPanel();
-        p.add(new Label(text));
-        p.setLayout(new GridLayout(1, 1));
-        return p;
+        JPanel container = new JPanel();
+        container.add(new Label(text));
+        container.setLayout(new GridLayout(1, 2));
+        container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
+        return container;
     }
 }
