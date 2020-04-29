@@ -23,8 +23,9 @@ public class run {
     }
     private static JPanel gaPanel() {
         JPanel container = new JPanel();
-        container.add(new Label());
         container.setLayout(new GridLayout(1, 2));
+        JSlider b = new JSlider();
+        container.add(b);
         container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
         return container;
     }
