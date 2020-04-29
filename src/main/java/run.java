@@ -30,27 +30,37 @@ public class run {
         JPanel container = new JPanel();
         container.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
-        JSlider b = new JSlider();
         c.fill = GridBagConstraints.HORIZONTAL;
+        c.weighty = 1.0;
         c.gridx = 0;
         c.gridy = 0;
+        c.gridwidth = 1;
+        c.anchor = GridBagConstraints.PAGE_START;
+        container.add(loadFileButton(), c);
+        JSlider b = new JSlider();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.weighty = 1.0;
+        c.gridx = 0;
+        c.gridy = 2;
         container.add(b, c);
         JSlider a = new JSlider();
         c.fill = GridBagConstraints.HORIZONTAL;
+        c.weighty = 1.0;
         c.gridx = 0;
-        c.gridy = 1;
+        c.gridy = 3;
         container.add(a, c);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 0;
+        c.gridy = 4;
+        c.anchor = GridBagConstraints.PAGE_END;
+        container.add(startSearchButton(), c);
+        JButton export = new JButton("Export");
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 2;
+        c.gridy = 4;
+        c.anchor = GridBagConstraints.PAGE_END;
+        container.add(export, c);
         return container;
-        /*
-        JPanel container = new JPanel();
-        container.setLayout(new GridLayout(1, 2));
-        JSlider b = new JSlider();
-        container.add(b);
-        JSlider a = new JSlider();
-        container.add(a);
-        container.add(loadFileButton());
-        return container;
-         */
     }
 
     private JPanel saPanel() {
