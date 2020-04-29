@@ -21,7 +21,7 @@ public class GeneticAlgorithm {
         this.visual = visual;
     }
 
-    public SolutionPermutation search(List<Student> studentList, List<Project> projectList) {
+    public SolutionPermutation solve(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
         SolutionPermutation temp;
 
