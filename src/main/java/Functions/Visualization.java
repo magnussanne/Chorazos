@@ -23,14 +23,19 @@ public class Visualization extends JPanel {
     private int solutionSize;
     private static int Generation;
 
-    public Visualization(List<Student> studentList, List<Project> projectList) {
+    public Visualization() {
         setPreferredSize(new Dimension(500, 500));
+
+        setBackground(Color.WHITE);
+        repaint();
+    }
+
+    public void loadValues(List<Student> studentList, List<Project> projectList) {
         this.Generation = 1;
         this.studentList = studentList;
         this.projectList = projectList;
 
         setBackground(background);
-        repaint();
     }
 
     public void drawSolution(SolutionPermutation solution) {
@@ -44,7 +49,10 @@ public class Visualization extends JPanel {
     public void paintComponent(final Graphics graphics) {
         super.paintComponent(graphics);
         final Graphics2D g = (Graphics2D) graphics;
-        drawChromosome(g);
+
+        if(studentList != null) {
+            drawChromosome(g);
+        }
     }
 
     private void drawChromosome(Graphics2D g) {
@@ -85,16 +93,12 @@ public class Visualization extends JPanel {
     public static void main(String[] args) throws FileNotFoundException {
         List<Student> studentList = new ArrayList<>();
         List<Project> projectList = new ArrayList<>();
-        List<Solution> solutionList = new ArrayList<>();
 
         ReadProjects.Read("project.csv", projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
-        for (Student s : studentList) {
-            solutionList.add(new Solution(s, projectList, solutionList));
-        }
-        SolutionPermutation sp = new SolutionPermutation(solutionList);
 
-        Visualization visual = new Visualization(studentList, projectList);
+        Visualization visual = new Visualization();
+        visual.loadValues(studentList, projectList);
 
         SwingUtilities.invokeLater(() -> {
             final JFrame frame = new JFrame();
@@ -111,15 +115,15 @@ public class Visualization extends JPanel {
         SimulatedAnnealing sa = new SimulatedAnnealing(visual);
         HillClimbing hc = new HillClimbing(visual);
 
-        switch (0) {
+        switch (2) {
             case 0:
                 ga.solve(studentList, projectList);
                 break;
             case 1:
-                sa.solve(sp);
+                sa.solve(studentList, projectList);
                 break;
             case 2:
-                hc.solve(sp);
+                hc.solve(studentList, projectList);
                 break;
         }
 

@@ -1,12 +1,14 @@
 package Functions;
 
+import Objects.Project;
 import Objects.Solution;
 import Objects.SolutionPermutation;
+import Objects.Student;
 
 import java.util.ArrayList;
 import java.util.List;
 
-public class HillClimbing {
+public class HillClimbing implements Search {
     private static List<Solution> solutionList = new ArrayList<>();
     private static List<SolutionPermutation> solutionPermList = new ArrayList<>();
 
@@ -15,12 +17,12 @@ public class HillClimbing {
     public HillClimbing(){
         visual = null;
     }
-
     public HillClimbing(Visualization visual) {
         this.visual = visual;
     }
 
-    public SolutionPermutation solve(SolutionPermutation s0) {
+    public SolutionPermutation solve(List<Student> studentList, List<Project> projectList) {
+        SolutionPermutation s0 = createSolutionPermutation(studentList, projectList);
         SolutionPermutation s1;
         int runLoop = 0;
 
@@ -40,6 +42,16 @@ public class HillClimbing {
         return s0;
     }
 
+    private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
+        List<Solution> solutionList = new ArrayList<>();
+
+        for (Student s : studentList) {
+            solutionList.add(new Solution(s, projectList, solutionList));
+        }
+        SolutionPermutation sp = new SolutionPermutation(solutionList);
+        return sp;
+    }
+
     private SolutionPermutation iterate(SolutionPermutation s0) {
         for(int i =0; i<100; i++) {
             SolutionPermutation s1 = new SolutionPermutation(s0);
@@ -49,7 +61,7 @@ public class HillClimbing {
 
         return findMinEnergy(solutionPermList);
     }
-    public static SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
+    private static SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
         SolutionPermutation curr = solutionPermList.get(0);
         for(SolutionPermutation s : solutionPermList) {
             if(s.getEnergy() < curr.getEnergy()) {

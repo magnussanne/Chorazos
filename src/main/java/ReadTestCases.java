@@ -25,39 +25,33 @@ public class ReadTestCases {
         ReadStaff.Read("staff.csv", staffList, projectList);
         ReadStudents.Read("student.csv", studentList, projectList);
 
-        for (Student s : studentList) {
-            solutionList.add(new Solution(s, projectList, solutionList));
-        }
-
-        SolutionPermutation s0 = new SolutionPermutation(solutionList);
-
-        SolutionPermutation s1 = new SolutionPermutation(s0);
+        SolutionPermutation s0;
 
         System.out.println("Hill Climbing:");
         HillClimbing hill = new HillClimbing();
-        s1 = hill.solve(s0);
+        s0 = hill.solve(studentList, projectList);
 
-        System.out.println(s0.getEnergy() + " -> " + s1.getEnergy());
-        int[] preferenceArray = s1.getPreferenceInfo();
+        System.out.println(s0.getEnergy());
+        int[] preferenceArray = s0.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
 
         System.out.println("\nSimulated Annealing:");
         SimulatedAnnealing annealing = new SimulatedAnnealing();
-        SolutionPermutation s2 = annealing.solve(s0);
+        s0 = annealing.solve(studentList, projectList);
 
-        System.out.println(s0.getEnergy() + " -> " + s2.getEnergy());
-        int[] preferenceArray2 = s2.getPreferenceInfo();
+        System.out.println(s0.getEnergy());
+        int[] preferenceArray2 = s0.getPreferenceInfo();
         System.out.println(preferenceArray2[1] + " students got an average of their " + preferenceArray2[0] + " choice," +
                 " while " + preferenceArray2[2] + " students did not get any of their choices");
 
         System.out.println("\nGenetic Algorithm:");
         GeneticAlgorithm ga = new GeneticAlgorithm();
-        SolutionPermutation s3 = ga.solve(studentList, projectList);
-        int[] preferenceArray3 = s3.getPreferenceInfo();
+        s0 = ga.solve(studentList, projectList);
+        int[] preferenceArray3 = s0.getPreferenceInfo();
         System.out.println(preferenceArray3[1] + " students got an average of their " + preferenceArray3[0] + " choice," +
                 " while " + preferenceArray3[2] + " students did not get any of their choices");
 
-        System.out.println(s3.toString());
+        System.out.println(s0.toString());
     }
 }

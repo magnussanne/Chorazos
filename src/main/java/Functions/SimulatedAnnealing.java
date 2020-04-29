@@ -1,8 +1,14 @@
 package Functions;
 
+import Objects.Project;
+import Objects.Solution;
 import Objects.SolutionPermutation;
+import Objects.Student;
 
-public class SimulatedAnnealing {
+import java.util.ArrayList;
+import java.util.List;
+
+public class SimulatedAnnealing implements Search {
     private double InitialTemp = 900000;
     private double tempChange = 0.999;
 
@@ -11,12 +17,12 @@ public class SimulatedAnnealing {
     public SimulatedAnnealing(){
         visual = null;
     }
-
     public SimulatedAnnealing(Visualization visual) {
         this.visual = visual;
     }
 
-    public SolutionPermutation solve(SolutionPermutation s0) {
+    public SolutionPermutation solve(List<Student> studentList, List<Project> projectList) {
+        SolutionPermutation s0 = createSolutionPermutation(studentList, projectList);
         double temp = InitialTemp;
 
         while(temp > 1) {
@@ -35,7 +41,17 @@ public class SimulatedAnnealing {
         return s0;
     }
 
-    public SolutionPermutation modify(SolutionPermutation s0, double temp) {
+    private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
+        List<Solution> solutionList = new ArrayList<>();
+
+        for (Student s : studentList) {
+            solutionList.add(new Solution(s, projectList, solutionList));
+        }
+        SolutionPermutation sp = new SolutionPermutation(solutionList);
+        return sp;
+    }
+
+    private SolutionPermutation modify(SolutionPermutation s0, double temp) {
         int numberChanges = 30;
 
         for(int count=0; true; count++) {

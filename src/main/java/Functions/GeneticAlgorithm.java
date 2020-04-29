@@ -4,7 +4,7 @@ import Objects.*;
 
 import java.util.*;
 
-public class GeneticAlgorithm {
+public class GeneticAlgorithm implements Search {
     private final int P = 1000;         //  Population size
     private final double M = 0.325;     //  Cull bottom M%
     private final double N = 1;         //  Mate top N%
@@ -16,7 +16,6 @@ public class GeneticAlgorithm {
     public GeneticAlgorithm(){
         visual = null;
     }
-
     public GeneticAlgorithm(Visualization visual) {
         this.visual = visual;
     }
@@ -37,7 +36,7 @@ public class GeneticAlgorithm {
         return population.get(P-1);
     }
 
-    public List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
+    private List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> populationList = new ArrayList<>();
 
         for(int i = 0; i < P; i++){
