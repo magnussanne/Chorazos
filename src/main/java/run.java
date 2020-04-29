@@ -52,4 +52,10 @@ public class run {
 
         return loadFile;
     }
+
+    private JButton startSearchButton() {
+        JButton runButton = new JButton("Run");
+
+        return runButton;
+    }
 }

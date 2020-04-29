@@ -113,7 +113,7 @@ public class Visualization extends JPanel {
 
         switch (0) {
             case 0:
-                ga.search(studentList, projectList);
+                ga.solve(studentList, projectList);
                 break;
             case 1:
                 sa.solve(sp);
