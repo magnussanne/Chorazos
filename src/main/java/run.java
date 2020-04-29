@@ -28,13 +28,29 @@ public class run {
 
     private JPanel gaPanel() {
         JPanel container = new JPanel();
+        container.setLayout(new GridBagLayout());
+        GridBagConstraints c = new GridBagConstraints();
+        JSlider b = new JSlider();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 0;
+        c.gridy = 0;
+        container.add(b, c);
+        JSlider a = new JSlider();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridx = 0;
+        c.gridy = 1;
+        container.add(a, c);
+        return container;
+        /*
+        JPanel container = new JPanel();
         container.setLayout(new GridLayout(1, 2));
         JSlider b = new JSlider();
         container.add(b);
-        container.add(new Visualization(new ArrayList<>(), new ArrayList<>()));
+        JSlider a = new JSlider();
+        container.add(a);
         container.add(loadFileButton());
-
         return container;
+         */
     }
 
     private JPanel saPanel() {
