@@ -83,10 +83,9 @@ public class run {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
-        c.gridx = 0;
         c.gridy = 1;
         container.add(pLabel, c);
-        c.gridx = 1;
+        c.gridy = 2;
         container.add(p, c);
         JSlider m = new JSlider();
 
@@ -102,10 +101,9 @@ public class run {
         m.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 2;
+        c.gridy = 3;
         container.add(mLabel, c);
-        c.gridx = 1;
+        c.gridy = 4;
         container.add(m, c);
         JSlider n = new JSlider();
 
@@ -121,10 +119,9 @@ public class run {
         n.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 5;
         container.add(nLabel, c);
-        c.gridx = 1;
+        c.gridy = 6;
         container.add(n, c);
         JSlider r = new JSlider(JSlider.HORIZONTAL, 0, 50, 15);
 
@@ -140,10 +137,9 @@ public class run {
         r.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 4;
+        c.gridy = 7;
         container.add(rLabel, c);
-        c.gridx = 1;
+        c.gridy = 8;
         container.add(r, c);
         JSlider e = new JSlider(JSlider.HORIZONTAL, 0, 100, 10);
 
@@ -159,10 +155,9 @@ public class run {
         e.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 5;
+        c.gridy = 9;
         container.add(eLabel, c);
-        c.gridx = 1;
+        c.gridy = 10;
         container.add(e, c);
         JSlider gpa = new JSlider();
 
@@ -178,17 +173,15 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 6;
+        c.gridy = 11;
         container.add(gpaLabel, c);
-        c.gridx = 1;
+        c.gridy = 12;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridx = 0;
-        c.gridy = 7;
+        c.gridy = 13;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(ga), c);
         JButton export = new JButton("Export");
@@ -238,10 +231,9 @@ public class run {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
-        c.gridx = 0;
         c.gridy = 1;
         container.add(changesLabel, c);
-        c.gridx = 1;
+        c.gridy = 2;
         container.add(changes, c);
         JSlider temp = new JSlider(JSlider.HORIZONTAL, 0, 1000000, 500000);
 
@@ -257,10 +249,9 @@ public class run {
         temp.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 2;
+        c.gridy = 3;
         container.add(tempLabel, c);
-        c.gridx = 1;
+        c.gridy = 4;
         container.add(temp, c);
         JSlider changeRate = new JSlider(JSlider.HORIZONTAL, 0, 10000, 9999);
 
@@ -276,10 +267,9 @@ public class run {
         changeRate.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 3;
+        c.gridy = 5;
         container.add(changeRateLabel, c);
-        c.gridx = 1;
+        c.gridy = 6;
         container.add(changeRate, c);
         JSlider gpa = new JSlider();
 
@@ -295,17 +285,15 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
-        c.gridy = 4;
+        c.gridy = 7;
         container.add(gpaLabel, c);
-        c.gridx = 1;
+        c.gridy = 8;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridx = 0;
-        c.gridy = 5;
+        c.gridy = 9;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(sa), c);
         JButton export = new JButton("Export");
@@ -350,10 +338,9 @@ public class run {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
-        c.gridx = 0;
-        c.gridy = 2;
+        c.gridy = 1;
         container.add(changesLabel, c);
-        c.gridx = 1;
+        c.gridy = 2;
         container.add(changes, c);
         JSlider gpa = new JSlider();
 
@@ -369,23 +356,20 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 0;
         c.gridy = 3;
         container.add(gpaLabel, c);
-        c.gridx = 1;
+        c.gridy = 4;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridx = 0;
-        c.gridy = 4;
+        c.gridy = 5;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(hc), c);
         JButton export = new JButton("Export");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        c.gridy = 4;
         container.add(export, c);
         return container;
     }
