@@ -196,7 +196,7 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(ga, true, new ArrayList<>()), c);
+        container.add(startSearchButton(ga, useDefault, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -329,7 +329,7 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 10;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(sa, true, new ArrayList<>()), c);
+        container.add(startSearchButton(sa, useDefault, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -417,7 +417,7 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 6;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(hc, true, new ArrayList<>()), c);
+        container.add(startSearchButton(hc, useDefault, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -470,14 +470,14 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm, boolean defaultValues, List<JSlider> sliders) {
+    private JButton startSearchButton(Search algorithm, JCheckBox defaultValues, List<JSlider> sliders) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
             if(projectList == null || studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
-                if(!defaultValues)
+                if(!defaultValues.isSelected())
                     algorithm.setParameters(sliders);
 
                 this.output = algorithm.solve(this.studentList, this.projectList);
