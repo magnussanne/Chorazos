@@ -9,6 +9,7 @@ import java.awt.*;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Hashtable;
 
 public class run {
     private List<Student> studentList;
@@ -66,7 +67,19 @@ public class run {
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
-        JSlider p = new JSlider();
+        JSlider p = new JSlider(JSlider.HORIZONTAL, 1000, 40000, 1000);
+
+        p.setMajorTickSpacing(2000);
+        p.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> pLabelTable = new Hashtable<Integer, JLabel>();
+        pLabelTable.put( new Integer( 1000 ), new JLabel("1,000") );
+        pLabelTable.put( new Integer( 20000 ), new JLabel("20,000") );
+        pLabelTable.put( new Integer( 40000 ), new JLabel("40,000") );
+        p.setLabelTable( pLabelTable );
+
+        p.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
@@ -76,6 +89,18 @@ public class run {
         c.gridx = 1;
         container.add(p, c);
         JSlider m = new JSlider();
+
+        m.setMajorTickSpacing(10);
+        m.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> mLabelTable = new Hashtable<Integer, JLabel>();
+        mLabelTable.put( new Integer( 0 ), new JLabel("0%") );
+        mLabelTable.put( new Integer( 50 ), new JLabel("50%") );
+        mLabelTable.put( new Integer( 100 ), new JLabel("100%") );
+        m.setLabelTable( mLabelTable );
+
+        m.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
@@ -83,20 +108,56 @@ public class run {
         c.gridx = 1;
         container.add(m, c);
         JSlider n = new JSlider();
+
+        n.setMajorTickSpacing(10);
+        n.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> nLabelTable = new Hashtable<Integer, JLabel>();
+        nLabelTable.put( new Integer( 0 ), new JLabel("0%") );
+        nLabelTable.put( new Integer( 50 ), new JLabel("50%") );
+        nLabelTable.put( new Integer( 100 ), new JLabel("100%") );
+        n.setLabelTable( nLabelTable );
+
+        n.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;
         container.add(nLabel, c);
         c.gridx = 1;
         container.add(n, c);
-        JSlider r = new JSlider();
+        JSlider r = new JSlider(JSlider.HORIZONTAL, 0, 50, 15);
+
+        r.setMajorTickSpacing(5);
+        r.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> rLabelTable = new Hashtable<Integer, JLabel>();
+        rLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        rLabelTable.put( new Integer( 25 ), new JLabel("25") );
+        rLabelTable.put( new Integer( 50 ), new JLabel("50") );
+        r.setLabelTable( rLabelTable );
+
+        r.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 4;
         container.add(rLabel, c);
         c.gridx = 1;
         container.add(r, c);
-        JSlider e = new JSlider();
+        JSlider e = new JSlider(JSlider.HORIZONTAL, 0, 100, 10);
+
+        e.setMajorTickSpacing(10);
+        e.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> eLabelTable = new Hashtable<Integer, JLabel>();
+        eLabelTable.put( new Integer( 0 ), new JLabel("0%") );
+        eLabelTable.put( new Integer( 50 ), new JLabel("50%") );
+        eLabelTable.put( new Integer( 100 ), new JLabel("100%") );
+        e.setLabelTable( mLabelTable );
+
+        e.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 5;
@@ -104,6 +165,18 @@ public class run {
         c.gridx = 1;
         container.add(e, c);
         JSlider gpa = new JSlider();
+
+        gpa.setMajorTickSpacing(10);
+        gpa.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> gpaLabelTable = new Hashtable<Integer, JLabel>();
+        gpaLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        gpaLabelTable.put( new Integer( 50 ), new JLabel("0.5") );
+        gpaLabelTable.put( new Integer( 100 ), new JLabel("1") );
+        gpa.setLabelTable( gpaLabelTable );
+
+        gpa.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 6;
@@ -150,6 +223,18 @@ public class run {
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
+
+        changes.setMajorTickSpacing(10);
+        changes.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> changesLabelTable = new Hashtable<Integer, JLabel>();
+        changesLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        changesLabelTable.put( new Integer( 50 ), new JLabel("50") );
+        changesLabelTable.put( new Integer( 100 ), new JLabel("100") );
+        changes.setLabelTable( changesLabelTable );
+
+        changes.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
@@ -158,14 +243,38 @@ public class run {
         container.add(changesLabel, c);
         c.gridx = 1;
         container.add(changes, c);
-        JSlider temp = new JSlider();
+        JSlider temp = new JSlider(JSlider.HORIZONTAL, 0, 1000000, 500000);
+
+        temp.setMajorTickSpacing(100000);
+        temp.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> tempLabelTable = new Hashtable<Integer, JLabel>();
+        tempLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        tempLabelTable.put( new Integer( 500000 ), new JLabel("500,000") );
+        tempLabelTable.put( new Integer( 1000000 ), new JLabel("1,000,000") );
+        temp.setLabelTable( tempLabelTable );
+
+        temp.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(tempLabel, c);
         c.gridx = 1;
         container.add(temp, c);
-        JSlider changeRate = new JSlider();
+        JSlider changeRate = new JSlider(JSlider.HORIZONTAL, 0, 10000, 9999);
+
+        changeRate.setMajorTickSpacing(1000);
+        changeRate.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> changeRateLabelTable = new Hashtable<Integer, JLabel>();
+        changeRateLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        changeRateLabelTable.put( new Integer( 5000 ), new JLabel("0.5") );
+        changeRateLabelTable.put( new Integer( 10000 ), new JLabel("1") );
+        changeRate.setLabelTable( changeRateLabelTable );
+
+        changeRate.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;
@@ -173,6 +282,18 @@ public class run {
         c.gridx = 1;
         container.add(changeRate, c);
         JSlider gpa = new JSlider();
+
+        gpa.setMajorTickSpacing(10);
+        gpa.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> gpaLabelTable = new Hashtable<Integer, JLabel>();
+        gpaLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        gpaLabelTable.put( new Integer( 50 ), new JLabel("0.5") );
+        gpaLabelTable.put( new Integer( 100 ), new JLabel("1") );
+        gpa.setLabelTable( gpaLabelTable );
+
+        gpa.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 4;
@@ -214,6 +335,18 @@ public class run {
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
+
+        changes.setMajorTickSpacing(10);
+        changes.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> changesLabelTable = new Hashtable<Integer, JLabel>();
+        changesLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        changesLabelTable.put( new Integer( 50 ), new JLabel("50") );
+        changesLabelTable.put( new Integer( 100 ), new JLabel("100") );
+        changes.setLabelTable( changesLabelTable );
+
+        changes.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
@@ -223,6 +356,18 @@ public class run {
         c.gridx = 1;
         container.add(changes, c);
         JSlider gpa = new JSlider();
+
+        gpa.setMajorTickSpacing(10);
+        gpa.setPaintTicks(true);
+
+        Hashtable<Integer, JLabel> gpaLabelTable = new Hashtable<Integer, JLabel>();
+        gpaLabelTable.put( new Integer( 0 ), new JLabel("0") );
+        gpaLabelTable.put( new Integer( 50 ), new JLabel("0.5") );
+        gpaLabelTable.put( new Integer( 100 ), new JLabel("1") );
+        gpa.setLabelTable( gpaLabelTable );
+
+        gpa.setPaintLabels(true);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 3;
