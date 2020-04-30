@@ -21,4 +21,15 @@ public class WriteToCSVFile {
 
         writer.close();
     }
+
+    public static void Write(Object object, File file) throws IOException {
+        if(file.isDirectory()) {
+            file = new File(file.toString() + "/output.csv");
+        }
+
+        BufferedWriter writer = new BufferedWriter(new FileWriter(file));
+        writer.write(object.toString());
+
+        writer.close();
+    }
 }

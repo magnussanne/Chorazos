@@ -71,7 +71,7 @@ public class Solution implements Interface.Solution {
 
     @Override
     public String toString() {
-        return getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getId() + ", " + getProject().getTitle();
+        return getStudent().getNumber() + ", " + getStudent().getName() + ", " + df.format(getStudent().getGPA()) + ", " + getProject().getId() + ", " + getProject().getTitle();
     }
 
     //  Tests if the student is in the correct stream to do the project

@@ -5,12 +5,15 @@ import Objects.Solution;
 import Objects.SolutionPermutation;
 import Objects.Student;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class HillClimbing implements Search {
     private static List<Solution> solutionList = new ArrayList<>();
     private static List<SolutionPermutation> solutionPermList = new ArrayList<>();
+
+    private int N = 50;
 
     private Visualization visual;
 
@@ -35,11 +38,17 @@ public class HillClimbing implements Search {
             }
 
             if(visual != null) {
-                visual.drawSolution(s1);
+                visual.drawSolution(0, s1);
             }
         }
 
         return s0;
+    }
+
+    public void setParameters(List<JSlider> sliders) {
+        this.N = sliders.get(0).getValue();
+
+        int GPA = sliders.get(0).getValue();
     }
 
     private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
@@ -55,7 +64,7 @@ public class HillClimbing implements Search {
     private SolutionPermutation iterate(SolutionPermutation s0) {
         for(int i =0; i<100; i++) {
             SolutionPermutation s1 = new SolutionPermutation(s0);
-            s1.modify(50);
+            s1.modify(N);
             solutionPermList.add(s1);
         }
 

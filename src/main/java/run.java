@@ -1,21 +1,27 @@
 import Functions.*;
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
+import IO.Output.CSV.WriteToCSVFile;
 import Objects.Project;
+import Objects.SolutionPermutation;
 import Objects.Student;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class run {
     private List<Student> studentList;
     private List<Project> projectList;
     private Visualization visual;
+    private SolutionPermutation output;
 
     public static void main(String[] args) {
         run gui = new run();
@@ -23,11 +29,6 @@ public class run {
     }
 
     private void createGUI(){
-        JFrame mainWindow = new JFrame("Chorazos");
-        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainWindow.setSize(1000, 720);
-        mainWindow.setLayout(new GridLayout(1, 2));
-
         this.visual = new  Visualization();
 
         JTabbedPane tabbedPane = new JTabbedPane();
@@ -35,8 +36,14 @@ public class run {
         tabbedPane.addTab("Simulated Annealing", saPanel(visual));
         tabbedPane.addTab("Hill Climbing", hcPanel(visual));
 
+        final JFrame mainWindow = new JFrame("Chorazos");
+        mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainWindow.setSize(1000, 720);
+        mainWindow.setResizable(false);
         mainWindow.add(tabbedPane);
         mainWindow.add(visual);
+        mainWindow.pack();
+        mainWindow.setLocationRelativeTo(null);
         mainWindow.setVisible(true);
     }
 
@@ -196,11 +203,10 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(ga), c);
-        JButton export = new JButton("Export");
+        container.add(startSearchButton(ga, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        container.add(export, c);
+        container.add(exportButton(), c);
         return container;
     }
 
@@ -308,11 +314,10 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 9;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(sa), c);
-        JButton export = new JButton("Export");
+        container.add(startSearchButton(sa, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        container.add(export, c);
+        container.add(exportButton(), c);
         return container;
     }
 
@@ -379,17 +384,16 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 5;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(hc), c);
-        JButton export = new JButton("Export");
+        container.add(startSearchButton(hc, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        container.add(export, c);
+        container.add(exportButton(), c);
         return container;
     }
 
     private JButton loadFileButton() {
         JButton loadFile = new JButton("Load Inputs");
-        JFileChooser fc =new JFileChooser();
+        JFileChooser fc = new JFileChooser();
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
         loadFile.addActionListener(e -> {
@@ -412,24 +416,54 @@ public class run {
                     File file = fc.getSelectedFile();
                     ReadStudents.Read(file, this.studentList, this.projectList);
                 }
-            } catch (FileNotFoundException fileNotFoundException) {
-                fileNotFoundException.printStackTrace();
-            }
 
-            this.visual.loadValues(this.studentList, this.projectList);
+                this.visual.loadValues(this.studentList, this.projectList);
+            } catch (FileNotFoundException fileNotFoundException) {
+                showMessageDialog(null, "Invalid File\nPlease reselect a valid file");
+            }
         });
 
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm) {
+    private JButton startSearchButton(Search algorithm, boolean defaultValues, List<JSlider> sliders) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
             if(projectList == null || studentList == null) {
-                System.out.println("Error: Null List");
+                showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
-                algorithm.solve(this.studentList, this.projectList);
+                if(!defaultValues)
+                    algorithm.setParameters(sliders);
+
+                this.output = algorithm.solve(this.studentList, this.projectList);
+                int[] preferenceArray = output.getPreferenceInfo();
+                showMessageDialog(null, "Run Complete\n" + preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice, while " + preferenceArray[2] + " students did not get any of their choices");
+            }
+        });
+
+        return runButton;
+    }
+
+    private JButton exportButton() {
+        JButton runButton = new JButton("Export");
+
+        runButton.addActionListener(e -> {
+            if(this.output == null) {
+                showMessageDialog(null, "No output to export.\nPlease run to create a solution");
+            } else {
+                JFileChooser fc = new JFileChooser();
+                fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+                try {
+                    int r = fc.showSaveDialog(null);
+                    if (r == JFileChooser.APPROVE_OPTION) {
+                        File file = fc.getSelectedFile();
+                        WriteToCSVFile.Write(this.output, file);
+                    }
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
 
