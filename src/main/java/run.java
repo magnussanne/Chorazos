@@ -6,6 +6,7 @@ import Objects.Student;
 
 import javax.swing.*;
 import java.awt.*;
+import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.List;
@@ -376,19 +377,34 @@ public class run {
 
     private JButton loadFileButton() {
         JButton loadFile = new JButton("Load Inputs");
+        JFileChooser fc =new JFileChooser();
+        fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
         loadFile.addActionListener(e -> {
             this.projectList = new ArrayList<>();
             this.studentList = new ArrayList<>();
 
             try {
-                ReadProjects.Read("project.csv", this.projectList);
-                ReadStudents.Read("student.csv", this.studentList, this.projectList);
+                fc.setDialogTitle("Select Project List");
+                int r = fc.showOpenDialog(null);
 
-                this.visual.loadValues(this.studentList, this.projectList);
+                if (r == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    ReadProjects.Read(file, this.projectList);
+                }
+
+                fc.setDialogTitle("Select Student List");
+                r = fc.showOpenDialog(null);
+
+                if (r == JFileChooser.APPROVE_OPTION) {
+                    File file = fc.getSelectedFile();
+                    ReadStudents.Read(file, this.studentList, this.projectList);
+                }
             } catch (FileNotFoundException fileNotFoundException) {
                 fileNotFoundException.printStackTrace();
             }
+
+            this.visual.loadValues(this.studentList, this.projectList);
         });
 
         return loadFile;
