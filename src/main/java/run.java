@@ -190,7 +190,7 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 13;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(ga), c);
+        container.add(startSearchButton(ga, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -301,7 +301,7 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 9;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(sa), c);
+        container.add(startSearchButton(sa, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -371,7 +371,7 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 5;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(hc), c);
+        container.add(startSearchButton(hc, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -413,13 +413,16 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm) {
+    private JButton startSearchButton(Search algorithm, boolean defaultValues, List<JSlider> sliders) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
             if(projectList == null || studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
+                if(!defaultValues)
+                    algorithm.setParameters(sliders);
+
                 this.output = algorithm.solve(this.studentList, this.projectList);
             }
         });
