@@ -39,6 +39,7 @@ public class run {
         final JFrame mainWindow = new JFrame("Chorazos");
         mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindow.setSize(1000, 720);
+        mainWindow.setLayout(new GridLayout(1, 2));
         mainWindow.setResizable(false);
         mainWindow.add(tabbedPane);
         mainWindow.add(visual);
