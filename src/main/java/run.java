@@ -29,11 +29,6 @@ public class run {
     }
 
     private void createGUI(){
-        JFrame mainWindow = new JFrame("Chorazos");
-        mainWindow.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        mainWindow.setSize(1000, 720);
-        mainWindow.setLayout(new GridLayout(1, 2));
-
         this.visual = new  Visualization();
 
         JTabbedPane tabbedPane = new JTabbedPane();
@@ -41,8 +36,14 @@ public class run {
         tabbedPane.addTab("Simulated Annealing", saPanel(visual));
         tabbedPane.addTab("Hill Climbing", hcPanel(visual));
 
+        final JFrame mainWindow = new JFrame("Chorazos");
+        mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        mainWindow.setSize(1000, 720);
+        mainWindow.setResizable(false);
         mainWindow.add(tabbedPane);
         mainWindow.add(visual);
+        mainWindow.pack();
+        mainWindow.setLocationRelativeTo(null);
         mainWindow.setVisible(true);
     }
 
@@ -424,6 +425,8 @@ public class run {
                     algorithm.setParameters(sliders);
 
                 this.output = algorithm.solve(this.studentList, this.projectList);
+                int[] preferenceArray = output.getPreferenceInfo();
+                showMessageDialog(null, "Run Complete\n" + preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice, while " + preferenceArray[2] + " students did not get any of their choices");
             }
         });
 
