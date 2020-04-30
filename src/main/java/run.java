@@ -1,21 +1,27 @@
 import Functions.*;
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
+import IO.Output.CSV.WriteToCSVFile;
 import Objects.Project;
+import Objects.SolutionPermutation;
 import Objects.Student;
 
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
+
+import static javax.swing.JOptionPane.showMessageDialog;
 
 public class run {
     private List<Student> studentList;
     private List<Project> projectList;
     private Visualization visual;
+    private SolutionPermutation output;
 
     public static void main(String[] args) {
         run gui = new run();
@@ -185,10 +191,9 @@ public class run {
         c.gridy = 13;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(ga), c);
-        JButton export = new JButton("Export");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        container.add(export, c);
+        container.add(exportButton(), c);
         return container;
     }
 
@@ -297,10 +302,9 @@ public class run {
         c.gridy = 9;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(sa), c);
-        JButton export = new JButton("Export");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        container.add(export, c);
+        container.add(exportButton(), c);
         return container;
     }
 
@@ -368,16 +372,15 @@ public class run {
         c.gridy = 5;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(hc), c);
-        JButton export = new JButton("Export");
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
-        container.add(export, c);
+        container.add(exportButton(), c);
         return container;
     }
 
     private JButton loadFileButton() {
         JButton loadFile = new JButton("Load Inputs");
-        JFileChooser fc =new JFileChooser();
+        JFileChooser fc = new JFileChooser();
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
         loadFile.addActionListener(e -> {
@@ -417,7 +420,32 @@ public class run {
             if(projectList == null || studentList == null) {
                 System.out.println("Error: Null List");
             } else {
-                algorithm.solve(this.studentList, this.projectList);
+                this.output = algorithm.solve(this.studentList, this.projectList);
+            }
+        });
+
+        return runButton;
+    }
+
+    private JButton exportButton() {
+        JButton runButton = new JButton("Export");
+
+        runButton.addActionListener(e -> {
+            if(this.output == null) {
+                showMessageDialog(null, "No out to export.\nPlease run to create a solution");
+            } else {
+                JFileChooser fc = new JFileChooser();
+                fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+                try {
+                    int r = fc.showSaveDialog(null);
+                    if (r == JFileChooser.APPROVE_OPTION) {
+                        File file = fc.getSelectedFile();
+                        WriteToCSVFile.Write(this.output, file);
+                    }
+                } catch (IOException ioException) {
+                    ioException.printStackTrace();
+                }
             }
         });
 
