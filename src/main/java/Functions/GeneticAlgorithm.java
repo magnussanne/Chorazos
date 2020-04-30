@@ -2,14 +2,15 @@ package Functions;
 
 import Objects.*;
 
+import javax.swing.*;
 import java.util.*;
 
 public class GeneticAlgorithm implements Search {
-    private final int P = 1000;         //  Population size
-    private final double M = 0.325;     //  Cull bottom M%
-    private final double N = 1;         //  Mate top N%
-    private final int R = 15;           //  Stop after R iterations without improvement
-    private final int E = 15;           //  % Chance of mutation
+    private int P = 1000;         //  Population size
+    private double M = 0.325;     //  Cull bottom M%
+    private double N = 1;         //  Mate top N%
+    private int R = 15;           //  Stop after R iterations without improvement
+    private int E = 15;           //  % Chance of mutation
 
     private Visualization visual;
 
@@ -34,6 +35,16 @@ public class GeneticAlgorithm implements Search {
         }
 
         return population.get(P-1);
+    }
+
+    public void setParameters(List<JSlider> sliders) {
+        this.P = sliders.get(0).getValue();
+        this.M = ((double) sliders.get(1).getValue() / 100);
+        this.N = ((double) sliders.get(2).getValue() / 100);
+        this.R = sliders.get(3).getValue();
+        this.E = sliders.get(4).getValue();
+
+        int GPA = sliders.get(5).getValue();
     }
 
     private List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {

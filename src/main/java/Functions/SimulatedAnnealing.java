@@ -5,10 +5,12 @@ import Objects.Solution;
 import Objects.SolutionPermutation;
 import Objects.Student;
 
+import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class SimulatedAnnealing implements Search {
+    private int N = 30;
     private double InitialTemp = 900000;
     private double tempChange = 0.999;
 
@@ -41,6 +43,14 @@ public class SimulatedAnnealing implements Search {
         return s0;
     }
 
+    public void setParameters(List<JSlider> sliders) {
+        this.N = sliders.get(0).getValue();
+        this.InitialTemp = sliders.get(1).getValue();
+        this.tempChange = ((double) sliders.get(2).getValue() / 10000);
+
+        int GPA = sliders.get(3).getValue();
+    }
+
     private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
         List<Solution> solutionList = new ArrayList<>();
 
@@ -52,7 +62,7 @@ public class SimulatedAnnealing implements Search {
     }
 
     private SolutionPermutation modify(SolutionPermutation s0, double temp) {
-        int numberChanges = 30;
+        int numberChanges = N;
 
         for(int count=0; true; count++) {
             SolutionPermutation s1 = new SolutionPermutation(s0);
