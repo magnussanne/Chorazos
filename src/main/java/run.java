@@ -49,7 +49,7 @@ public class run {
         JLabel nLabel = new JLabel();
         nLabel.setText("Percentage to be mated");
         JLabel rLabel = new JLabel();
-        rLabel.setText("Number of iterations without improvement before terminating");
+        rLabel.setText("Iterations without improvement before terminating");
         JLabel eLabel = new JLabel();
         eLabel.setText("Chance of Mutation");
         JLabel gpaLabel = new JLabel();
@@ -130,7 +130,7 @@ public class run {
         SimulatedAnnealing sa = new SimulatedAnnealing(visual);
 
         JLabel changesLabel = new JLabel();
-        changesLabel.setText("Number of Changes per iteration");
+        changesLabel.setText("Changes per iteration");
         JLabel tempLabel = new JLabel();
         tempLabel.setText("Initial Temperature");
         JLabel changeRateLabel = new JLabel();
@@ -199,7 +199,7 @@ public class run {
         HillClimbing hc = new HillClimbing(visual);
 
         JLabel changesLabel = new JLabel();
-        changesLabel.setText("Number of Changes per iteration");
+        changesLabel.setText("Changes per iteration");
         JLabel gpaLabel = new JLabel();
         gpaLabel.setText("Influence of GPA");
         container.setLayout(new GridBagLayout());
