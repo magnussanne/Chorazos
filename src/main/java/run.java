@@ -92,111 +92,103 @@ public class run {
         c.gridy = 1;
         container.add(useDefault, c);
 
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.gridwidth = 0;
-            c.ipady = 0;
-            c.gridy = 2;
-            container.add(pLabel, c);
-            c.gridy = 3;
-            container.add(p, c);
-            JSlider m = new JSlider();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 0;
+        c.ipady = 0;
+        c.gridy = 2;
+        container.add(pLabel, c);
+        c.gridy = 3;
+        container.add(p, c);
+        JSlider m = new JSlider();
 
-            m.setMajorTickSpacing(10);
-            m.setPaintTicks(true);
+        m.setMajorTickSpacing(10);
+        m.setPaintTicks(true);
 
-            Hashtable<Integer, JLabel> mLabelTable = new Hashtable<Integer, JLabel>();
-            mLabelTable.put(new Integer(0), new JLabel("0%"));
-            mLabelTable.put(new Integer(50), new JLabel("50%"));
-            mLabelTable.put(new Integer(100), new JLabel("100%"));
-            m.setLabelTable(mLabelTable);
+        Hashtable<Integer, JLabel> mLabelTable = new Hashtable<Integer, JLabel>();
+        mLabelTable.put(new Integer(0), new JLabel("0%"));
+        mLabelTable.put(new Integer(50), new JLabel("50%"));
+        mLabelTable.put(new Integer(100), new JLabel("100%"));
+        m.setLabelTable(mLabelTable);
 
-            m.setPaintLabels(true);
+        m.setPaintLabels(true);
 
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.gridy = 4;
-            container.add(mLabel, c);
-            c.gridy = 5;
-            container.add(m, c);
-            JSlider n = new JSlider();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridy = 4;
+        container.add(mLabel, c);
+        c.gridy = 5;
+        container.add(m, c);
+        JSlider n = new JSlider();
 
-            n.setMajorTickSpacing(10);
-            n.setPaintTicks(true);
+        n.setMajorTickSpacing(10);
+        n.setPaintTicks(true);
 
-            Hashtable<Integer, JLabel> nLabelTable = new Hashtable<Integer, JLabel>();
-            nLabelTable.put(new Integer(0), new JLabel("0%"));
-            nLabelTable.put(new Integer(50), new JLabel("50%"));
-            nLabelTable.put(new Integer(100), new JLabel("100%"));
-            n.setLabelTable(nLabelTable);
+        Hashtable<Integer, JLabel> nLabelTable = new Hashtable<Integer, JLabel>();
+        nLabelTable.put(new Integer(0), new JLabel("0%"));
+        nLabelTable.put(new Integer(50), new JLabel("50%"));
+        nLabelTable.put(new Integer(100), new JLabel("100%"));
+        n.setLabelTable(nLabelTable);
 
-            n.setPaintLabels(true);
+        n.setPaintLabels(true);
 
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.gridy = 6;
-            container.add(nLabel, c);
-            c.gridy = 7;
-            container.add(n, c);
-            JSlider r = new JSlider(JSlider.HORIZONTAL, 0, 50, 15);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridy = 6;
+        container.add(nLabel, c);
+        c.gridy = 7;
+        container.add(n, c);
+        JSlider r = new JSlider(JSlider.HORIZONTAL, 0, 50, 15);
 
-            r.setMajorTickSpacing(5);
-            r.setPaintTicks(true);
+        r.setMajorTickSpacing(5);
+        r.setPaintTicks(true);
 
-            Hashtable<Integer, JLabel> rLabelTable = new Hashtable<Integer, JLabel>();
-            rLabelTable.put(new Integer(0), new JLabel("0"));
-            rLabelTable.put(new Integer(25), new JLabel("25"));
-            rLabelTable.put(new Integer(50), new JLabel("50"));
-            r.setLabelTable(rLabelTable);
+        Hashtable<Integer, JLabel> rLabelTable = new Hashtable<Integer, JLabel>();
+        rLabelTable.put(new Integer(0), new JLabel("0"));
+        rLabelTable.put(new Integer(25), new JLabel("25"));
+        rLabelTable.put(new Integer(50), new JLabel("50"));
+        r.setLabelTable(rLabelTable);
 
-            r.setPaintLabels(true);
+        r.setPaintLabels(true);
 
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.gridy = 8;
-            container.add(rLabel, c);
-            c.gridy = 9;
-            container.add(r, c);
-            JSlider e = new JSlider(JSlider.HORIZONTAL, 0, 100, 10);
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridy = 8;
+        container.add(rLabel, c);
+        c.gridy = 9;
+        container.add(r, c);
+        JSlider e = new JSlider(JSlider.HORIZONTAL, 0, 100, 10);
 
-            e.setMajorTickSpacing(10);
-            e.setPaintTicks(true);
+        e.setMajorTickSpacing(10);
+        e.setPaintTicks(true);
 
-            Hashtable<Integer, JLabel> eLabelTable = new Hashtable<Integer, JLabel>();
-            eLabelTable.put(new Integer(0), new JLabel("0%"));
-            eLabelTable.put(new Integer(50), new JLabel("50%"));
-            eLabelTable.put(new Integer(100), new JLabel("100%"));
-            e.setLabelTable(mLabelTable);
+        Hashtable<Integer, JLabel> eLabelTable = new Hashtable<Integer, JLabel>();
+        eLabelTable.put(new Integer(0), new JLabel("0%"));
+        eLabelTable.put(new Integer(50), new JLabel("50%"));
+        eLabelTable.put(new Integer(100), new JLabel("100%"));
+        e.setLabelTable(mLabelTable);
 
-            e.setPaintLabels(true);
+        e.setPaintLabels(true);
 
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.gridy = 10;
-            container.add(eLabel, c);
-            c.gridy = 11;
-            container.add(e, c);
-            JSlider gpa = new JSlider();
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridy = 10;
+        container.add(eLabel, c);
+        c.gridy = 11;
+        container.add(e, c);
+        JSlider gpa = new JSlider();
 
-            gpa.setMajorTickSpacing(10);
-            gpa.setPaintTicks(true);
+        gpa.setMajorTickSpacing(10);
+        gpa.setPaintTicks(true);
 
-            Hashtable<Integer, JLabel> gpaLabelTable = new Hashtable<Integer, JLabel>();
-            gpaLabelTable.put(new Integer(0), new JLabel("0"));
-            gpaLabelTable.put(new Integer(50), new JLabel("0.5"));
-            gpaLabelTable.put(new Integer(100), new JLabel("1"));
-            gpa.setLabelTable(gpaLabelTable);
+        Hashtable<Integer, JLabel> gpaLabelTable = new Hashtable<Integer, JLabel>();
+        gpaLabelTable.put(new Integer(0), new JLabel("0"));
+        gpaLabelTable.put(new Integer(50), new JLabel("0.5"));
+        gpaLabelTable.put(new Integer(100), new JLabel("1"));
+        gpa.setLabelTable(gpaLabelTable);
 
-            gpa.setPaintLabels(true);
+        gpa.setPaintLabels(true);
 
-            c.fill = GridBagConstraints.HORIZONTAL;
-            c.gridy = 12;
-            container.add(gpaLabel, c);
-            c.gridy = 13;
-            container.add(gpa, c);
-        if(useDefault.isSelected() == true) {
-            p.setEnabled(false);
-            m.setEnabled(false);
-            n.setEnabled(false);
-            r.setEnabled(false);
-            e.setEnabled(false);
-            gpa.setEnabled(false);
-        }
+        c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridy = 12;
+        container.add(gpaLabel, c);
+        c.gridy = 13;
+        container.add(gpa, c);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
@@ -208,12 +200,32 @@ public class run {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
+
+        p.setEnabled(!useDefault.isSelected());
+        m.setEnabled(!useDefault.isSelected());
+        n.setEnabled(!useDefault.isSelected());
+        r.setEnabled(!useDefault.isSelected());
+        e.setEnabled(!useDefault.isSelected());
+        gpa.setEnabled(!useDefault.isSelected());
+
+        useDefault.addActionListener(action -> {
+            p.setEnabled(!useDefault.isSelected());
+            m.setEnabled(!useDefault.isSelected());
+            n.setEnabled(!useDefault.isSelected());
+            r.setEnabled(!useDefault.isSelected());
+            e.setEnabled(!useDefault.isSelected());
+            gpa.setEnabled(!useDefault.isSelected());
+
+            container.revalidate();
+        });
+
         return container;
     }
 
     private JPanel saPanel(Visualization visual) {
         JPanel container = new JPanel();
         SimulatedAnnealing sa = new SimulatedAnnealing(visual);
+        JCheckBox useDefault = new JCheckBox("Use Default Values", true);
 
         JLabel changesLabel = new JLabel();
         changesLabel.setText("Number of Changes per iteration");
@@ -252,8 +264,10 @@ public class run {
         c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
-        container.add(changesLabel, c);
+        container.add(useDefault, c);
         c.gridy = 2;
+        container.add(changesLabel, c);
+        c.gridy = 3;
         container.add(changes, c);
         JSlider temp = new JSlider(JSlider.HORIZONTAL, 0, 1000000, 500000);
 
@@ -269,9 +283,9 @@ public class run {
         temp.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 3;
-        container.add(tempLabel, c);
         c.gridy = 4;
+        container.add(tempLabel, c);
+        c.gridy = 5;
         container.add(temp, c);
         JSlider changeRate = new JSlider(JSlider.HORIZONTAL, 0, 10000, 9999);
 
@@ -287,9 +301,9 @@ public class run {
         changeRate.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 5;
-        container.add(changeRateLabel, c);
         c.gridy = 6;
+        container.add(changeRateLabel, c);
+        c.gridy = 7;
         container.add(changeRate, c);
         JSlider gpa = new JSlider();
 
@@ -305,26 +319,42 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 7;
-        container.add(gpaLabel, c);
         c.gridy = 8;
+        container.add(gpaLabel, c);
+        c.gridy = 9;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridy = 9;
+        c.gridy = 10;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(sa, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
+
+        temp.setEnabled(!useDefault.isSelected());
+        changeRate.setEnabled(!useDefault.isSelected());
+        changes.setEnabled(!useDefault.isSelected());
+        gpa.setEnabled(!useDefault.isSelected());
+
+        useDefault.addActionListener(action -> {
+            temp.setEnabled(!useDefault.isSelected());
+            changeRate.setEnabled(!useDefault.isSelected());
+            changes.setEnabled(!useDefault.isSelected());
+            gpa.setEnabled(!useDefault.isSelected());
+
+            container.revalidate();
+        });
+
         return container;
     }
 
     private JPanel hcPanel(Visualization visual) {
         JPanel container = new JPanel();
         HillClimbing hc = new HillClimbing(visual);
+        JCheckBox useDefault = new JCheckBox("Use Default Values", true);
 
         JLabel changesLabel = new JLabel();
         changesLabel.setText("Number of Changes per iteration");
@@ -358,8 +388,10 @@ public class run {
         c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
-        container.add(changesLabel, c);
+        container.add(useDefault, c);
         c.gridy = 2;
+        container.add(changesLabel, c);
+        c.gridy = 3;
         container.add(changes, c);
         JSlider gpa = new JSlider();
 
@@ -375,20 +407,31 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 3;
-        container.add(gpaLabel, c);
         c.gridy = 4;
+        container.add(gpaLabel, c);
+        c.gridy = 5;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridy = 5;
+        c.gridy = 6;
         c.anchor = GridBagConstraints.PAGE_END;
         container.add(startSearchButton(hc, true, new ArrayList<>()), c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
+
+        changes.setEnabled(!useDefault.isSelected());
+        gpa.setEnabled(!useDefault.isSelected());
+
+        useDefault.addActionListener(action -> {
+            changes.setEnabled(!useDefault.isSelected());
+            gpa.setEnabled(!useDefault.isSelected());
+
+            container.revalidate();
+        });
+
         return container;
     }
 
