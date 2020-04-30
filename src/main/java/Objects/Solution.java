@@ -59,14 +59,16 @@ public class Solution implements Interface.Solution {
     }
 
     @Override
-    public double getEnergy(List<Solution> solutionList) {
-        return (((double) scPreference() * student.getGPA()) / 205)/2;
+    public double getEnergy(List<Solution> solutionList, double gpaImportance) {
+        double energy = scPreference() * (student.getGPA() * gpaImportance);
+        energy /= (gpaImportance * 50);
+        return energy;
     }
 
 
     @Override
-    public double getFitness(List<Solution> solutionList) {
-        return 1 - getEnergy(solutionList);
+    public double getFitness(List<Solution> solutionList, double gpaImportance) {
+        return 1 - getEnergy(solutionList, gpaImportance);
     }
 
     @Override

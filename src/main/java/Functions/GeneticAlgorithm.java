@@ -12,6 +12,8 @@ public class GeneticAlgorithm implements Search {
     private int R = 15;           //  Stop after R iterations without improvement
     private int E = 15;           //  % Chance of mutation
 
+    private double gpaImportance = 0.5;
+
     private Visualization visual;
 
     public GeneticAlgorithm(){
@@ -29,7 +31,7 @@ public class GeneticAlgorithm implements Search {
             temp = population.get(P-1);
             update(population);
 
-            if(temp.getFitness() < population.get(P-1).getFitness()) {
+            if(temp.getFitness(gpaImportance) < population.get(P-1).getFitness(gpaImportance)) {
                 j = 0;
             }
         }
@@ -44,7 +46,17 @@ public class GeneticAlgorithm implements Search {
         this.R = sliders.get(3).getValue();
         this.E = sliders.get(4).getValue();
 
-        int GPA = sliders.get(5).getValue();
+        this.gpaImportance = ((double) sliders.get(5).getValue() / 100);
+    }
+
+    public void resetParameters() {
+        this.P = 1000;
+        this.M = 0.325;
+        this.N = 1;
+        this.R = 15;
+        this.E = 15;
+
+        this.gpaImportance = 0.5;
     }
 
     private List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
@@ -75,7 +87,7 @@ public class GeneticAlgorithm implements Search {
     }
 
     private void sort(List<SolutionPermutation> population) {
-        population.sort((o1, o2) -> o1.compare(o2));
+        population.sort((o1, o2) -> o1.compare(o2, gpaImportance));
     }
 
     private void cull(List<SolutionPermutation> population) {

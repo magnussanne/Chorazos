@@ -31,7 +31,7 @@ public class ReadTestCases {
         HillClimbing hill = new HillClimbing();
         s0 = hill.solve(studentList, projectList);
 
-        System.out.println(s0.getEnergy());
+        System.out.println(s0.getEnergy(0.5));
         int[] preferenceArray = s0.getPreferenceInfo();
         System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
                 " while " + preferenceArray[2] + " students did not get any of their choices");
@@ -40,7 +40,7 @@ public class ReadTestCases {
         SimulatedAnnealing annealing = new SimulatedAnnealing();
         s0 = annealing.solve(studentList, projectList);
 
-        System.out.println(s0.getEnergy());
+        System.out.println(s0.getEnergy(0.5));
         int[] preferenceArray2 = s0.getPreferenceInfo();
         System.out.println(preferenceArray2[1] + " students got an average of their " + preferenceArray2[0] + " choice," +
                 " while " + preferenceArray2[2] + " students did not get any of their choices");

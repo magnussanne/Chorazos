@@ -52,6 +52,7 @@ public class run {
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(visual);
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
+        List<JSlider> JSliderList = new ArrayList<>();
 
         JLabel pLabel = new JLabel();
         pLabel.setText("Population Size");
@@ -190,13 +191,33 @@ public class run {
         c.gridy = 13;
         container.add(gpa, c);
 
+
+        if(useDefault.isSelected() == true) {
+            p.setEnabled(false);
+            m.setEnabled(false);
+            n.setEnabled(false);
+            r.setEnabled(false);
+            e.setEnabled(false);
+            gpa.setEnabled(false);
+        }
+
+
+        JSliderList.add(p);
+        JSliderList.add(m);
+        JSliderList.add(n);
+        JSliderList.add(r);
+        JSliderList.add(e);
+        JSliderList.add(gpa);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(ga, true, new ArrayList<>()), c);
+
+        container.add(startSearchButton(ga, useDefault, JSliderList), c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -225,7 +246,10 @@ public class run {
     private JPanel saPanel(Visualization visual) {
         JPanel container = new JPanel();
         SimulatedAnnealing sa = new SimulatedAnnealing(visual);
+
+        List<JSlider> JSliderList = new ArrayList<>();
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
+
 
         JLabel changesLabel = new JLabel();
         changesLabel.setText("Number of Changes per iteration");
@@ -329,7 +353,14 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 10;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(sa, true, new ArrayList<>()), c);
+
+        JSliderList.add(changes);
+        JSliderList.add(temp);
+        JSliderList.add(changeRate);
+        JSliderList.add(gpa);
+
+        container.add(startSearchButton(sa, useDefault, JSliderList), c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -354,7 +385,11 @@ public class run {
     private JPanel hcPanel(Visualization visual) {
         JPanel container = new JPanel();
         HillClimbing hc = new HillClimbing(visual);
+
+        List<JSlider> JSliderList = new ArrayList<>();
+
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
+
 
         JLabel changesLabel = new JLabel();
         changesLabel.setText("Number of Changes per iteration");
@@ -417,7 +452,13 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 6;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(hc, true, new ArrayList<>()), c);
+
+
+        JSliderList.add(changes);
+        JSliderList.add(gpa);
+
+        container.add(startSearchButton(hc, useDefault, JSliderList), c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
@@ -470,14 +511,15 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm, boolean defaultValues, List<JSlider> sliders) {
+    private JButton startSearchButton(Search algorithm, JCheckBox defaultValues, List<JSlider> sliders) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
             if(projectList == null || studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
-                if(!defaultValues)
+                algorithm.resetParameters();
+                if(!defaultValues.isSelected())
                     algorithm.setParameters(sliders);
 
                 this.output = algorithm.solve(this.studentList, this.projectList);

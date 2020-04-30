@@ -72,9 +72,9 @@ public class Visualization extends JPanel {
 
         if(this.solution != null) {
             if (function == 0) {
-                s = "Energy: " + df.format(this.solution.getEnergy());
+                s = "Energy: " + df.format(this.solution.getEnergy(solution.getGpaImportance()));
             } else if (function == 1) {
-                s = "Fitness: " + df.format(this.solution.getFitness());
+                s = "Fitness: " + df.format(this.solution.getFitness(solution.getGpaImportance()));
             }
 
             stringLen = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
