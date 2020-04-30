@@ -403,11 +403,11 @@ public class run {
                     File file = fc.getSelectedFile();
                     ReadStudents.Read(file, this.studentList, this.projectList);
                 }
-            } catch (FileNotFoundException fileNotFoundException) {
-                fileNotFoundException.printStackTrace();
-            }
 
-            this.visual.loadValues(this.studentList, this.projectList);
+                this.visual.loadValues(this.studentList, this.projectList);
+            } catch (FileNotFoundException fileNotFoundException) {
+                showMessageDialog(null, "Invalid File\nPlease reselect a valid file");
+            }
         });
 
         return loadFile;
@@ -418,7 +418,7 @@ public class run {
 
         runButton.addActionListener(e -> {
             if(projectList == null || studentList == null) {
-                System.out.println("Error: Null List");
+                showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
                 this.output = algorithm.solve(this.studentList, this.projectList);
             }
@@ -432,7 +432,7 @@ public class run {
 
         runButton.addActionListener(e -> {
             if(this.output == null) {
-                showMessageDialog(null, "No out to export.\nPlease run to create a solution");
+                showMessageDialog(null, "No output to export.\nPlease run to create a solution");
             } else {
                 JFileChooser fc = new JFileChooser();
                 fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
