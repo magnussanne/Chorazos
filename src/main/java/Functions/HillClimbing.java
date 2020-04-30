@@ -14,6 +14,7 @@ public class HillClimbing implements Search {
     private static List<SolutionPermutation> solutionPermList = new ArrayList<>();
 
     private int N = 50;
+    private double gpaImportance = 0.5;
 
     private Visualization visual;
 
@@ -47,12 +48,11 @@ public class HillClimbing implements Search {
 
     public void setParameters(List<JSlider> sliders) {
         this.N = sliders.get(0).getValue();
-
-        int GPA = sliders.get(0).getValue();
+        this.gpaImportance = ((double) sliders.get(0).getValue() / 100);
     }
 
     public void resetParameters() {
-        N = 50;
+        this.N = 50;
     }
 
     private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
@@ -74,10 +74,10 @@ public class HillClimbing implements Search {
 
         return findMinEnergy(solutionPermList);
     }
-    private static SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
+    private SolutionPermutation findMinEnergy(List<SolutionPermutation> solutionPermList) {
         SolutionPermutation curr = solutionPermList.get(0);
         for(SolutionPermutation s : solutionPermList) {
-            if(s.getEnergy() < curr.getEnergy()) {
+            if(s.getEnergy(this.gpaImportance) < curr.getEnergy(this.gpaImportance)) {
                 curr = s;
             }
         }

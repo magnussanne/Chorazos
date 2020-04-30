@@ -22,21 +22,21 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         this.solutionList = solutionList;
     }
 
-    public double getEnergy() {
+    public double getEnergy(double gpaImportance) {
         double energy = 0;
 
         for(Solution s : solutionList) {
-            energy += s.getEnergy(solutionList);
+            energy += s.getEnergy(solutionList, gpaImportance);
         }
 
         return energy;
     }
 
-    public double getFitness() {
+    public double getFitness(double gpaImportance) {
         double fitness = 0;
 
         for(Solution s : solutionList) {
-            fitness += s.getFitness(solutionList);
+            fitness += s.getFitness(solutionList, gpaImportance);
         }
 
         return fitness;
@@ -105,18 +105,22 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         return solutionList.size();
     }
 
+    public double getGpaImportance() {
+        return getGpaImportance();
+    }
+
     public List<Solution> getSolutionList() {
         return solutionList;
     }
 
-    public int compare(SolutionPermutation other) {
-        if(getFitness() == 0 || other.getFitness() == 0) {
+    public int compare(SolutionPermutation other, double gpaImportance) {
+        if(getFitness(gpaImportance) == 0 || other.getFitness(gpaImportance) == 0) {
             return 0;
         }
 
-        if(getFitness() > other.getFitness()) {
+        if(getFitness(gpaImportance) > other.getFitness(gpaImportance)) {
             return -1;
-        } else if(getFitness() == other.getFitness()) {
+        } else if(getFitness(gpaImportance) == other.getFitness(gpaImportance)) {
             return 0;
         } else {
             return 1;
