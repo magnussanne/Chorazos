@@ -47,6 +47,14 @@ public class GeneticAlgorithm implements Search {
         int GPA = sliders.get(5).getValue();
     }
 
+    public void resetParameters() {
+        int P = 1000;         //  Population size
+        double M = 0.325;     //  Cull bottom M%
+        double N = 1;         //  Mate top N%
+        int R = 15;           //  Stop after R iterations without improvement
+        int E = 15;           //  % Chance of mutation
+    }
+
     private List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> populationList = new ArrayList<>();
 

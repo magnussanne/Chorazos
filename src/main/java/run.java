@@ -518,6 +518,7 @@ public class run {
             if(projectList == null || studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
+                algorithm.resetParameters();
                 if(!defaultValues.isSelected())
                     algorithm.setParameters(sliders);
 

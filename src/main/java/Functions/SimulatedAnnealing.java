@@ -51,6 +51,12 @@ public class SimulatedAnnealing implements Search {
         int GPA = sliders.get(3).getValue();
     }
 
+    public void resetParameters() {
+        int N = 30;
+        double InitialTemp = 900000;
+        double tempChange = 0.999;
+    }
+
     private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
         List<Solution> solutionList = new ArrayList<>();
 
