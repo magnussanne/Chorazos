@@ -191,6 +191,7 @@ public class run {
         c.gridy = 13;
         container.add(gpa, c);
 
+
         if(useDefault.isSelected() == true) {
             p.setEnabled(false);
             m.setEnabled(false);
@@ -199,6 +200,7 @@ public class run {
             e.setEnabled(false);
             gpa.setEnabled(false);
         }
+
 
         JSliderList.add(p);
         JSliderList.add(m);
@@ -213,17 +215,41 @@ public class run {
         c.weightx = 0.5;
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
-        container.add(startSearchButton(ga, true, JSliderList), c);
+
+        container.add(startSearchButton(ga, useDefault, JSliderList), c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
+
+        p.setEnabled(!useDefault.isSelected());
+        m.setEnabled(!useDefault.isSelected());
+        n.setEnabled(!useDefault.isSelected());
+        r.setEnabled(!useDefault.isSelected());
+        e.setEnabled(!useDefault.isSelected());
+        gpa.setEnabled(!useDefault.isSelected());
+
+        useDefault.addActionListener(action -> {
+            p.setEnabled(!useDefault.isSelected());
+            m.setEnabled(!useDefault.isSelected());
+            n.setEnabled(!useDefault.isSelected());
+            r.setEnabled(!useDefault.isSelected());
+            e.setEnabled(!useDefault.isSelected());
+            gpa.setEnabled(!useDefault.isSelected());
+
+            container.revalidate();
+        });
+
         return container;
     }
 
     private JPanel saPanel(Visualization visual) {
         JPanel container = new JPanel();
         SimulatedAnnealing sa = new SimulatedAnnealing(visual);
+
         List<JSlider> JSliderList = new ArrayList<>();
+        JCheckBox useDefault = new JCheckBox("Use Default Values", true);
+
 
         JLabel changesLabel = new JLabel();
         changesLabel.setText("Number of Changes per iteration");
@@ -262,8 +288,10 @@ public class run {
         c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
-        container.add(changesLabel, c);
+        container.add(useDefault, c);
         c.gridy = 2;
+        container.add(changesLabel, c);
+        c.gridy = 3;
         container.add(changes, c);
         JSlider temp = new JSlider(JSlider.HORIZONTAL, 0, 1000000, 500000);
 
@@ -279,9 +307,9 @@ public class run {
         temp.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 3;
-        container.add(tempLabel, c);
         c.gridy = 4;
+        container.add(tempLabel, c);
+        c.gridy = 5;
         container.add(temp, c);
         JSlider changeRate = new JSlider(JSlider.HORIZONTAL, 0, 10000, 9999);
 
@@ -297,9 +325,9 @@ public class run {
         changeRate.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 5;
-        container.add(changeRateLabel, c);
         c.gridy = 6;
+        container.add(changeRateLabel, c);
+        c.gridy = 7;
         container.add(changeRate, c);
         JSlider gpa = new JSlider();
 
@@ -315,15 +343,15 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 7;
-        container.add(gpaLabel, c);
         c.gridy = 8;
+        container.add(gpaLabel, c);
+        c.gridy = 9;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridy = 9;
+        c.gridy = 10;
         c.anchor = GridBagConstraints.PAGE_END;
 
         JSliderList.add(changes);
@@ -331,17 +359,37 @@ public class run {
         JSliderList.add(changeRate);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(sa, true, JSliderList), c);
+        container.add(startSearchButton(sa, useDefault, JSliderList), c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
+
+        temp.setEnabled(!useDefault.isSelected());
+        changeRate.setEnabled(!useDefault.isSelected());
+        changes.setEnabled(!useDefault.isSelected());
+        gpa.setEnabled(!useDefault.isSelected());
+
+        useDefault.addActionListener(action -> {
+            temp.setEnabled(!useDefault.isSelected());
+            changeRate.setEnabled(!useDefault.isSelected());
+            changes.setEnabled(!useDefault.isSelected());
+            gpa.setEnabled(!useDefault.isSelected());
+
+            container.revalidate();
+        });
+
         return container;
     }
 
     private JPanel hcPanel(Visualization visual) {
         JPanel container = new JPanel();
         HillClimbing hc = new HillClimbing(visual);
+
         List<JSlider> JSliderList = new ArrayList<>();
+
+        JCheckBox useDefault = new JCheckBox("Use Default Values", true);
+
 
         JLabel changesLabel = new JLabel();
         changesLabel.setText("Number of Changes per iteration");
@@ -375,8 +423,10 @@ public class run {
         c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
-        container.add(changesLabel, c);
+        container.add(useDefault, c);
         c.gridy = 2;
+        container.add(changesLabel, c);
+        c.gridy = 3;
         container.add(changes, c);
         JSlider gpa = new JSlider();
 
@@ -392,24 +442,37 @@ public class run {
         gpa.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridy = 3;
-        container.add(gpaLabel, c);
         c.gridy = 4;
+        container.add(gpaLabel, c);
+        c.gridy = 5;
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
-        c.gridy = 5;
+        c.gridy = 6;
         c.anchor = GridBagConstraints.PAGE_END;
+
 
         JSliderList.add(changes);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(hc, true, JSliderList), c);
+        container.add(startSearchButton(hc, useDefault, JSliderList), c);
+
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 1;
         container.add(exportButton(), c);
+
+        changes.setEnabled(!useDefault.isSelected());
+        gpa.setEnabled(!useDefault.isSelected());
+
+        useDefault.addActionListener(action -> {
+            changes.setEnabled(!useDefault.isSelected());
+            gpa.setEnabled(!useDefault.isSelected());
+
+            container.revalidate();
+        });
+
         return container;
     }
 
@@ -448,14 +511,14 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm, boolean defaultValues, List<JSlider> sliders) {
+    private JButton startSearchButton(Search algorithm, JCheckBox defaultValues, List<JSlider> sliders) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
             if(projectList == null || studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
-                if(!defaultValues)
+                if(!defaultValues.isSelected())
                     algorithm.setParameters(sliders);
 
                 this.output = algorithm.solve(this.studentList, this.projectList);
