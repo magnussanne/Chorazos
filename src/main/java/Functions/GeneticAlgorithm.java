@@ -67,7 +67,7 @@ public class GeneticAlgorithm implements Search {
         sort(population);
 
         if(visual != null) {
-            visual.drawSolution(population.get(P-1));
+            visual.drawSolution(1, population.get(P-1));
         }
 
         cull(population);

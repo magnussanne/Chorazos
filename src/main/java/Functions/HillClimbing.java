@@ -38,7 +38,7 @@ public class HillClimbing implements Search {
             }
 
             if(visual != null) {
-                visual.drawSolution(s1);
+                visual.drawSolution(0, s1);
             }
         }
 

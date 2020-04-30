@@ -10,18 +10,22 @@ import Objects.Student;
 import javax.swing.*;
 import java.awt.*;
 import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class Visualization extends JPanel {
-    Color background = Color.BLACK;
-    Color drawings = Color.CYAN;
+    private static DecimalFormat df = new DecimalFormat("#.##");
+
+    private Color background = Color.BLACK;
+    private Color drawings = Color.CYAN;
 
     private List<Student> studentList;
     private List<Project> projectList;
-    private List<Solution> solution;
+    private SolutionPermutation solution;
     private int solutionSize;
     private static int Generation;
+    private int function;
 
     public Visualization() {
         setPreferredSize(new Dimension(500, 500));
@@ -38,10 +42,11 @@ public class Visualization extends JPanel {
         setBackground(background);
     }
 
-    public void drawSolution(SolutionPermutation solution) {
+    public void drawSolution(int function, SolutionPermutation solution) {
         this.Generation++;
-        this.solution = solution.getSolutionList();
+        this.solution = solution;
         this.solutionSize = this.solution.size();
+        this.function = function;
         repaint();
     }
 
@@ -60,14 +65,29 @@ public class Visualization extends JPanel {
         double projectHeight = ((double) getHeight()-60) / ((double) this.projectList.size()+1);
 
         g.setColor(drawings);
-        g.drawString("Generation: " + this.Generation, 30, 30);
+        String s = "Generation: " + this.Generation;
+        int stringLen = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
+        int start = getWidth()/2 - stringLen/2;
+        g.drawString(s, start, 15);
+
+        if(this.solution != null) {
+            if (function == 0) {
+                s = "Energy: " + df.format(this.solution.getEnergy());
+            } else if (function == 1) {
+                s = "Fitness: " + df.format(this.solution.getFitness());
+            }
+
+            stringLen = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
+            start = getWidth()/2 - stringLen/2;
+            g.drawString(s, start, 30);
+        }
 
         for(int i=1; i<=this.studentList.size(); i++) {
-            g.fillOval(30, (int) (studentHeight*i) + 30, 3, 3);
+            g.fillOval(30, (int) (studentHeight*i) + 45, 3, 3);
         }
 
         for(int i=1; i<=this.projectList.size(); i++) {
-            g.fillOval(getWidth()-30, (int) (projectHeight*i) + 30, 3, 3);
+            g.fillOval(getWidth()-30, (int) (projectHeight*i) + 45, 3, 3);
         }
 
         connectSolutions(g);
@@ -78,12 +98,12 @@ public class Visualization extends JPanel {
         double projectHeight = ((double) getHeight()-60) / ((double) this.projectList.size()+1);
 
         for(int i=1; i<=solutionSize; i++) {
-            Solution s = this.solution.get(i-1);
+            Solution s = this.solution.getSolutionList().get(i-1);
             int startX = 30;
             int endX = getWidth()-30;
 
-            double startY = studentHeight * i + 30;
-            double endY = projectHeight * (this.projectList.indexOf(s.getProject())+1) + 30;
+            double startY = studentHeight * i + 45;
+            double endY = projectHeight * (this.projectList.indexOf(s.getProject())+1) + 45;
 
             g.drawLine(startX, (int) startY, endX, (int) endY);
             i++;
@@ -103,7 +123,6 @@ public class Visualization extends JPanel {
         SwingUtilities.invokeLater(() -> {
             final JFrame frame = new JFrame();
             frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            frame.setTitle("Genetic Algorithms");
             frame.setResizable(false);
             frame.add(visual, BorderLayout.CENTER);
             frame.pack();
@@ -115,7 +134,7 @@ public class Visualization extends JPanel {
         SimulatedAnnealing sa = new SimulatedAnnealing(visual);
         HillClimbing hc = new HillClimbing(visual);
 
-        switch (2) {
+        switch (0) {
             case 0:
                 ga.solve(studentList, projectList);
                 break;

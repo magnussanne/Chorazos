@@ -36,7 +36,7 @@ public class SimulatedAnnealing implements Search {
             temp *= tempChange;
 
             if(visual != null) {
-                visual.drawSolution(s1);
+                visual.drawSolution(0, s1);
             }
         }
 
