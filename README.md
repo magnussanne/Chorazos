@@ -79,5 +79,18 @@ Note: Our code can take up to 5 minutes to run and sometimes longer.
 Note: we have added instructions for running the code at the top of the readme
 
 Assignment 7:
-This week we designed the GUI for our application. We used Java Swing to implement it with full functionality. 
+This week we designed the GUI for our application. We used Java Swing to implement it with full functionality. Our application
+allows the user to import a .csv file of projects and students, the project file must be chosen first and then the student 
+file, this is instructed in the title of the file selection window. After the user has imported their projects we have 
+implemented functionality that allows for them to change the parameters of the search, for example they can change the population
+size in a genetic algorithm search or the initial temperature in a simulated annealing search. This is done using JSliders.
+We also allow the user to decide the influence that GPA has on the solution, so if the slider is at its max the students GPA
+will fully influence the decision of project allocation and if it is at its minimum the students GPA will have no influence
+on project allocation. If the user wishes to use the default parameters they can tick the box at the top of the window. The default
+values are the values we found to give the best solution with the most efficient runtime. Once the parameters have been decided the
+user can run the program. We have implemented a visualisation of the search being performedon the right side of the window. We decided
+to implement this animation as we were concerned that the user would feel the program is not working due to the occasionally long run 
+times. The animation shows the dots on the left hand side, which represent the students being connected to the dots on the right hand 
+side, which represent the project. Once the program has finished a window pops up with the results of the search and the user then has 
+the option to export the solution as a .csv to a location of their chosing on their computer.
 
