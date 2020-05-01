@@ -78,5 +78,6 @@ Note: Our code can take up to 5 minutes to run and sometimes longer.
 
 Note: we have added instructions for running the code at the top of the readme
 
-
+Assignment 7:
+This week we designed the GUI for our application. We used Java Swing to implement it with full functionality. 
 
