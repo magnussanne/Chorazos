@@ -49,16 +49,6 @@ public class GeneticAlgorithm implements Search {
         this.gpaImportance = ((double) sliders.get(5).getValue() / 100);
     }
 
-    public void resetParameters() {
-        this.P = 1000;
-        this.M = 0.325;
-        this.N = 1;
-        this.R = 15;
-        this.E = 15;
-
-        this.gpaImportance = 0.5;
-    }
-
     private List<SolutionPermutation> generateInitialPopulation(List<Student> studentList, List<Project> projectList) {
         List<SolutionPermutation> populationList = new ArrayList<>();
 

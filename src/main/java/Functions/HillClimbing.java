@@ -51,10 +51,6 @@ public class HillClimbing implements Search {
         this.gpaImportance = ((double) sliders.get(0).getValue() / 100);
     }
 
-    public void resetParameters() {
-        this.N = 50;
-    }
-
     private SolutionPermutation createSolutionPermutation(List<Student> studentList, List<Project> projectList) {
         List<Solution> solutionList = new ArrayList<>();
 
