@@ -94,3 +94,6 @@ times. The animation shows the dots on the left hand side, which represent the s
 side, which represent the project. Once the program has finished a window pops up with the results of the search and the user then has 
 the option to export the solution as a .csv to a location of their chosing on their computer.
 
+NOTE: The application is run from a jar file that is located in the SampleOutput folder, the path is "C:\Chorazos\Chorazos\SampleOutput".
+It can also be ran from run.java which is located at "C:\Chorazos\Chorazos\src\main\java\run.java"
+
