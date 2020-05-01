@@ -27,8 +27,11 @@ public class Visualization extends JPanel {
     private static int Generation;
     private int function;
 
+    private long time;
+
     public Visualization() {
         setPreferredSize(new Dimension(500, 500));
+        this.time = System.currentTimeMillis();
 
         setBackground(Color.WHITE);
         repaint();
@@ -47,6 +50,12 @@ public class Visualization extends JPanel {
         this.solution = solution;
         this.solutionSize = this.solution.size();
         this.function = function;
+
+        if(System.currentTimeMillis()-time > 10) {
+            update(getGraphics());
+            time = System.currentTimeMillis();
+        }
+
         repaint();
     }
 
@@ -72,9 +81,9 @@ public class Visualization extends JPanel {
 
         if(this.solution != null) {
             if (function == 0) {
-                s = "Energy: " + df.format(this.solution.getEnergy(solution.getGpaImportance()));
+                s = "Energy: " + df.format(this.solution.getEnergy());
             } else if (function == 1) {
-                s = "Fitness: " + df.format(this.solution.getFitness(solution.getGpaImportance()));
+                s = "Fitness: " + df.format(this.solution.getFitness());
             }
 
             stringLen = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();

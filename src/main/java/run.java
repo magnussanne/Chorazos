@@ -191,17 +191,6 @@ public class run {
         c.gridy = 13;
         container.add(gpa, c);
 
-
-        if(useDefault.isSelected() == true) {
-            p.setEnabled(false);
-            m.setEnabled(false);
-            n.setEnabled(false);
-            r.setEnabled(false);
-            e.setEnabled(false);
-            gpa.setEnabled(false);
-        }
-
-
         JSliderList.add(p);
         JSliderList.add(m);
         JSliderList.add(n);
@@ -236,6 +225,15 @@ public class run {
             r.setEnabled(!useDefault.isSelected());
             e.setEnabled(!useDefault.isSelected());
             gpa.setEnabled(!useDefault.isSelected());
+
+            if(useDefault.isSelected()) {
+                p.setValue(1000);
+                m.setValue(32);
+                n.setValue(100);
+                r.setValue(15);
+                e.setValue(15);
+                gpa.setValue(50);
+            }
 
             container.revalidate();
         });
@@ -376,6 +374,13 @@ public class run {
             changes.setEnabled(!useDefault.isSelected());
             gpa.setEnabled(!useDefault.isSelected());
 
+            if(useDefault.isSelected()) {
+                temp.setValue(900000);
+                changeRate.setValue(9999);
+                changes.setValue(30);
+                gpa.setValue(50);
+            }
+
             container.revalidate();
         });
 
@@ -469,6 +474,11 @@ public class run {
         useDefault.addActionListener(action -> {
             changes.setEnabled(!useDefault.isSelected());
             gpa.setEnabled(!useDefault.isSelected());
+
+            if(useDefault.isSelected()) {
+                changes.setValue(50);
+                gpa.setValue(50);
+            }
 
             container.revalidate();
         });

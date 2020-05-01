@@ -61,7 +61,7 @@ public class Solution implements Interface.Solution {
     @Override
     public double getEnergy(List<Solution> solutionList, double gpaImportance) {
         double energy = scPreference() * (student.getGPA() * gpaImportance);
-        energy /= (gpaImportance * 50);
+        energy /= (gpaImportance * 210);
         return energy;
     }
 
