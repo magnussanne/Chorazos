@@ -9,6 +9,7 @@ import java.util.Random;
 
 public class SolutionPermutation implements Interface.SolutionPermutation {
     private List<Solution> solutionList;
+    private double gpaImportance;
 
     public SolutionPermutation(SolutionPermutation other) {
         solutionList = new ArrayList<>();
@@ -25,8 +26,19 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
     public double getEnergy(double gpaImportance) {
         double energy = 0;
 
+        this.gpaImportance = gpaImportance;
         for(Solution s : solutionList) {
             energy += s.getEnergy(solutionList, gpaImportance);
+        }
+
+        return energy;
+    }
+
+    public double getEnergy() {
+        double energy = 0;
+
+        for(Solution s : solutionList) {
+            energy += s.getEnergy(solutionList, this.gpaImportance);
         }
 
         return energy;
@@ -35,8 +47,20 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
     public double getFitness(double gpaImportance) {
         double fitness = 0;
 
+        this.gpaImportance = gpaImportance;
         for(Solution s : solutionList) {
             fitness += s.getFitness(solutionList, gpaImportance);
+        }
+
+        return fitness;
+    }
+
+    public double getFitness() {
+        double fitness = 0;
+
+        this.gpaImportance = gpaImportance;
+        for(Solution s : solutionList) {
+            fitness += s.getFitness(solutionList, this.gpaImportance);
         }
 
         return fitness;
@@ -103,10 +127,6 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
 
     public int size() {
         return solutionList.size();
-    }
-
-    public double getGpaImportance() {
-        return getGpaImportance();
     }
 
     public List<Solution> getSolutionList() {
