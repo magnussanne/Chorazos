@@ -1,7 +1,6 @@
 import Functions.*;
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
-import IO.Output.CSV.WriteToCSVFile;
 import Objects.Project;
 import Objects.SolutionPermutation;
 import Objects.Student;
@@ -10,7 +9,6 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -18,10 +16,9 @@ import java.util.Hashtable;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class run {
+    private JFrame mainWindow;
     private List<Student> studentList;
     private List<Project> projectList;
-    private Visualization visual;
-    private SolutionPermutation output;
 
     public static void main(String[] args) {
         run gui = new run();
@@ -29,14 +26,14 @@ public class run {
     }
 
     private void createGUI(){
-        this.visual = new  Visualization();
+        Visualization visual = new  Visualization();
 
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Genetic Algorithm", gaPanel(visual));
         tabbedPane.addTab("Simulated Annealing", saPanel(visual));
         tabbedPane.addTab("Hill Climbing", hcPanel(visual));
 
-        final JFrame mainWindow = new JFrame("Chorazos");
+        this.mainWindow = new JFrame("Chorazos");
         mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
         mainWindow.setSize(1000, 720);
         mainWindow.setLayout(new GridLayout(1, 2));
@@ -77,7 +74,7 @@ public class run {
         c.gridy = 0;
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(), c);
+        container.add(loadFileButton(visual), c);
         JSlider p = new JSlider(JSlider.HORIZONTAL, 1000, 40000, 1000);
 
         p.setMajorTickSpacing(2000);
@@ -205,11 +202,7 @@ public class run {
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
 
-        container.add(startSearchButton(ga, useDefault, JSliderList), c);
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 1;
-        container.add(exportButton(), c);
+        container.add(startSearchButton(ga, JSliderList, visual), c);
 
         p.setEnabled(!useDefault.isSelected());
         m.setEnabled(!useDefault.isSelected());
@@ -268,7 +261,7 @@ public class run {
         c.gridy = 0;
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(), c);
+        container.add(loadFileButton(visual), c);
         JSlider changes = new JSlider();
 
         changes.setMajorTickSpacing(10);
@@ -357,11 +350,7 @@ public class run {
         JSliderList.add(changeRate);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(sa, useDefault, JSliderList), c);
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 1;
-        container.add(exportButton(), c);
+        container.add(startSearchButton(sa, JSliderList, visual), c);
 
         temp.setEnabled(!useDefault.isSelected());
         changeRate.setEnabled(!useDefault.isSelected());
@@ -410,7 +399,7 @@ public class run {
         c.gridy = 0;
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(), c);
+        container.add(loadFileButton(visual), c);
         JSlider changes = new JSlider();
 
         changes.setMajorTickSpacing(10);
@@ -462,11 +451,7 @@ public class run {
         JSliderList.add(changes);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(hc, useDefault, JSliderList), c);
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridx = 1;
-        container.add(exportButton(), c);
+        container.add(startSearchButton(hc, JSliderList, visual), c);
 
         changes.setEnabled(!useDefault.isSelected());
         gpa.setEnabled(!useDefault.isSelected());
@@ -486,7 +471,7 @@ public class run {
         return container;
     }
 
-    private JButton loadFileButton() {
+    private JButton loadFileButton(Visualization visual) {
         JButton loadFile = new JButton("Load Inputs");
         JFileChooser fc = new JFileChooser();
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
@@ -512,7 +497,7 @@ public class run {
                     ReadStudents.Read(file, this.studentList, this.projectList);
                 }
 
-                this.visual.loadValues(this.studentList, this.projectList);
+                visual.loadValues(this.studentList, this.projectList);
             } catch (FileNotFoundException fileNotFoundException) {
                 showMessageDialog(null, "Invalid File\nPlease reselect a valid file");
             }
@@ -521,7 +506,7 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm, JCheckBox defaultValues, List<JSlider> sliders) {
+    private JButton startSearchButton(Search algorithm, List<JSlider> sliders, Visualization visual) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
@@ -530,33 +515,11 @@ public class run {
             } else {
                 algorithm.setParameters(sliders);
 
-                this.output = algorithm.solve(this.studentList, this.projectList);
-                showMessageDialog(null, "Run Complete: \n" + output.getPreferenceSummary());
-            }
-        });
-
-        return runButton;
-    }
-
-    private JButton exportButton() {
-        JButton runButton = new JButton("Export");
-
-        runButton.addActionListener(e -> {
-            if(this.output == null) {
-                showMessageDialog(null, "No output to export.\nPlease run to create a solution");
-            } else {
-                JFileChooser fc = new JFileChooser();
-                fc.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-                try {
-                    int r = fc.showSaveDialog(null);
-                    if (r == JFileChooser.APPROVE_OPTION) {
-                        File file = fc.getSelectedFile();
-                        WriteToCSVFile.Write(this.output, file);
-                    }
-                } catch (IOException ioException) {
-                    ioException.printStackTrace();
-                }
+                SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
+                Summary summary = new Summary(output);
+                mainWindow.remove(visual);
+                mainWindow.add(summary);
+                mainWindow.revalidate();
             }
         });
 
