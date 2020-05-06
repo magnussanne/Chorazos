@@ -88,6 +88,15 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         return preferenceArray;
     }
 
+    public String getPreferenceSummary() {
+        int[] info = getPreferenceInfo();
+
+        String out = info[1] + " students got an average of their " + info[0] +
+            " choice, while " + info[2] + " students did not get any of their choices";
+
+        return out;
+    }
+
     public void modify(int NUMBER_CHANGES) {
         Random rand = new Random();
 

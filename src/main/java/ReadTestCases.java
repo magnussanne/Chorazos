@@ -32,25 +32,19 @@ public class ReadTestCases {
         s0 = hill.solve(studentList, projectList);
 
         System.out.println(s0.getEnergy(0.5));
-        int[] preferenceArray = s0.getPreferenceInfo();
-        System.out.println(preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice," +
-                " while " + preferenceArray[2] + " students did not get any of their choices");
+        System.out.println(s0.getPreferenceSummary());
 
         System.out.println("\nSimulated Annealing:");
         SimulatedAnnealing annealing = new SimulatedAnnealing();
         s0 = annealing.solve(studentList, projectList);
 
         System.out.println(s0.getEnergy(0.5));
-        int[] preferenceArray2 = s0.getPreferenceInfo();
-        System.out.println(preferenceArray2[1] + " students got an average of their " + preferenceArray2[0] + " choice," +
-                " while " + preferenceArray2[2] + " students did not get any of their choices");
+        System.out.println(s0.getPreferenceSummary());
 
         System.out.println("\nGenetic Algorithm:");
         GeneticAlgorithm ga = new GeneticAlgorithm();
         s0 = ga.solve(studentList, projectList);
-        int[] preferenceArray3 = s0.getPreferenceInfo();
-        System.out.println(preferenceArray3[1] + " students got an average of their " + preferenceArray3[0] + " choice," +
-                " while " + preferenceArray3[2] + " students did not get any of their choices");
+        System.out.println(s0.getPreferenceSummary());
 
         System.out.println(s0.toString());
     }
