@@ -14,14 +14,12 @@ import javax.swing.*;
 import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.io.FileNotFoundException;
-import java.text.DecimalFormat;
 import javax.swing.table.*;
 import java.lang.*;
 import javax.swing.text.SimpleAttributeSet;
 import javax.swing.text.StyleConstants;
 import javax.swing.text.StyledDocument;
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -33,8 +31,6 @@ public class Summary extends JPanel {
     JTable summaryTable;
     DefaultTableModel model;
     Object[] columnNames;
-
-
 
     public Summary(SolutionPermutation solution) {
         setPreferredSize(new Dimension(500, 500));
@@ -66,7 +62,10 @@ public class Summary extends JPanel {
         return text;
     }
 
-    private JButton exportButton(SolutionPermutation solution) {
+    private JPanel exportButton(SolutionPermutation solution) {
+        JPanel export = new JPanel();
+        export.setLayout(new FlowLayout());
+
         JButton exportButton = new JButton("Export");
         exportButton.setHorizontalAlignment(JButton.RIGHT);
 
@@ -85,7 +84,8 @@ public class Summary extends JPanel {
             }
         });
 
-        return exportButton;
+        export.add(exportButton);
+        return export;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
