@@ -531,8 +531,7 @@ public class run {
                 algorithm.setParameters(sliders);
 
                 this.output = algorithm.solve(this.studentList, this.projectList);
-                int[] preferenceArray = output.getPreferenceInfo();
-                showMessageDialog(null, "Run Complete\n" + preferenceArray[1] + " students got an average of their " + preferenceArray[0] + " choice, while " + preferenceArray[2] + " students did not get any of their choices");
+                showMessageDialog(null, "Run Complete: \n" + output.getPreferenceSummary());
             }
         });
 
