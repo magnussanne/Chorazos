@@ -30,11 +30,13 @@ public class run {
 
     private void createGUI(){
         this.visual = new  Visualization();
+        Summary summary = new Summary();
 
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Genetic Algorithm", gaPanel(visual));
         tabbedPane.addTab("Simulated Annealing", saPanel(visual));
         tabbedPane.addTab("Hill Climbing", hcPanel(visual));
+        tabbedPane.addTab("Summary", summary);
 
         final JFrame mainWindow = new JFrame("Chorazos");
         mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
