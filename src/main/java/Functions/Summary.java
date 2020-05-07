@@ -34,14 +34,16 @@ public class Summary extends JPanel {
 
     public Summary(SolutionPermutation solution) {
         setPreferredSize(new Dimension(500, 500));
-        this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
-        this.add(textSummary(solution.getPreferenceSummary()));
-        this.add(exportButton(solution));
         columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
         model = new DefaultTableModel(columnNames, solutionSize);
+        model.addRow(columnNames);
         summaryTable = new JTable(model);
         JScrollPane scrollPane = new JScrollPane(summaryTable);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
+        this.add(summaryTable);
+        this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        this.add(textSummary(solution.getPreferenceSummary()));
+        this.add(exportButton(solution));
     }
 
     public void addEntries(SolutionPermutation solution) {
