@@ -41,6 +41,7 @@ public class Summary extends JPanel {
         JScrollPane scrollPane = new JScrollPane(summaryTable);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         this.add(summaryTable);
+        this.add(scrollPane);
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         this.add(textSummary(solution.getPreferenceSummary()));
         this.add(exportButton(solution));
