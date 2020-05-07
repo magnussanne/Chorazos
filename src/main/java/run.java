@@ -1,6 +1,7 @@
 import Functions.*;
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
+import IO.Input.textInput;
 import Objects.Project;
 import Objects.SolutionPermutation;
 import Objects.Student;
@@ -483,20 +484,13 @@ public class run {
             this.studentList = new ArrayList<>();
 
             try {
-                fc.setDialogTitle("Select Project List");
+                fc.setDialogTitle("Select Input");
                 int r = fc.showOpenDialog(null);
 
                 if (r == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
-                    ReadProjects.Read(file, this.projectList);
-                }
-
-                fc.setDialogTitle("Select Student List");
-                r = fc.showOpenDialog(null);
-
-                if (r == JFileChooser.APPROVE_OPTION) {
-                    File file = fc.getSelectedFile();
-                    ReadStudents.Read(file, this.studentList, this.projectList);
+                    textInput t = new textInput(file, ",");
+                    t.Read(studentList, projectList);
                 }
 
                 this.visual.loadValues(this.studentList, this.projectList);

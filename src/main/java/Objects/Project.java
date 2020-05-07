@@ -12,6 +12,12 @@ public class Project implements Interface.Project {
     private String title;
     private Focus focus;
 
+    public Project(String title) {
+        this.title = title;
+        this.id = randomUUID();
+        this.focus = CSDS;
+    }
+
     public Project(String id, String title, Focus focus) {
         this.id = UUID.fromString(id);
         this.title = title;
@@ -22,11 +28,6 @@ public class Project implements Interface.Project {
         this.id = randomUUID();
         this.title = title;
         this.focus = focus;
-    }
-
-    public Project(String title) {
-        this.title = title;
-        this.focus = CSDS;
     }
 
     public UUID getId() {

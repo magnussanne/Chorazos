@@ -14,8 +14,16 @@ public class Student implements Interface.Student {
     private int number;
     private Focus study;
     private double GPA;
-    private List<Project> preference = new ArrayList<>();
+    private List<Project> preference;
 
+    public Student(String name, int number, double GPA, List<Project> preference) {
+        this.name = name;
+        this.number = number;
+        this.GPA = GPA;
+        this.preference = preference;
+
+        this.study = Focus.CSDS;
+    }
 
     public Student(String name, int number, Focus study) {
         this.name = name;
@@ -23,6 +31,7 @@ public class Student implements Interface.Student {
         this.study = study;
         Random randGPA = new Random();
         this.GPA = 2.0*randGPA.nextDouble()+2.0;
+        this.preference = new ArrayList<>();
     }
 
     public String getName() {
@@ -40,6 +49,10 @@ public class Student implements Interface.Student {
     public double getGPA() { return GPA; }
 
     public Project getPreference(int index) {
+        if(index >= preference.size()) {
+            return null;
+        }
+
         return preference.get(index);
     }
 
