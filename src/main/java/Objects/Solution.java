@@ -114,7 +114,7 @@ public class Solution implements Interface.Solution {
 
     public String getPreference(){
         int index = 21;
-        int noOfProjects = 20;
+        int noOfProjects = 10;
         for(int i = 0; i < noOfProjects; i++){
             if(project == student.getPreference(i))
                 index = i;

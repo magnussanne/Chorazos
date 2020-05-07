@@ -54,7 +54,7 @@ public class Summary extends JPanel {
         for(Solution s : solution.getSolutionList()) {
             Student student = s.getStudent();
             Project project = s.getProject();
-            row = new Object[]{student.getNumber(), student.getName(), project.getId(), project.getTitle()};
+            row = new Object[]{student.getNumber(), student.getName(), project.getId(), project.getTitle(), s.getPreference()};
             model.addRow(row);
         }
 
