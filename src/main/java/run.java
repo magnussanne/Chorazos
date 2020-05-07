@@ -19,6 +19,8 @@ public class run {
     private JFrame mainWindow;
     private List<Student> studentList;
     private List<Project> projectList;
+    private Summary summary;
+    private Visualization visual;
 
     public static void main(String[] args) {
         run gui = new run();
@@ -26,28 +28,28 @@ public class run {
     }
 
     private void createGUI(){
-        Visualization visual = new  Visualization();
+        this.visual = new  Visualization();
 
         JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Genetic Algorithm", gaPanel(visual));
-        tabbedPane.addTab("Simulated Annealing", saPanel(visual));
-        tabbedPane.addTab("Hill Climbing", hcPanel(visual));
+        tabbedPane.addTab("Genetic Algorithm", gaPanel());
+        tabbedPane.addTab("Simulated Annealing", saPanel());
+        tabbedPane.addTab("Hill Climbing", hcPanel());
 
         this.mainWindow = new JFrame("Chorazos");
-        mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-        mainWindow.setSize(1000, 720);
-        mainWindow.setLayout(new GridLayout(1, 2));
-        mainWindow.setResizable(false);
-        mainWindow.add(tabbedPane);
-        mainWindow.add(visual);
-        mainWindow.pack();
-        mainWindow.setLocationRelativeTo(null);
-        mainWindow.setVisible(true);
+        this.mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
+        this.mainWindow.setSize(1000, 720);
+        this.mainWindow.setLayout(new GridLayout(1, 2));
+        this.mainWindow.setResizable(false);
+        this.mainWindow.add(tabbedPane);
+        this.mainWindow.add(this.visual);
+        this.mainWindow.pack();
+        this.mainWindow.setLocationRelativeTo(null);
+        this.mainWindow.setVisible(true);
     }
 
-    private JPanel gaPanel(Visualization visual) {
+    private JPanel gaPanel() {
         JPanel container = new JPanel();
-        GeneticAlgorithm ga = new GeneticAlgorithm(visual);
+        GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
         List<JSlider> JSliderList = new ArrayList<>();
 
@@ -74,7 +76,7 @@ public class run {
         c.gridy = 0;
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(visual), c);
+        container.add(loadFileButton(), c);
         JSlider p = new JSlider(JSlider.HORIZONTAL, 1000, 40000, 1000);
 
         p.setMajorTickSpacing(2000);
@@ -202,7 +204,7 @@ public class run {
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
 
-        container.add(startSearchButton(ga, JSliderList, visual), c);
+        container.add(startSearchButton(ga, JSliderList), c);
 
         p.setEnabled(!useDefault.isSelected());
         m.setEnabled(!useDefault.isSelected());
@@ -234,9 +236,9 @@ public class run {
         return container;
     }
 
-    private JPanel saPanel(Visualization visual) {
+    private JPanel saPanel() {
         JPanel container = new JPanel();
-        SimulatedAnnealing sa = new SimulatedAnnealing(visual);
+        SimulatedAnnealing sa = new SimulatedAnnealing(this.visual);
 
         List<JSlider> JSliderList = new ArrayList<>();
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
@@ -261,7 +263,7 @@ public class run {
         c.gridy = 0;
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(visual), c);
+        container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
 
         changes.setMajorTickSpacing(10);
@@ -350,7 +352,7 @@ public class run {
         JSliderList.add(changeRate);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(sa, JSliderList, visual), c);
+        container.add(startSearchButton(sa, JSliderList), c);
 
         temp.setEnabled(!useDefault.isSelected());
         changeRate.setEnabled(!useDefault.isSelected());
@@ -376,9 +378,9 @@ public class run {
         return container;
     }
 
-    private JPanel hcPanel(Visualization visual) {
+    private JPanel hcPanel() {
         JPanel container = new JPanel();
-        HillClimbing hc = new HillClimbing(visual);
+        HillClimbing hc = new HillClimbing(this.visual);
 
         List<JSlider> JSliderList = new ArrayList<>();
 
@@ -399,7 +401,7 @@ public class run {
         c.gridy = 0;
         c.gridwidth = 3;
         c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(visual), c);
+        container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
 
         changes.setMajorTickSpacing(10);
@@ -451,7 +453,7 @@ public class run {
         JSliderList.add(changes);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(hc, JSliderList, visual), c);
+        container.add(startSearchButton(hc, JSliderList), c);
 
         changes.setEnabled(!useDefault.isSelected());
         gpa.setEnabled(!useDefault.isSelected());
@@ -471,7 +473,7 @@ public class run {
         return container;
     }
 
-    private JButton loadFileButton(Visualization visual) {
+    private JButton loadFileButton() {
         JButton loadFile = new JButton("Load Inputs");
         JFileChooser fc = new JFileChooser();
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
@@ -497,7 +499,7 @@ public class run {
                     ReadStudents.Read(file, this.studentList, this.projectList);
                 }
 
-                visual.loadValues(this.studentList, this.projectList);
+                this.visual.loadValues(this.studentList, this.projectList);
             } catch (FileNotFoundException fileNotFoundException) {
                 showMessageDialog(null, "Invalid File\nPlease reselect a valid file");
             }
@@ -506,20 +508,31 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm, List<JSlider> sliders, Visualization visual) {
+    private JButton startSearchButton(Search algorithm, List<JSlider> sliders) {
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
-            if(projectList == null || studentList == null) {
+            if(this.projectList == null || this.studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
             } else {
+                try {
+                    this.mainWindow.remove(this.summary);
+                    this.mainWindow.add(this.visual);
+                    this.mainWindow.validate();
+                    this.mainWindow.repaint();
+                } catch (NullPointerException n) {
+
+                }
+
                 algorithm.setParameters(sliders);
 
                 SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
-                Summary summary = new Summary(output);
-                mainWindow.remove(visual);
-                mainWindow.add(summary);
-                mainWindow.revalidate();
+
+                summary = new Summary(output);
+                this.mainWindow.remove(this.visual);
+                this.mainWindow.add(this.summary);
+                this.mainWindow.validate();
+                this.mainWindow.repaint();
             }
         });
 
