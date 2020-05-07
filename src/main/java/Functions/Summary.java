@@ -34,21 +34,31 @@ public class Summary extends JPanel {
 
     public Summary(SolutionPermutation solution) {
         setPreferredSize(new Dimension(500, 500));
-        columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
-        model = new DefaultTableModel(columnNames, solutionSize);
-        model.addRow(columnNames);
+        model = createModel(solution);
         summaryTable = new JTable(model);
+        this.add(summaryTable);
         JScrollPane scrollPane = new JScrollPane(summaryTable);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        this.add(summaryTable);
         this.add(scrollPane);
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         this.add(textSummary(solution.getPreferenceSummary()));
         this.add(exportButton(solution));
     }
 
-    public void addEntries(SolutionPermutation solution) {
-        TableColumn column;
+    public DefaultTableModel createModel(SolutionPermutation solution) {
+        columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
+        DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+        model.addRow(new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"});
+        Object[] row;
+
+        for(Solution s : solution.getSolutionList()) {
+            Student student = s.getStudent();
+            Project project = s.getProject();
+            row = new Object[]{student.getNumber(), student.getName(), project.getId(), project.getTitle(), s.getPreference()};
+            model.addRow(row);
+        }
+
+        return model;
     }
 
     private JTextPane textSummary(String string) {
