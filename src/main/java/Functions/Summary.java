@@ -36,9 +36,9 @@ public class Summary extends JPanel {
         setPreferredSize(new Dimension(500, 500));
         model = createModel(solution);
         summaryTable = new JTable(model);
+        this.add(summaryTable);
         JScrollPane scrollPane = new JScrollPane(summaryTable);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        this.add(summaryTable);
         this.add(scrollPane);
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         this.add(textSummary(solution.getPreferenceSummary()));
