@@ -40,6 +40,8 @@ public class Summary extends JPanel {
         columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
         model = new DefaultTableModel(columnNames, solutionSize);
         summaryTable = new JTable(model);
+        JScrollPane scrollPane = new JScrollPane(summaryTable);
+        scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
     }
 
     public void addEntries(SolutionPermutation solution) {
@@ -111,7 +113,6 @@ public class Summary extends JPanel {
             frame.setLocationRelativeTo(null);
             frame.setVisible(true);
         });
-
     }
 }
 
