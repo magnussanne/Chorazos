@@ -1,4 +1,4 @@
-package Functions;
+package Functions.GUI;
 
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
@@ -11,7 +11,6 @@ import Objects.Student;
 
 import javax.swing.*;
 
-import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import javax.swing.table.*;

@@ -1,4 +1,4 @@
-package Functions;
+package Functions.Search;
 
 import Objects.Project;
 import Objects.SolutionPermutation;
