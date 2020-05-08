@@ -103,10 +103,10 @@ public class Solution implements Interface.Solution {
 
     public int scPreference(){
         int index = 50;
-        int noOfProjects = 10;
+        int noOfProjects = 20;
         for(int i = 0; i < noOfProjects; i++){
             if(project == student.getPreference(i))
-                index = i;
+                index = i + 1;
         }
 
         return index;
@@ -114,10 +114,10 @@ public class Solution implements Interface.Solution {
 
     public String getPreference(){
         int index = 21;
-        int noOfProjects = 10;
+        int noOfProjects = 20;
         for(int i = 0; i < noOfProjects; i++){
             if(project == student.getPreference(i))
-                index = i;
+                index = i + 1;
         }
 
         String preference = "";
