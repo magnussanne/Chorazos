@@ -1,5 +1,6 @@
-package Functions;
+package Functions.Search;
 
+import Functions.GUI.Visualization;
 import Objects.*;
 
 import javax.swing.*;
