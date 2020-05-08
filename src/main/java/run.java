@@ -1,6 +1,10 @@
-import Functions.*;
-import IO.Input.CSV.ReadProjects;
-import IO.Input.CSV.ReadStudents;
+import Functions.GUI.Image;
+import Functions.GUI.Summary;
+import Functions.GUI.Visualization;
+import Functions.Search.GeneticAlgorithm;
+import Functions.Search.HillClimbing;
+import Functions.Search.Search;
+import Functions.Search.SimulatedAnnealing;
 import IO.Input.textInput;
 import Objects.Project;
 import Objects.SolutionPermutation;
@@ -20,6 +24,7 @@ public class run {
     private JFrame mainWindow;
     private List<Student> studentList;
     private List<Project> projectList;
+    private Image logo;
     private Summary summary;
     private Visualization visual;
 
@@ -30,6 +35,7 @@ public class run {
 
     private void createGUI(){
         this.visual = new  Visualization();
+        this.logo = new Image();
 
         JTabbedPane tabbedPane = new JTabbedPane();
         tabbedPane.addTab("Genetic Algorithm", gaPanel());
@@ -42,7 +48,7 @@ public class run {
         this.mainWindow.setLayout(new GridLayout(1, 2));
         this.mainWindow.setResizable(false);
         this.mainWindow.add(tabbedPane);
-        this.mainWindow.add(this.visual);
+        this.mainWindow.add(this.logo);
         this.mainWindow.pack();
         this.mainWindow.setLocationRelativeTo(null);
         this.mainWindow.setVisible(true);
@@ -480,6 +486,17 @@ public class run {
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
         loadFile.addActionListener(e -> {
+            List<Project> oldProject;
+            List<Student> oldStudent;
+
+            if(this.projectList != null) {
+                oldProject = this.projectList;
+                oldStudent = this.studentList;
+            } else {
+                oldProject = null;
+                oldStudent = null;
+            }
+
             this.projectList = new ArrayList<>();
             this.studentList = new ArrayList<>();
 
@@ -490,10 +507,14 @@ public class run {
                 if (r == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
                     textInput t = new textInput(file, ",");
-                    t.Read(studentList, projectList);
-                }
+                    t.Read(this.studentList, this.projectList);
 
-                this.visual.loadValues(this.studentList, this.projectList);
+                    this.visual.loadValues(this.studentList, this.projectList);
+                    replacePanel(this.logo, this.visual);
+                } else if(r == JFileChooser.CANCEL_OPTION) {
+                    this.projectList = oldProject;
+                    this.studentList = oldStudent;
+                }
             } catch (FileNotFoundException fileNotFoundException) {
                 showMessageDialog(null, "Invalid File\nPlease reselect a valid file");
             }
@@ -523,13 +544,17 @@ public class run {
                 SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
 
                 summary = new Summary(output);
-                this.mainWindow.remove(this.visual);
-                this.mainWindow.add(this.summary);
-                this.mainWindow.validate();
-                this.mainWindow.repaint();
+                replacePanel(this.visual, this.summary);
             }
         });
 
         return runButton;
+    }
+
+    private void replacePanel(JPanel oldPanel, JPanel newPanel) {
+        this.mainWindow.remove(oldPanel);
+        this.mainWindow.add(newPanel);
+        this.mainWindow.validate();
+        this.mainWindow.repaint();
     }
 }

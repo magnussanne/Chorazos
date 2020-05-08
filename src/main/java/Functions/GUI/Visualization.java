@@ -1,5 +1,8 @@
-package Functions;
+package Functions.GUI;
 
+import Functions.Search.GeneticAlgorithm;
+import Functions.Search.HillClimbing;
+import Functions.Search.SimulatedAnnealing;
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
 import Objects.Project;

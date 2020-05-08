@@ -1,6 +1,6 @@
-import Functions.GeneticAlgorithm;
-import Functions.HillClimbing;
-import Functions.SimulatedAnnealing;
+import Functions.Search.GeneticAlgorithm;
+import Functions.Search.HillClimbing;
+import Functions.Search.SimulatedAnnealing;
 import Objects.*;
 import IO.Input.CSV.*;
 

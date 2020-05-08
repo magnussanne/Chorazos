@@ -1,4 +1,4 @@
-package Functions;
+package Functions.GUI;
 
 import IO.Input.CSV.ReadProjects;
 import IO.Input.CSV.ReadStudents;
@@ -11,7 +11,6 @@ import Objects.Student;
 
 import javax.swing.*;
 
-import javax.swing.table.TableColumn;
 import java.awt.*;
 import java.io.FileNotFoundException;
 import javax.swing.table.*;
@@ -50,7 +49,6 @@ public class Summary extends JPanel {
     public DefaultTableModel createModel(SolutionPermutation solution) {
         columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
-        model.addRow(new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"});
         Object[] row;
 
         for(Solution s : solution.getSolutionList()) {
@@ -144,5 +142,6 @@ public class Summary extends JPanel {
             frame.setVisible(true);
         });
     }
+    
 }
 
