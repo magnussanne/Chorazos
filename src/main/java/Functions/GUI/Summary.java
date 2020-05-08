@@ -34,18 +34,21 @@ public class Summary extends JPanel {
     public Summary(SolutionPermutation solution) {
         setPreferredSize(new Dimension(500, 500));
         model = createModel(solution);
-        summaryTable = new JTable(model);
+        summaryTable = new JTable(model) {
+            public boolean isCellEditable(int row, int column) {
+                return false;
+            }
+        };
         columnWidth(summaryTable);
         this.add(summaryTable);
         JScrollPane scrollPane = new JScrollPane(summaryTable);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
-        //scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
+        scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
         this.add(scrollPane);
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
         this.add(textSummary(solution.getPreferenceSummary()));
         this.add(exportButton(solution));
     }
-
     public DefaultTableModel createModel(SolutionPermutation solution) {
         columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
