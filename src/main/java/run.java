@@ -486,6 +486,17 @@ public class run {
         fc.setFileSelectionMode(JFileChooser.FILES_AND_DIRECTORIES);
 
         loadFile.addActionListener(e -> {
+            List<Project> oldProject;
+            List<Student> oldStudent;
+
+            if(this.projectList != null) {
+                oldProject = this.projectList;
+                oldStudent = this.studentList;
+            } else {
+                oldProject = null;
+                oldStudent = null;
+            }
+
             this.projectList = new ArrayList<>();
             this.studentList = new ArrayList<>();
 
@@ -496,11 +507,14 @@ public class run {
                 if (r == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
                     textInput t = new textInput(file, ",");
-                    t.Read(studentList, projectList);
-                }
+                    t.Read(this.studentList, this.projectList);
 
-                this.visual.loadValues(this.studentList, this.projectList);
-                replacePanel(this.logo, this.visual);
+                    this.visual.loadValues(this.studentList, this.projectList);
+                    replacePanel(this.logo, this.visual);
+                } else if(r == JFileChooser.CANCEL_OPTION) {
+                    this.projectList = oldProject;
+                    this.studentList = oldStudent;
+                }
             } catch (FileNotFoundException fileNotFoundException) {
                 showMessageDialog(null, "Invalid File\nPlease reselect a valid file");
             }
