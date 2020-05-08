@@ -125,6 +125,6 @@ public class Summary extends JPanel {
             frame.setVisible(true);
         });
     }
-    
+
 }
 
