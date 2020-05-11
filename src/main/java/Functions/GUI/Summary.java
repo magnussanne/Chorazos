@@ -32,7 +32,7 @@ public class Summary extends JPanel {
     Object[] columnNames;
 
     public Summary(SolutionPermutation solution) {
-        setPreferredSize(new Dimension(500, 500));
+        setPreferredSize(new Dimension(550, 500));
         model = createModel(solution);
         summaryTable = new JTable(model) {
             @Override
@@ -40,15 +40,13 @@ public class Summary extends JPanel {
                 Component comp = super.prepareRenderer(renderer, row, col);
                 Object value = getModel().getValueAt(row, 4);
 
+                int colour;
+                if(value == "NA")
+                    colour = 0;
+                else
+                    colour = 255 * (21-Integer.parseInt(value.toString())) / 20;
 
-                    int colour;
-                    if(value == "NA")
-                        colour = 0;
-                    else
-                        colour = 255 * (21-Integer.parseInt(value.toString())) / 20;
-
-                    comp.setBackground(new Color(255, colour, colour));
-                
+                comp.setBackground(new Color(255, colour, colour));
 
                 return comp;
             }
@@ -57,16 +55,19 @@ public class Summary extends JPanel {
                 return false;
             }
         };
-        columnWidth(summaryTable);
-        this.add(summaryTable);
+
+        summaryTable = columnWidth(summaryTable);
         JScrollPane scrollPane = new JScrollPane(summaryTable);
+        summaryTable.setAutoResizeMode(JTable.AUTO_RESIZE_OFF);
         scrollPane.setVerticalScrollBarPolicy(JScrollPane.VERTICAL_SCROLLBAR_ALWAYS);
         scrollPane.setHorizontalScrollBarPolicy(JScrollPane.HORIZONTAL_SCROLLBAR_ALWAYS);
-        this.add(scrollPane);
+
         this.setLayout(new BoxLayout(this, BoxLayout.PAGE_AXIS));
+        this.add(scrollPane);
         this.add(textSummary(solution.getPreferenceSummary()));
         this.add(exportButton(solution));
     }
+
     public DefaultTableModel createModel(SolutionPermutation solution) {
         columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
@@ -124,9 +125,9 @@ public class Summary extends JPanel {
         return export;
     }
 
-    public Container columnWidth(JTable table) {
+    public JTable columnWidth(JTable table) {
+        DefaultTableColumnModel colModel = (DefaultTableColumnModel) table.getColumnModel();
         for (int i = 0; i < table.getColumnCount(); i++) {
-            DefaultTableColumnModel colModel = (DefaultTableColumnModel) table.getColumnModel();
             TableColumn col = colModel.getColumn(i);
             int width = 0;
             for (int j = 0; j < table.getRowCount(); j++) {
@@ -136,6 +137,7 @@ public class Summary extends JPanel {
             }
             col.setPreferredWidth(width + 2);
         }
+
         return table;
     }
 
