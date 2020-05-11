@@ -38,9 +38,9 @@ public class Summary extends JPanel {
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
                 Component comp = super.prepareRenderer(renderer, row, col);
-                Object value = getModel().getValueAt(row, col);
+                Object value = getModel().getValueAt(row, 4);
 
-                if(col == 4) {
+
                     int colour;
                     if(value == "NA")
                         colour = 0;
@@ -48,9 +48,7 @@ public class Summary extends JPanel {
                         colour = 255 * (21-Integer.parseInt(value.toString())) / 20;
 
                     comp.setBackground(new Color(255, colour, colour));
-                } else {
-                    comp.setBackground(Color.white);
-                }
+                
 
                 return comp;
             }
