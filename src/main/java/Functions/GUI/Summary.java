@@ -39,43 +39,19 @@ public class Summary extends JPanel {
             public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
                 Component comp = super.prepareRenderer(renderer, row, col);
                 Object value = getModel().getValueAt(row, col);
-                if (value == "0" || value == "1"|| value == "2"|| value == "3" || value == "4"|| value == "5"){
-                    comp.setBackground(Color.white);
-                } else if (value.equals("NA")) {
-                    comp.setBackground(Color.RED);
-                } else if(value.equals("6")){
-                    comp.setBackground(new Color(255, 239, 239));
-                } else if(value.equals("7")){
-                    comp.setBackground(new Color(255, 223, 223));
-                } else if(value.equals("8")){
-                    comp.setBackground(new Color(255, 207, 207));
-                } else if(value.equals("9")){
-                    comp.setBackground(new Color(255, 191, 191));
-                } else if(value.equals("10")){
-                    comp.setBackground(new Color(255, 175, 175));
-                } else if(value.equals("11")){
-                    comp.setBackground(new Color(255, 159, 159));
-                } else if(value.equals("12")){
-                    comp.setBackground(new Color(255, 143, 143));
-                } else if(value.equals("13")){
-                    comp.setBackground(new Color(255, 127, 127));
-                }else if(value.equals("14")){
-                    comp.setBackground(new Color(255, 111, 111));
-                }else if(value.equals("15")){
-                    comp.setBackground(new Color(255, 95, 95));
-                }else if(value.equals("16")){
-                    comp.setBackground(new Color(255, 79, 79));
-                }else if(value.equals("17")){
-                    comp.setBackground(new Color(255, 63, 63));
-                }else if(value.equals("18")){
-                    comp.setBackground(new Color(255, 47, 47));
-                }else if(value.equals("19")){
-                    comp.setBackground(new Color(255, 31, 31));
-                }else if(value.equals("20")){
-                    comp.setBackground(new Color(255, 15, 15));
+
+                if(col == 4) {
+                    int colour;
+                    if(value == "NA")
+                        colour = 0;
+                    else
+                        colour = 255 * (21-Integer.parseInt(value.toString())) / 20;
+
+                    comp.setBackground(new Color(255, colour, colour));
                 } else {
-                    comp.setBackground(Color.WHITE);
+                    comp.setBackground(Color.white);
                 }
+
                 return comp;
             }
 
