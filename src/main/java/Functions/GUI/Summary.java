@@ -32,7 +32,7 @@ public class Summary extends JPanel {
     Object[] columnNames;
 
     public Summary(SolutionPermutation solution) {
-        setPreferredSize(new Dimension(500, 500));
+        setPreferredSize(new Dimension(1000, 500));
         model = createModel(solution);
         summaryTable = new JTable(model) {
             public boolean isCellEditable(int row, int column) {
@@ -106,7 +106,7 @@ public class Summary extends JPanel {
         return export;
     }
 
-    public Container columnWidth(JTable table) {
+    public void columnWidth(JTable table) {
         for (int i = 0; i < table.getColumnCount(); i++) {
             DefaultTableColumnModel colModel = (DefaultTableColumnModel) table.getColumnModel();
             TableColumn col = colModel.getColumn(i);
@@ -118,7 +118,6 @@ public class Summary extends JPanel {
             }
             col.setPreferredWidth(width + 2);
         }
-        return table;
     }
 
     public static void main(String[] args) throws FileNotFoundException {
