@@ -58,7 +58,6 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
     public double getFitness() {
         double fitness = 0;
 
-        this.gpaImportance = gpaImportance;
         for(Solution s : solutionList) {
             fitness += s.getFitness(solutionList, this.gpaImportance);
         }
@@ -93,6 +92,17 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
 
         String out = info[1] + " students got an average of their " + info[0] +
             " choice, while " + info[2] + " students did not get any of their choices";
+
+        List<Project> p = new ArrayList<>();
+        int count = 0;
+        for(Solution s : solutionList) {
+            if(p.contains(s.getProject())) {
+                count++;
+            } else {
+                p.add(s.getProject());
+            }
+        }
+        out += "\n" + count + " duplicates";
 
         return out;
     }

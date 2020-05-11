@@ -35,6 +35,24 @@ public class Summary extends JPanel {
         setPreferredSize(new Dimension(1000, 500));
         model = createModel(solution);
         summaryTable = new JTable(model) {
+            @Override
+            public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
+                Component comp = super.prepareRenderer(renderer, row, col);
+                Object value = getModel().getValueAt(row, 4);
+
+
+                    int colour;
+                    if(value == "NA")
+                        colour = 0;
+                    else
+                        colour = 255 * (21-Integer.parseInt(value.toString())) / 20;
+
+                    comp.setBackground(new Color(255, colour, colour));
+                
+
+                return comp;
+            }
+
             public boolean isCellEditable(int row, int column) {
                 return false;
             }
@@ -144,6 +162,6 @@ public class Summary extends JPanel {
             frame.setVisible(true);
         });
     }
-    
+
 }
 
