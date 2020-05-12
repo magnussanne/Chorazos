@@ -10,6 +10,8 @@ import java.util.List;
 import java.util.Scanner;
 
 public class textInput {
+    private final int MAX_NUMBER_COLUMNS = 50;
+
     private Scanner sc;
     private String delim;
     private String[] titleString;
@@ -33,7 +35,7 @@ public class textInput {
 
     public void TitleList(){
         this.titleString = sc.next().split(this.delim);
-        for(int i = 0; i<25; i++) {
+        for(int i=0; i<MAX_NUMBER_COLUMNS; i++) {
             try {
                 if(titleString[i].toLowerCase().equals("student"))
                     this.nameIndex = i;
@@ -44,7 +46,7 @@ public class textInput {
                 else if(titleString[i].toLowerCase().equals("1"))
                     this.preferenceStartIndex = i;
             } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
-                i = 25;
+                i = MAX_NUMBER_COLUMNS;
             }
         }
     }
@@ -58,7 +60,7 @@ public class textInput {
             int number = Integer.parseInt(tokens[1]);
             double gpa = Double.parseDouble(tokens[2]);
 
-            for(int i=4; i<23; i++) {
+            for(int i=4; i<MAX_NUMBER_COLUMNS; i++) {
                 try {
                     Project project = null;
 
@@ -75,7 +77,7 @@ public class textInput {
 
                     preference.add(project);
                 } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
-                    i = 23;
+                    i = MAX_NUMBER_COLUMNS;
                 }
             }
 
@@ -116,7 +118,26 @@ public class textInput {
     }
 
     public boolean unusedColumns() {
-        return true;
+        for(int i=0; i<titleString.length; i++) {
+            if(!usedColumn(i))
+                return true;
+        }
+
+        return false;
+    }
+
+    private boolean usedColumn(int index) {
+        if(this.nameIndex == index) {
+            return true;
+        } else if(this.numberIndex == index) {
+            return true;
+        } else if(this.gpaIndex == index) {
+            return true;
+        } else if(this.preferenceStartIndex <= index && index <= this.preferenceStartIndex+20) {
+            return true;
+        }
+
+        return false;
     }
 
     public String getUnusedColumns() {
