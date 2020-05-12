@@ -38,7 +38,7 @@ public class Summary extends JPanel {
             @Override
             public Component prepareRenderer(TableCellRenderer renderer, int row, int col) {
                 Component comp = super.prepareRenderer(renderer, row, col);
-                Object value = getModel().getValueAt(row, 4);
+                Object value = getModel().getValueAt(row, 3);
 
                 int colour;
                 if(value == "NA")
@@ -69,14 +69,14 @@ public class Summary extends JPanel {
     }
 
     public DefaultTableModel createModel(SolutionPermutation solution) {
-        columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
+        columnNames = new Object[]{"Student Number", "Student Name,",  "Project Name", "Preference"};
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         Object[] row;
 
         for(Solution s : solution.getSolutionList()) {
             Student student = s.getStudent();
             Project project = s.getProject();
-            row = new Object[]{student.getNumber(), student.getName(), project.getId(), project.getTitle(), s.getPreference()};
+            row = new Object[]{student.getNumber(), student.getName(), project.getTitle(), s.getPreference()};
             model.addRow(row);
         }
 
@@ -127,14 +127,15 @@ public class Summary extends JPanel {
 
     public JTable columnWidth(JTable table) {
         DefaultTableColumnModel colModel = (DefaultTableColumnModel) table.getColumnModel();
-        for (int i = 0; i < table.getColumnCount(); i++) {
+        for (int i=0; i < table.getColumnCount(); i++) {
             TableColumn col = colModel.getColumn(i);
             int width = 0;
-            for (int j = 0; j < table.getRowCount(); j++) {
+            for (int j=0; j<table.getRowCount(); j++) {
                 TableCellRenderer renderer = table.getCellRenderer(j, i);
                 Component comp = renderer.getTableCellRendererComponent(table, table.getValueAt(j, i), false, false, j, i);
                 width = Math.max(width, comp.getPreferredSize().width);
             }
+            width = Math.max(width, 100);
             col.setPreferredWidth(width + 2);
         }
 
