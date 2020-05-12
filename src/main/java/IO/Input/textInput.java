@@ -19,6 +19,7 @@ public class textInput {
     private int numberIndex;
     private int gpaIndex;
     private int preferenceStartIndex;
+    private int preferenceEndIndex;
 
     public textInput(File file, String delim) throws FileNotFoundException {
         this.sc = new Scanner(file);
@@ -35,6 +36,9 @@ public class textInput {
 
     public void TitleList(){
         this.titleString = sc.next().split(this.delim);
+        int currentMax = -1;
+        int currentMin = -1;
+
         for(int i=0; i<MAX_NUMBER_COLUMNS; i++) {
             try {
                 if(titleString[i].toLowerCase().equals("student"))
@@ -43,11 +47,25 @@ public class textInput {
                     this.numberIndex = i;
                 else if(titleString[i].toLowerCase().equals("gpa"))
                     this.gpaIndex = i;
-                else if(titleString[i].toLowerCase().equals("1"))
-                    this.preferenceStartIndex = i;
+                else {
+                    try {
+                        int t = Integer.parseInt(titleString[i]);
+
+                        if(t > currentMax || currentMax == -1) {
+                            currentMax = t;
+                            this.preferenceEndIndex = i;
+                        }
+                        if(t < currentMin || currentMin == -1) {
+                            currentMin = t;
+                            this.preferenceStartIndex = i;
+                        }
+                    } catch (NumberFormatException e) {}
+                }
             } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 i = MAX_NUMBER_COLUMNS;
             }
+
+            System.out.println(this.preferenceStartIndex + " " + this.preferenceEndIndex);
         }
     }
 
@@ -138,7 +156,7 @@ public class textInput {
             return true;
         } else if(this.gpaIndex == index) {
             return true;
-        } else if(this.preferenceStartIndex <= index && index <= this.preferenceStartIndex+20) {
+        } else if(this.preferenceStartIndex <= index && index <= this.preferenceEndIndex) {
             return true;
         }
 
@@ -152,7 +170,7 @@ public class textInput {
         if(gpaIndex != -1)
             this.titleString[gpaIndex] = "";
 
-        for(int i=this.preferenceStartIndex; i<this.preferenceStartIndex+20; i++) {
+        for(int i=this.preferenceStartIndex; i<=this.preferenceEndIndex; i++) {
             this.titleString[i] = "";
         }
 
