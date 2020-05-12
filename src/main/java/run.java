@@ -523,9 +523,11 @@ public class run {
                     }
 
                     if(r == JFileChooser.APPROVE_OPTION) {
-                        showMessageDialog(null, "Unused Columns: " + t.getUnusedColumns());
-                        t.Read(this.studentList, this.projectList);
+                        if(t.unusedColumns()) {
+                            showMessageDialog(null, "Unused Columns:\n" + t.getUnusedColumns());
+                        }
 
+                        t.Read(this.studentList, this.projectList);
                         this.visual.loadValues(this.studentList, this.projectList);
                         replacePanel(this.logo, this.visual);
                     }

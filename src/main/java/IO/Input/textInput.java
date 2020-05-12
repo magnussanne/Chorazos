@@ -12,6 +12,7 @@ import java.util.Scanner;
 public class textInput {
     private Scanner sc;
     private String delim;
+    private String[] titleString;
     private int nameIndex;
     private int numberIndex;
     private int gpaIndex;
@@ -31,7 +32,7 @@ public class textInput {
     }
 
     public void TitleList(){
-        String[] titleString = sc.next().split(this.delim);
+        this.titleString = sc.next().split(this.delim);
         for(int i = 0; i<25; i++) {
             try {
                 if(titleString[i].toLowerCase().equals("student"))
@@ -114,7 +115,28 @@ public class textInput {
         return !(this.gpaIndex == -1);
     }
 
+    public boolean unusedColumns() {
+        return true;
+    }
+
     public String getUnusedColumns() {
-        return "List Unused Columns";
+        this.titleString[nameIndex] = "";
+        this.titleString[numberIndex] = "";
+
+        if(gpaIndex != -1)
+            this.titleString[gpaIndex] = "";
+
+        for(int i=this.preferenceStartIndex; i<this.preferenceStartIndex+20; i++) {
+            this.titleString[i] = "";
+        }
+
+        String out = "";
+        for(String s: this.titleString) {
+            if(!s.equals("")) {
+                out += s + ", ";
+            }
+        }
+
+        return out.substring(0, out.length()-2);
     }
 }
