@@ -13,13 +13,31 @@ import java.util.Scanner;
 public class textInput {
     private Scanner sc;
     private String delim;
+    private int nameIndex;
+    private int numberIndex;
+    private int gpaIndex;
+    private int preferenceStartIndex;
 
     public textInput(File file, String delim) throws FileNotFoundException {
         this.sc = new Scanner(file);
         this.sc.useDelimiter("\n");
         this.delim = delim;
 
-        sc.next();
+        TitleList();
+    }
+
+    public void TitleList(){
+        String[] titleString = sc.next().split(this.delim);
+        for(int i = 0; i<25; i++){
+            if(titleString[i].toLowerCase() == "student")
+                this.nameIndex = i;
+            else if(titleString[i].toLowerCase() == "student number")
+                this.numberIndex = i;
+            else if(titleString[i].toLowerCase() == "gpa")
+                this.gpaIndex = i;
+            else if(titleString[i].toLowerCase() == "1")
+                this.preferenceStartIndex = i;
+        }
     }
 
     public void Read(List<Student> studentList, List<Project> projectList) {
