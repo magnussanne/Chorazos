@@ -69,7 +69,7 @@ public class Summary extends JPanel {
     }
 
     public DefaultTableModel createModel(SolutionPermutation solution) {
-        columnNames = new Object[]{"Student Number", "Student Name,", "Project ID", "Project Name", "Preference"};
+        columnNames = new Object[]{"Student Number", "Student Name", "Project ID", "Project Name", "Preference"};
         DefaultTableModel model = new DefaultTableModel(columnNames, 0);
         Object[] row;
 
