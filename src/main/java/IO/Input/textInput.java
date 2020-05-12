@@ -107,7 +107,7 @@ public class textInput {
             out += "Number Index, ";
         }
         if(this.preferenceStartIndex == -1) {
-            out += "Project Preferences, ";
+            out += "Project Preferences (Please ensure preference titles are in number values, not text), ";
         }
 
         return out.substring(0, out.length()-2);
