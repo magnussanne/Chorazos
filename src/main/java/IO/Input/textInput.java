@@ -111,7 +111,7 @@ public class textInput {
     }
 
     public boolean gpaPresent() {
-        return false;
+        return !(this.gpaIndex == -1);
     }
 
     public String getUnusedColumns() {
