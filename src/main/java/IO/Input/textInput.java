@@ -22,20 +22,29 @@ public class textInput {
         this.sc.useDelimiter("\n");
         this.delim = delim;
 
+        this.nameIndex = -1;
+        this.numberIndex = -1;
+        this.gpaIndex = -1;
+        this.preferenceStartIndex = -1;
+
         TitleList();
     }
 
     public void TitleList(){
         String[] titleString = sc.next().split(this.delim);
-        for(int i = 0; i<25; i++){
-            if(titleString[i].toLowerCase() == "student")
-                this.nameIndex = i;
-            else if(titleString[i].toLowerCase() == "student number")
-                this.numberIndex = i;
-            else if(titleString[i].toLowerCase() == "gpa")
-                this.gpaIndex = i;
-            else if(titleString[i].toLowerCase() == "1")
-                this.preferenceStartIndex = i;
+        for(int i = 0; i<25; i++) {
+            try {
+                if(titleString[i].toLowerCase().equals("student"))
+                    this.nameIndex = i;
+                else if(titleString[i].toLowerCase().equals("student number"))
+                    this.numberIndex = i;
+                else if(titleString[i].toLowerCase().equals("gpa"))
+                    this.gpaIndex = i;
+                else if(titleString[i].toLowerCase().equals("1"))
+                    this.preferenceStartIndex = i;
+            } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
+                i = 25;
+            }
         }
     }
 
@@ -75,11 +84,30 @@ public class textInput {
     }
 
     public boolean stopError() {
+        if(this.nameIndex == -1) {
+            return true;
+        } else if(this.numberIndex == -1) {
+            return true;
+        } else if(this.preferenceStartIndex == -1) {
+            return true;
+        }
+
         return false;
     }
 
     public String getStopError() {
-        return "Stop Reason";
+        String out = "";
+        if(this.nameIndex == -1) {
+            out += "Student Name, ";
+        }
+        if(this.numberIndex == -1) {
+            out += "Number Index, ";
+        }
+        if(this.preferenceStartIndex == -1) {
+            out += "Project Preferences, ";
+        }
+
+        return out.substring(0, out.length()-2);
     }
 
     public boolean gpaPresent() {
