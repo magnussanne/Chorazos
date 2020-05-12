@@ -44,11 +44,16 @@ public class textInput {
             String[] tokens = sc.next().split(this.delim);
             List<Project> preference = new ArrayList<>();
 
-            String name = tokens[0];
-            int number = Integer.parseInt(tokens[1]);
-            double gpa = Double.parseDouble(tokens[2]);
+            String name = tokens[nameIndex];
+            int number = Integer.parseInt(tokens[numberIndex]);
+            double gpa;
+            if(gpaIndex == -1)
+                gpa = 3;
+            else
+                gpa = Double.parseDouble(tokens[gpaIndex]);
 
-            for(int i=4; i<23; i++) {
+
+            for(int i=preferenceStartIndex; i<preferenceStartIndex + 20; i++) {
                 try {
                     Project project = null;
 
