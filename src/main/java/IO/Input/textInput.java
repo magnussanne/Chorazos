@@ -82,7 +82,7 @@ public class textInput {
             else
                 gpa = Double.parseDouble(tokens[gpaIndex]);
 
-            for(int i=4; i<MAX_NUMBER_COLUMNS; i++) {
+            for(int i=this.preferenceStartIndex; i<this.preferenceEndIndex; i++) {
 
                 try {
                     Project project = null;
@@ -100,7 +100,7 @@ public class textInput {
 
                     preference.add(project);
                 } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
-                    i = MAX_NUMBER_COLUMNS;
+                    i = this.preferenceEndIndex;
                 }
             }
 
@@ -127,7 +127,7 @@ public class textInput {
             out += "Student Name, ";
         }
         if(this.numberIndex == -1) {
-            out += "Number Index, ";
+            out += "Student Number, ";
         }
         if(this.preferenceStartIndex == -1) {
             out += "Project Preferences (Please ensure preference titles are in number values, not text), ";
