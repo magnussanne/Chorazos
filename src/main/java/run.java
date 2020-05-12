@@ -507,11 +507,31 @@ public class run {
                 if (r == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
                     textInput t = new textInput(file, ",");
-                    t.Read(this.studentList, this.projectList);
 
-                    this.visual.loadValues(this.studentList, this.projectList);
-                    replacePanel(this.logo, this.visual);
-                } else if(r == JFileChooser.CANCEL_OPTION) {
+                    if(t.stopError()) {
+                        showMessageDialog(null, "Error: Missing Columns\n" + t.getStopError());
+                        r = JFileChooser.CANCEL_OPTION;
+                    }
+
+                    if(!t.gpaPresent() && r == JFileChooser.APPROVE_OPTION) {
+                        String message = "Student GPA column is not present. Is this correct?";
+                        int proceed = JOptionPane.showConfirmDialog(null, message, "GPA", JOptionPane.YES_NO_OPTION);
+
+                        if (proceed == JOptionPane.NO_OPTION) {
+                            r = JFileChooser.CANCEL_OPTION;
+                        }
+                    }
+
+                    if(r == JFileChooser.APPROVE_OPTION) {
+                        showMessageDialog(null, "Unused Columns: " + t.getUnusedColumns());
+                        t.Read(this.studentList, this.projectList);
+
+                        this.visual.loadValues(this.studentList, this.projectList);
+                        replacePanel(this.logo, this.visual);
+                    }
+                }
+
+                if (r == JFileChooser.CANCEL_OPTION) {
                     this.projectList = oldProject;
                     this.studentList = oldStudent;
                 }

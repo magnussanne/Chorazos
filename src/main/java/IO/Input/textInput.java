@@ -1,6 +1,5 @@
 package IO.Input;
 
-import Interface.Focus;
 import Objects.Project;
 import Objects.Student;
 
@@ -73,5 +72,21 @@ public class textInput {
             Student s = new Student(name, number, gpa, preference);
             studentList.add(s);
         }
+    }
+
+    public boolean stopError() {
+        return false;
+    }
+
+    public String getStopError() {
+        return "Stop Reason";
+    }
+
+    public boolean gpaPresent() {
+        return false;
+    }
+
+    public String getUnusedColumns() {
+        return "List Unused Columns";
     }
 }
