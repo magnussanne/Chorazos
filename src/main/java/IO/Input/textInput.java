@@ -64,8 +64,6 @@ public class textInput {
             } catch (IndexOutOfBoundsException indexOutOfBoundsException) {
                 i = MAX_NUMBER_COLUMNS;
             }
-
-            System.out.println(this.preferenceStartIndex + " " + this.preferenceEndIndex);
         }
     }
 
