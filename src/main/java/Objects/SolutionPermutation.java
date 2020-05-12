@@ -167,7 +167,7 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
     }
 
     public String toString() {
-        String out = "Student Number, Student Name, Student GPA, Project UUID, Project Title\n";
+        String out = "Student Number, Student Name, Student GPA, Project Title\n";
         for(Solution s : solutionList) {
             out += s.toString() + "\n";
         }
