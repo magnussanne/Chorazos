@@ -1,4 +1,4 @@
-package IO.Output.CSV;
+package IO;
 
 import Objects.Staff;
 

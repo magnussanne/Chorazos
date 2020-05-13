@@ -5,7 +5,7 @@ import Functions.Search.GeneticAlgorithm;
 import Functions.Search.HillClimbing;
 import Functions.Search.Search;
 import Functions.Search.SimulatedAnnealing;
-import IO.Input.textInput;
+import IO.textInput;
 import Objects.Project;
 import Objects.SolutionPermutation;
 import Objects.Student;

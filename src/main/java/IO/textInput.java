@@ -1,4 +1,4 @@
-package IO.Input;
+package IO;
 
 import Objects.Project;
 import Objects.Student;
