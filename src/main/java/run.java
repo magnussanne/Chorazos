@@ -130,6 +130,7 @@ public class run {
         InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
         ImageIcon image = new ImageIcon(ImageIO.read(stream));
         javax.swing.ToolTipManager.sharedInstance().setDismissDelay(100000 );
+        javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
 
         JLabel pLabel = new JLabel("Population Size", image, JLabel.LEFT);
         pLabel.setToolTipText("<html>" + "This decides the amount of solutions to create when finding the answer" + "<br>" +
