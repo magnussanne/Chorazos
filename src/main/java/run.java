@@ -86,6 +86,27 @@ public class run {
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
 
+        JSlider p = new JSlider();
+        JSlider m = new JSlider();
+        JSlider n = new JSlider();
+        JSlider r = new JSlider();
+        JSlider e = new JSlider();
+        JSlider gpa = new JSlider();
+
+        p.setValue(1000);
+        m.setValue(32);
+        n.setValue(100);
+        r.setValue(15);
+        e.setValue(15);
+        gpa.setValue(50);
+
+        JSliderList.add(p);
+        JSliderList.add(m);
+        JSliderList.add(n);
+        JSliderList.add(r);
+        JSliderList.add(e);
+        JSliderList.add(gpa);
+
         simpleLayout.add(startSearchButton(ga, JSliderList), c);
 
         advancedLayout.addTab("Genetic Algorithm", gaPanel());
@@ -97,48 +118,7 @@ public class run {
 
         return cards;
     }
-/*
-    private JPanel simpleLayout() {
-        JPanel container = new JPanel();
-        GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
-        List<JSlider> JSliderList = new ArrayList<>();
-        container.setLayout(new GridBagLayout());
-        GridBagConstraints c = new GridBagConstraints();
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.weighty = 1.0;
-        c.weightx = 0.5;
-        c.ipady = 40;
-        c.gridx = 0;
-        c.gridy = 0;
-        c.gridwidth = 3;
-        c.anchor = GridBagConstraints.PAGE_START;
-        container.add(loadFileButton(), c);
 
-        JButton advanced = new JButton("Advanced Settings");
-        advanced.addActionListener(e -> cards().show(advancedLayout(), "link1"));
-        c.gridx = 7;
-        c.gridy = 7;
-        container.add(advanced, c);
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.ipady = 40;
-        c.gridwidth = 1;
-        c.weightx = 0.5;
-        c.gridy = 14;
-        c.anchor = GridBagConstraints.PAGE_END;
-
-        container.add(startSearchButton(ga, JSliderList), c);
-        return container;
-    }
-
-    private JTabbedPane advancedLayout() {
-        JTabbedPane tabbedPane = new JTabbedPane();
-        tabbedPane.addTab("Genetic Algorithm", gaPanel());
-        tabbedPane.addTab("Simulated Annealing", saPanel());
-        tabbedPane.addTab("Hill Climbing", hcPanel());
-        return tabbedPane;
-    }
-*/
     private JPanel gaPanel() {
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
