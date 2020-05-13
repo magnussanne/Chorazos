@@ -109,7 +109,7 @@ public class run {
         JSliderList.add(e);
         JSliderList.add(gpa);
 
-        simpleLayout.add(startSearchButton(ga, JSliderList), c);
+        simpleLayout.add(startSearchButton(ga, JSliderList, c), c);
 
         JButton simple = new JButton("Simple Settings");
         advancedLayout.addTab("Genetic Algorithm", gaPanel(simple));
@@ -298,7 +298,7 @@ public class run {
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
 
-        container.add(startSearchButton(ga, JSliderList), c);
+        container.add(startSearchButton(ga, JSliderList, c), c);
 
         p.setEnabled(!useDefault.isSelected());
         m.setEnabled(!useDefault.isSelected());
@@ -453,7 +453,7 @@ public class run {
         JSliderList.add(changeRate);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(sa, JSliderList), c);
+        container.add(startSearchButton(sa, JSliderList, c), c);
 
         temp.setEnabled(!useDefault.isSelected());
         changeRate.setEnabled(!useDefault.isSelected());
@@ -559,7 +559,7 @@ public class run {
         JSliderList.add(changes);
         JSliderList.add(gpa);
 
-        container.add(startSearchButton(hc, JSliderList), c);
+        container.add(startSearchButton(hc, JSliderList, c), c);
 
         changes.setEnabled(!useDefault.isSelected());
         gpa.setEnabled(!useDefault.isSelected());
@@ -644,9 +644,9 @@ public class run {
         return loadFile;
     }
 
-    private JButton startSearchButton(Search algorithm, List<JSlider> sliders) {
+    private JButton startSearchButton(Search algorithm, List<JSlider> sliders, GridBagConstraints c) {
         JButton runButton = new JButton("Run");
-        JButton cancelButton = cancelButton(algorithm, runButton);
+        JButton cancelButton = cancelButton(algorithm, runButton, c);
 
         runButton.addActionListener(e -> {
             if(this.projectList == null || this.studentList == null) {
@@ -655,38 +655,39 @@ public class run {
                 this.runningThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        runButton(algorithm, sliders, runButton, cancelButton);
+                        runButton(algorithm, sliders, runButton, cancelButton, c);
                     }
                 });
 
                 this.runningThread.start();
-                replaceComponent(runButton, cancelButton);
+                replaceComponent(runButton, cancelButton, c);
             }
         });
 
         return runButton;
     }
 
-    private void runButton(Search algorithm, List<JSlider> sliders, JButton run, JButton cancel) {
+    private void runButton(Search algorithm, List<JSlider> sliders, JButton run, JButton cancel, GridBagConstraints c) {
         try {
             replaceComponent(this.summary, this.visual);
         } catch (NullPointerException n) {}
 
+        this.visual.resetGeneration();
         algorithm.setParameters(sliders);
 
         SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
 
         summary = new Summary(output);
         replaceComponent(this.visual, this.summary);
-        replaceComponent(cancel, run);
+        replaceComponent(cancel, run, c);
     }
 
-    private JButton cancelButton(Search algorithm, JButton runButton) {
+    private JButton cancelButton(Search algorithm, JButton runButton, GridBagConstraints c) {
         JButton cancelButton = new JButton("Cancel");
 
         cancelButton.addActionListener(e -> {
             algorithm.cancel();
-            replaceComponent(cancelButton, runButton);
+            replaceComponent(cancelButton, runButton, c);
         });
 
         return cancelButton;
@@ -696,6 +697,14 @@ public class run {
         Container container = oldComponent.getParent();
         container.remove(oldComponent);
         container.add(newComponent);
+        this.mainWindow.validate();
+        this.mainWindow.repaint();
+    }
+
+    private void replaceComponent(Container oldComponent, Container newComponent, GridBagConstraints c) {
+        Container container = oldComponent.getParent();
+        container.remove(oldComponent);
+        container.add(newComponent, c);
         this.mainWindow.validate();
         this.mainWindow.repaint();
     }

@@ -1,10 +1,8 @@
 package Objects;
 
-import Interface.Focus;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 import java.util.Random;
 
 public class SolutionPermutation implements Interface.SolutionPermutation {
@@ -82,11 +80,10 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
             }
         }
 
-        try {
+        if(preferenceArray[1] != 0) {
             preferenceArray[0] /= preferenceArray[1];
-        } catch (ArithmeticException e) {
-            preferenceArray = getPreferenceInfo();
         }
+
 
         return preferenceArray;
     }
