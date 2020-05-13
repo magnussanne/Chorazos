@@ -15,6 +15,7 @@ import java.awt.*;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -22,6 +23,7 @@ import java.util.Hashtable;
 import static javax.swing.JOptionPane.showMessageDialog;
 
 public class run {
+    private Thread runningThread;
     private JFrame mainWindow;
     private List<Student> studentList;
     private List<Project> projectList;
@@ -29,14 +31,15 @@ public class run {
     private Summary summary;
     private Visualization visual;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         run gui = new run();
         gui.createGUI();
     }
 
-    private void createGUI(){
+    private void createGUI() throws IOException {
         this.visual = new  Visualization();
         this.logo = new Image();
+        this.runningThread = null;
 
         this.mainWindow = new JFrame("Chorazos");
         this.mainWindow.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
@@ -628,31 +631,44 @@ public class run {
     }
 
     private JButton startSearchButton(Search algorithm, List<JSlider> sliders) {
+
         JButton runButton = new JButton("Run");
 
         runButton.addActionListener(e -> {
-            if(this.projectList == null || this.studentList == null) {
-                showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
-            } else {
-                try {
-                    this.mainWindow.remove(this.summary);
-                    this.mainWindow.add(this.visual);
-                    this.mainWindow.validate();
-                    this.mainWindow.repaint();
-                } catch (NullPointerException n) {
-
-                }
-
-                algorithm.setParameters(sliders);
-
-                SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
-
-                summary = new Summary(output);
-                replacePanel(this.visual, this.summary);
+            if(this.runningThread == null) {
+                this.runningThread = new Thread() {
+                    public void run() {
+                        runButton(algorithm, sliders);
+                    }
+                };
+                this.runningThread.start();
+                this.runningThread = null;
             }
         });
 
         return runButton;
+    }
+
+    private void runButton(Search algorithm, List<JSlider> sliders) {
+        if(this.projectList == null || this.studentList == null) {
+            showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
+        } else {
+            try {
+                this.mainWindow.remove(this.summary);
+                this.mainWindow.add(this.visual);
+                this.mainWindow.validate();
+                this.mainWindow.repaint();
+            } catch (NullPointerException n) {
+
+            }
+
+            algorithm.setParameters(sliders);
+
+            SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
+
+            summary = new Summary(output);
+            replacePanel(this.visual, this.summary);
+        }
     }
 
     private void replacePanel(JPanel oldPanel, JPanel newPanel) {
