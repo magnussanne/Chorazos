@@ -14,6 +14,7 @@ public class GeneticAlgorithm implements Search {
     private int E = 15;           //  % Chance of mutation
 
     private double gpaImportance = 0.5;
+    private boolean run;
 
     private Visualization visual;
 
@@ -25,10 +26,11 @@ public class GeneticAlgorithm implements Search {
     }
 
     public SolutionPermutation solve(List<Student> studentList, List<Project> projectList) {
+        this.run = true;
         List<SolutionPermutation> population = generateInitialPopulation(studentList, projectList);
         SolutionPermutation temp;
 
-        for(int j=0; j<R; j++){
+        for(int j=0; j<this.R && this.run; j++){
             temp = population.get(P-1);
             update(population);
 
@@ -38,6 +40,10 @@ public class GeneticAlgorithm implements Search {
         }
 
         return population.get(P-1);
+    }
+
+    public void cancel() {
+        this.run = false;
     }
 
     public void setParameters(List<JSlider> sliders) {

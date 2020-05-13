@@ -10,12 +10,13 @@ import Objects.Project;
 import Objects.SolutionPermutation;
 import Objects.Student;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -53,7 +54,8 @@ public class run {
         this.mainWindow.setVisible(true);
     }
 
-    private JPanel cards(){
+
+    private JPanel cards() throws IOException{
         JPanel cards = new JPanel(new CardLayout());
         CardLayout cardLayout = (CardLayout) cards.getLayout();
 
@@ -122,24 +124,34 @@ public class run {
         return cards;
     }
 
-    private JPanel gaPanel() {
+    private JPanel gaPanel() throws IOException{
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
         List<JSlider> JSliderList = new ArrayList<>();
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
+        ImageIcon image = new ImageIcon(ImageIO.read(stream));
+        javax.swing.ToolTipManager.sharedInstance().setDismissDelay(100000 );
+        javax.swing.ToolTipManager.sharedInstance().setInitialDelay(0);
 
-        JLabel pLabel = new JLabel();
-        pLabel.setText("Population Size");
-        JLabel mLabel = new JLabel();
-        mLabel.setText("Percentage to be culled");
-        JLabel nLabel = new JLabel();
-        nLabel.setText("Percentage to be mated");
-        JLabel rLabel = new JLabel();
-        rLabel.setText("Number of Iterations without improvement before terminating");
-        JLabel eLabel = new JLabel();
-        eLabel.setText("Chance of Mutation");
-        JLabel gpaLabel = new JLabel();
-        gpaLabel.setText("Influence of GPA");
+        JLabel pLabel = new JLabel("Population Size", image, JLabel.LEFT);
+        pLabel.setToolTipText("<html>" + "This decides the amount of solutions to create when finding the answer" + "<br>" +
+                "Increasing this will increase run time and will improve the quality of the answer." + "</html>");
+        JLabel mLabel = new JLabel("Percentage to be culled", image, JLabel.LEFT);
+        mLabel.setToolTipText("<html>" + "The bottom percentage of the population that is gotten rid of" + "<br>" +
+                "" + "</html>");
+        JLabel nLabel = new JLabel("Percentage to be mated", image, JLabel.LEFT);
+        nLabel.setToolTipText("<html>" + "The top percentage to be combined" + "<br>" +
+                "" + "</html>");
+        JLabel rLabel = new JLabel("Number of Generations without improvement before terminating", image, JLabel.LEFT);
+        rLabel.setToolTipText("<html>" + "Increasing this increases run time and improves quality of result" + "<br>" +
+                "" + "</html>");
+        JLabel eLabel = new JLabel("Chance of Mutation", image, JLabel.LEFT);
+        eLabel.setToolTipText("<html>" + "The chance a solution has of being randomly mutated before mating with another" + "<br>" +
+                "" + "</html>");
+        JLabel gpaLabel = new JLabel("Influence of GPA", image, JLabel.LEFT);
+        gpaLabel.setToolTipText("<html>" + "The influence the students GPA has on their project" + "<br>" +
+                "When this is high, the higher the students GPA, the more likely they are to get a higher choice" + "</html>");
 
         container.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -162,6 +174,7 @@ public class run {
         pLabelTable.put( new Integer( 20000 ), new JLabel("20,000") );
         pLabelTable.put( new Integer( 40000 ), new JLabel("40,000") );
         p.setLabelTable( pLabelTable );
+
 
         p.setPaintLabels(true);
         c.gridy = 1;
@@ -318,22 +331,29 @@ public class run {
         return container;
     }
 
-    private JPanel saPanel() {
+    private JPanel saPanel() throws IOException {
         JPanel container = new JPanel();
         SimulatedAnnealing sa = new SimulatedAnnealing(this.visual);
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
+        ImageIcon image = new ImageIcon(ImageIO.read(stream));
+        javax.swing.ToolTipManager.sharedInstance().setDismissDelay(100000 );
 
         List<JSlider> JSliderList = new ArrayList<>();
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
 
 
-        JLabel changesLabel = new JLabel();
-        changesLabel.setText("Number of Changes per iteration");
-        JLabel tempLabel = new JLabel();
-        tempLabel.setText("Initial Temperature");
-        JLabel changeRateLabel = new JLabel();
-        changeRateLabel.setText("Change in Temperature");
-        JLabel gpaLabel = new JLabel();
-        gpaLabel.setText("Influence of GPA");
+        JLabel changesLabel = new JLabel("Number of Changes per iteration", image, JLabel.LEFT);
+        changesLabel.setToolTipText("<html>" + "How many random changes is made to the solution" + "<br>" +
+                "" + "</html>");
+        JLabel tempLabel = new JLabel("Initial Temperature", image, JLabel.LEFT);
+        tempLabel.setToolTipText("<html>" + "This affects how long the program will run for" + "<br>" +
+                "The higher the initial temperature the longer it will run for and the better the solution" + "</html>");
+        JLabel changeRateLabel = new JLabel("Change in Temperature", image, JLabel.LEFT);
+        changeRateLabel.setToolTipText("<html>" + "How fast the temperature changes, is multiplicative" + "<br>" +
+                "The higher this is the slower the change, the longer it runs, and the better the solution" + "</html>");
+        JLabel gpaLabel = new JLabel("Influence of GPA", image, JLabel.LEFT);
+        gpaLabel.setToolTipText("<html>" + "The influence the students GPA has on their project" + "<br>" +
+                "When this is high, the higher the students GPA, the more likely they are to get a higher choice" + "</html>");
 
         container.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
@@ -460,19 +480,24 @@ public class run {
         return container;
     }
 
-    private JPanel hcPanel() {
+    private JPanel hcPanel() throws IOException {
         JPanel container = new JPanel();
         HillClimbing hc = new HillClimbing(this.visual);
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
+        ImageIcon image = new ImageIcon(ImageIO.read(stream));
+        javax.swing.ToolTipManager.sharedInstance().setDismissDelay(100000 );
 
         List<JSlider> JSliderList = new ArrayList<>();
 
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
 
 
-        JLabel changesLabel = new JLabel();
-        changesLabel.setText("Number of Changes per iteration");
-        JLabel gpaLabel = new JLabel();
-        gpaLabel.setText("Influence of GPA");
+        JLabel changesLabel = new JLabel("Number of Changes per iteration", image, JLabel.LEFT);
+        changesLabel.setToolTipText("<html>" + "How many random changes is made to the solution" + "<br>" +
+                "" + "</html>");
+        JLabel gpaLabel = new JLabel("Influence of GPA", image, JLabel.LEFT);
+        gpaLabel.setToolTipText("<html>" + "The influence the students GPA has on their project" + "<br>" +
+                "When this is high, the higher the students GPA, the more likely they are to get a higher choice" + "</html>");
         container.setLayout(new GridBagLayout());
         GridBagConstraints c = new GridBagConstraints();
         c.fill = GridBagConstraints.HORIZONTAL;
@@ -604,7 +629,7 @@ public class run {
 
                         t.Read(this.studentList, this.projectList);
                         this.visual.loadValues(this.studentList, this.projectList);
-                        replacePanel(this.logo, this.visual);
+                        replaceComponent(this.logo, this.visual);
                     }
                 }
 
@@ -621,18 +646,22 @@ public class run {
     }
 
     private JButton startSearchButton(Search algorithm, List<JSlider> sliders) {
-
         JButton runButton = new JButton("Run");
+        JButton cancelButton = cancelButton(algorithm, runButton);
 
         runButton.addActionListener(e -> {
-            if(this.runningThread == null) {
-                this.runningThread = new Thread() {
+            if(this.projectList == null || this.studentList == null) {
+                showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
+            } else {
+                this.runningThread = new Thread(new Runnable() {
+                    @Override
                     public void run() {
                         runButton(algorithm, sliders);
                     }
-                };
+                });
+
                 this.runningThread.start();
-                this.runningThread = null;
+                replaceComponent(runButton, cancelButton);
             }
         });
 
@@ -640,30 +669,33 @@ public class run {
     }
 
     private void runButton(Search algorithm, List<JSlider> sliders) {
-        if(this.projectList == null || this.studentList == null) {
-            showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
-        } else {
-            try {
-                this.mainWindow.remove(this.summary);
-                this.mainWindow.add(this.visual);
-                this.mainWindow.validate();
-                this.mainWindow.repaint();
-            } catch (NullPointerException n) {
+        try {
+            replaceComponent(this.summary, this.visual);
+        } catch (NullPointerException n) {}
 
-            }
+        algorithm.setParameters(sliders);
 
-            algorithm.setParameters(sliders);
+        SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
 
-            SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
-
-            summary = new Summary(output);
-            replacePanel(this.visual, this.summary);
-        }
+        summary = new Summary(output);
+        replaceComponent(this.visual, this.summary);
     }
 
-    private void replacePanel(JPanel oldPanel, JPanel newPanel) {
-        this.mainWindow.remove(oldPanel);
-        this.mainWindow.add(newPanel);
+    private JButton cancelButton(Search algorithm, JButton runButton) {
+        JButton cancelButton = new JButton("Cancel");
+
+        cancelButton.addActionListener(e -> {
+            algorithm.cancel();
+            replaceComponent(cancelButton, runButton);
+        });
+
+        return cancelButton;
+    }
+
+    private void replaceComponent(Container oldComponent, Container newComponent) {
+        Container container = oldComponent.getParent();
+        container.remove(oldComponent);
+        container.add(newComponent);
         this.mainWindow.validate();
         this.mainWindow.repaint();
     }
