@@ -112,6 +112,9 @@ public class run {
         advancedLayout.addTab("Genetic Algorithm", gaPanel());
         advancedLayout.addTab("Simulated Annealing", saPanel());
         advancedLayout.addTab("Hill Climbing", hcPanel());
+        JButton simple = new JButton("Simple Settings");
+        simple.addActionListener(a -> cardLayout.next(cards));
+        advancedLayout.add(simple);
 
         cards.add(simpleLayout, "Simple");
         cards.add(advancedLayout, "Advanced");
@@ -162,12 +165,19 @@ public class run {
 
         p.setPaintLabels(true);
         c.gridy = 1;
+        c.gridx = 0;
         container.add(useDefault, c);
+
+        c.gridx = 1;
+        JButton simple = new JButton("Simple Settings");
+        //simple.addActionListener(a -> cards.cardLayout.next(cards));
+        container.add(simple, c);
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 2;
+        c.gridx = 0;
         container.add(pLabel, c);
         c.gridy = 3;
         container.add(p, c);
