@@ -14,6 +14,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -29,12 +30,12 @@ public class run {
     private Summary summary;
     private Visualization visual;
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         run gui = new run();
         gui.createGUI();
     }
 
-    private void createGUI(){
+    private void createGUI() throws IOException {
         this.visual = new  Visualization();
         this.logo = new Image();
         this.runningThread = null;
