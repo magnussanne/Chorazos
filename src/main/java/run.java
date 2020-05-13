@@ -10,11 +10,13 @@ import Objects.Project;
 import Objects.SolutionPermutation;
 import Objects.Student;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Hashtable;
@@ -57,15 +59,18 @@ public class run {
         this.mainWindow.setVisible(true);
     }
 
-    private JPanel gaPanel() {
+    private JPanel gaPanel() throws IOException {
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
         List<JSlider> JSliderList = new ArrayList<>();
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
+        ImageIcon image = new ImageIcon(ImageIO.read(stream));
+        javax.swing.ToolTipManager.sharedInstance().setDismissDelay(100000 );
 
-        JLabel pLabel = new JLabel();
-        pLabel.setText("Population Size");
-        pLabel.setToolTipText("Click this button to disable the middle button.");
+        JLabel pLabel = new JLabel("Population Size", image, JLabel.LEFT);
+        pLabel.setToolTipText("<html>" + "This decides the amount of solutions to create when finding the answer" + "<br>" +
+                "Increasing this will increase run time and will improve the quality of the answer." + "</html>");
         JLabel mLabel = new JLabel();
         mLabel.setText("Percentage to be culled");
         JLabel nLabel = new JLabel();
