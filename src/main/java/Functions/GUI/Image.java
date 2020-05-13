@@ -1,28 +1,20 @@
 package Functions.GUI;
 
+import javax.imageio.ImageIO;
 import javax.swing.*;
 import java.awt.*;
+import java.io.IOException;
+import java.io.InputStream;
 
 public class Image extends JPanel {
-    public Image() {
+    public Image() throws IOException {
         setPreferredSize(new Dimension(500, 500));
 
-        ImageIcon image = new ImageIcon("src/main/resources/Chorazos.jpg");
+        InputStream stream = this.getClass().getClassLoader().getResourceAsStream("Chorazos.jpg");
+        ImageIcon image = new ImageIcon(ImageIO.read(stream));
         JLabel label = new JLabel("", image, JLabel.CENTER);
 
         this.setLayout(new BorderLayout());
         this.add(label, BorderLayout.CENTER);
-    }
-
-    public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> {
-            final JFrame frame = new JFrame();
-            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            frame.setResizable(false);
-            frame.add(new Image(), BorderLayout.CENTER);
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
     }
 }

@@ -1,10 +1,5 @@
 package Functions.GUI;
 
-import Functions.Search.GeneticAlgorithm;
-import Functions.Search.HillClimbing;
-import Functions.Search.SimulatedAnnealing;
-import IO.Input.CSV.ReadProjects;
-import IO.Input.CSV.ReadStudents;
 import Objects.Project;
 import Objects.Solution;
 import Objects.SolutionPermutation;
@@ -12,9 +7,7 @@ import Objects.Student;
 
 import javax.swing.*;
 import java.awt.*;
-import java.io.FileNotFoundException;
 import java.text.DecimalFormat;
-import java.util.ArrayList;
 import java.util.List;
 
 public class Visualization extends JPanel {
@@ -120,43 +113,5 @@ public class Visualization extends JPanel {
             g.drawLine(startX, (int) startY, endX, (int) endY);
             i++;
         }
-    }
-
-    public static void main(String[] args) throws FileNotFoundException {
-        List<Student> studentList = new ArrayList<>();
-        List<Project> projectList = new ArrayList<>();
-
-        ReadProjects.Read("project.csv", projectList);
-        ReadStudents.Read("student.csv", studentList, projectList);
-
-        Visualization visual = new Visualization();
-        visual.loadValues(studentList, projectList);
-
-        SwingUtilities.invokeLater(() -> {
-            final JFrame frame = new JFrame();
-            frame.setDefaultCloseOperation(WindowConstants.EXIT_ON_CLOSE);
-            frame.setResizable(false);
-            frame.add(visual, BorderLayout.CENTER);
-            frame.pack();
-            frame.setLocationRelativeTo(null);
-            frame.setVisible(true);
-        });
-
-        GeneticAlgorithm ga = new GeneticAlgorithm(visual);
-        SimulatedAnnealing sa = new SimulatedAnnealing(visual);
-        HillClimbing hc = new HillClimbing(visual);
-
-        switch (0) {
-            case 0:
-                ga.solve(studentList, projectList);
-                break;
-            case 1:
-                sa.solve(studentList, projectList);
-                break;
-            case 2:
-                hc.solve(studentList, projectList);
-                break;
-        }
-
     }
 }
