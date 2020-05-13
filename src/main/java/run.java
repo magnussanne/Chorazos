@@ -109,6 +109,8 @@ public class run {
         JSliderList.add(e);
         JSliderList.add(gpa);
 
+        simpleLayout.add(startSearchButton(ga, JSliderList, c), c);
+
         JButton simple1 = new JButton("Simple Settings");
         simple1.addActionListener(a -> cardLayout.next(cards));
         JButton simple2 = new JButton("Simple Settings");
@@ -119,10 +121,6 @@ public class run {
         advancedLayout.addTab("Genetic Algorithm", gaPanel(simple1));
         advancedLayout.addTab("Simulated Annealing", saPanel(simple2));
         advancedLayout.addTab("Hill Climbing", hcPanel(simple3));
-
-        simple.addActionListener(a -> cardLayout.next(cards));
-        advancedLayout.add(simple);
-
 
         cards.add(simpleLayout, "Simple");
         cards.add(advancedLayout, "Advanced");
