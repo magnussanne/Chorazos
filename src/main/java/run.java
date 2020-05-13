@@ -110,13 +110,16 @@ public class run {
         JSliderList.add(gpa);
 
         simpleLayout.add(startSearchButton(ga, JSliderList), c);
+        JButton simple1 = new JButton("Simple Settings");
+        simple1.addActionListener(a -> cardLayout.next(cards));
+        JButton simple2 = new JButton("Simple Settings");
+        simple2.addActionListener(a -> cardLayout.next(cards));
+        JButton simple3 = new JButton("Simple Settings");
+        simple3.addActionListener(a -> cardLayout.next(cards));
 
-        advancedLayout.addTab("Genetic Algorithm", gaPanel());
-        advancedLayout.addTab("Simulated Annealing", saPanel());
-        advancedLayout.addTab("Hill Climbing", hcPanel());
-        JButton simple = new JButton("Simple Settings");
-        simple.addActionListener(a -> cardLayout.next(cards));
-        advancedLayout.add(simple);
+        advancedLayout.addTab("Genetic Algorithm", gaPanel(simple1));
+        advancedLayout.addTab("Simulated Annealing", saPanel(simple2));
+        advancedLayout.addTab("Hill Climbing", hcPanel(simple3));
 
         cards.add(simpleLayout, "Simple");
         cards.add(advancedLayout, "Advanced");
@@ -124,7 +127,7 @@ public class run {
         return cards;
     }
 
-    private JPanel gaPanel() throws IOException{
+    private JPanel gaPanel(JButton simple1) throws IOException{
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
@@ -180,12 +183,8 @@ public class run {
         c.gridy = 1;
         c.gridx = 0;
         container.add(useDefault, c);
-
         c.gridx = 1;
-        JButton simple = new JButton("Simple Settings");
-        //simple.addActionListener(a -> cards.cardLayout.next(cards));
-        container.add(simple, c);
-
+        container.add(simple1, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.gridwidth = 0;
         c.ipady = 0;
@@ -331,7 +330,7 @@ public class run {
         return container;
     }
 
-    private JPanel saPanel() throws IOException {
+    private JPanel saPanel(JButton simple2) throws IOException {
         JPanel container = new JPanel();
         SimulatedAnnealing sa = new SimulatedAnnealing(this.visual);
         InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
@@ -383,7 +382,11 @@ public class run {
         c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
+        c.gridx = 0;
         container.add(useDefault, c);
+        c.gridx = 1;
+        container.add(simple2, c);
+        c.gridx = 0;
         c.gridy = 2;
         container.add(changesLabel, c);
         c.gridy = 3;
@@ -480,7 +483,7 @@ public class run {
         return container;
     }
 
-    private JPanel hcPanel() throws IOException {
+    private JPanel hcPanel(JButton simple3) throws IOException {
         JPanel container = new JPanel();
         HillClimbing hc = new HillClimbing(this.visual);
         InputStream stream = this.getClass().getClassLoader().getResourceAsStream("question.jpg");
@@ -527,6 +530,9 @@ public class run {
         c.ipady = 0;
         c.gridy = 1;
         container.add(useDefault, c);
+        c.gridx = 1;
+        container.add(simple3, c);
+        c.gridx = 0;
         c.gridy = 2;
         container.add(changesLabel, c);
         c.gridy = 3;
