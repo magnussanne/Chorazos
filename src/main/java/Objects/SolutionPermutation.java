@@ -91,7 +91,7 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
         int[] info = getPreferenceInfo();
 
         String out = info[1] + " students got an average of their " + info[0] +
-            " choice, while " + info[2] + " students did not get any of their choices";
+            " choice,\nwhile " + info[2] + " students did not get any of their choices.";
 
         List<Project> p = new ArrayList<>();
         int count = 0;

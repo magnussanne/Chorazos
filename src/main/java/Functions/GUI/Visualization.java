@@ -66,8 +66,8 @@ public class Visualization extends JPanel {
     }
 
     private void drawChromosome(Graphics2D g) {
-        double studentHeight = ((double) getHeight()-60) / ((double) this.studentList.size()+1);
-        double projectHeight = ((double) getHeight()-60) / ((double) this.projectList.size()+1);
+        double studentHeight = ((double) getHeight()-120) / ((double) this.studentList.size()+1);
+        double projectHeight = ((double) getHeight()-120) / ((double) this.projectList.size()+1);
 
         g.setColor(drawings);
         String s = "Generation: " + this.Generation;
@@ -85,6 +85,19 @@ public class Visualization extends JPanel {
             stringLen = (int) g.getFontMetrics().getStringBounds(s, g).getWidth();
             start = getWidth()/2 - stringLen/2;
             g.drawString(s, start, 30);
+
+            String[] temp = solution.getPreferenceSummary().split("\n");
+            stringLen = (int) g.getFontMetrics().getStringBounds(temp[0], g).getWidth();
+            start = getWidth()/2 - stringLen/2;
+            g.drawString(temp[0], start, getHeight()-45);
+
+            stringLen = (int) g.getFontMetrics().getStringBounds(temp[1], g).getWidth();
+            start = getWidth()/2 - stringLen/2;
+            g.drawString(temp[1], start, getHeight()-30);
+
+            stringLen = (int) g.getFontMetrics().getStringBounds(temp[2], g).getWidth();
+            start = getWidth()/2 - stringLen/2;
+            g.drawString(temp[2], start, getHeight()-15);
         }
 
         for(int i=1; i<=this.studentList.size(); i++) {
@@ -99,8 +112,8 @@ public class Visualization extends JPanel {
     }
 
     private void connectSolutions(Graphics2D g) {
-        double studentHeight = ((double) getHeight()-60) / ((double) this.studentList.size()+1);
-        double projectHeight = ((double) getHeight()-60) / ((double) this.projectList.size()+1);
+        double studentHeight = ((double) getHeight()-120) / ((double) this.studentList.size()+1);
+        double projectHeight = ((double) getHeight()-120) / ((double) this.projectList.size()+1);
 
         for(int i=1; i<=solutionSize; i++) {
             Solution s = this.solution.getSolutionList().get(i-1);
