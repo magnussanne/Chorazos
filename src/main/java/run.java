@@ -111,10 +111,10 @@ public class run {
 
         simpleLayout.add(startSearchButton(ga, JSliderList), c);
 
-        advancedLayout.addTab("Genetic Algorithm", gaPanel());
+        JButton simple = new JButton("Simple Settings");
+        advancedLayout.addTab("Genetic Algorithm", gaPanel(simple));
         advancedLayout.addTab("Simulated Annealing", saPanel());
         advancedLayout.addTab("Hill Climbing", hcPanel());
-        JButton simple = new JButton("Simple Settings");
         simple.addActionListener(a -> cardLayout.next(cards));
         advancedLayout.add(simple);
 
@@ -124,7 +124,7 @@ public class run {
         return cards;
     }
 
-    private JPanel gaPanel() throws IOException{
+    private JPanel gaPanel(JButton simple) throws IOException{
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
         JCheckBox useDefault = new JCheckBox("Use Default Values", true);
@@ -182,7 +182,6 @@ public class run {
         container.add(useDefault, c);
 
         c.gridx = 1;
-        JButton simple = new JButton("Simple Settings");
         //simple.addActionListener(a -> cards.cardLayout.next(cards));
         container.add(simple, c);
 
@@ -656,7 +655,7 @@ public class run {
                 this.runningThread = new Thread(new Runnable() {
                     @Override
                     public void run() {
-                        runButton(algorithm, sliders);
+                        runButton(algorithm, sliders, runButton, cancelButton);
                     }
                 });
 
@@ -668,7 +667,7 @@ public class run {
         return runButton;
     }
 
-    private void runButton(Search algorithm, List<JSlider> sliders) {
+    private void runButton(Search algorithm, List<JSlider> sliders, JButton run, JButton cancel) {
         try {
             replaceComponent(this.summary, this.visual);
         } catch (NullPointerException n) {}
@@ -679,6 +678,7 @@ public class run {
 
         summary = new Summary(output);
         replaceComponent(this.visual, this.summary);
+        replaceComponent(cancel, run);
     }
 
     private JButton cancelButton(Search algorithm, JButton runButton) {

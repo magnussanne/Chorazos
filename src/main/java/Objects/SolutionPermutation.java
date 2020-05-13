@@ -82,7 +82,11 @@ public class SolutionPermutation implements Interface.SolutionPermutation {
             }
         }
 
-        preferenceArray[0] /= preferenceArray[1];
+        try {
+            preferenceArray[0] /= preferenceArray[1];
+        } catch (ArithmeticException e) {
+            preferenceArray = getPreferenceInfo();
+        }
 
         return preferenceArray;
     }
