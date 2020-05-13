@@ -62,6 +62,7 @@ public class run {
 
         JLabel pLabel = new JLabel();
         pLabel.setText("Population Size");
+        pLabel.setToolTipText("Click this button to disable the middle button.");
         JLabel mLabel = new JLabel();
         mLabel.setText("Percentage to be culled");
         JLabel nLabel = new JLabel();
@@ -94,6 +95,7 @@ public class run {
         pLabelTable.put( new Integer( 20000 ), new JLabel("20,000") );
         pLabelTable.put( new Integer( 40000 ), new JLabel("40,000") );
         p.setLabelTable( pLabelTable );
+
 
         p.setPaintLabels(true);
         c.gridy = 1;
