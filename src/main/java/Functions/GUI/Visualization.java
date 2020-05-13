@@ -34,11 +34,15 @@ public class Visualization extends JPanel {
     }
 
     public void loadValues(List<Student> studentList, List<Project> projectList) {
-        this.Generation = 1;
+        resetGeneration();
         this.studentList = studentList;
         this.projectList = projectList;
 
         setBackground(background);
+    }
+
+    public void resetGeneration() {
+        this.Generation = 1;
     }
 
     public void drawSolution(int function, SolutionPermutation solution) {
