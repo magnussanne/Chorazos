@@ -12,7 +12,6 @@ import Objects.Student;
 
 import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -594,7 +593,7 @@ public class run {
 
                         t.Read(this.studentList, this.projectList);
                         this.visual.loadValues(this.studentList, this.projectList);
-                        replacePanel(this.logo, this.visual);
+                        replaceComponent(this.logo, this.visual);
                     }
                 }
 
@@ -611,18 +610,22 @@ public class run {
     }
 
     private JButton startSearchButton(Search algorithm, List<JSlider> sliders) {
-
         JButton runButton = new JButton("Run");
+        JButton cancelButton = cancelButton(algorithm, runButton);
 
         runButton.addActionListener(e -> {
-            if(this.runningThread == null) {
-                this.runningThread = new Thread() {
+            if(this.projectList == null || this.studentList == null) {
+                showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
+            } else {
+                this.runningThread = new Thread(new Runnable() {
+                    @Override
                     public void run() {
                         runButton(algorithm, sliders);
                     }
-                };
+                });
+
                 this.runningThread.start();
-                this.runningThread = null;
+                replaceComponent(runButton, cancelButton);
             }
         });
 
@@ -630,30 +633,33 @@ public class run {
     }
 
     private void runButton(Search algorithm, List<JSlider> sliders) {
-        if(this.projectList == null || this.studentList == null) {
-            showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
-        } else {
-            try {
-                this.mainWindow.remove(this.summary);
-                this.mainWindow.add(this.visual);
-                this.mainWindow.validate();
-                this.mainWindow.repaint();
-            } catch (NullPointerException n) {
+        try {
+            replaceComponent(this.summary, this.visual);
+        } catch (NullPointerException n) {}
 
-            }
+        algorithm.setParameters(sliders);
 
-            algorithm.setParameters(sliders);
+        SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
 
-            SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
-
-            summary = new Summary(output);
-            replacePanel(this.visual, this.summary);
-        }
+        summary = new Summary(output);
+        replaceComponent(this.visual, this.summary);
     }
 
-    private void replacePanel(JPanel oldPanel, JPanel newPanel) {
-        this.mainWindow.remove(oldPanel);
-        this.mainWindow.add(newPanel);
+    private JButton cancelButton(Search algorithm, JButton runButton) {
+        JButton cancelButton = new JButton("Cancel");
+
+        cancelButton.addActionListener(e -> {
+            algorithm.cancel();
+            replaceComponent(cancelButton, runButton);
+        });
+
+        return cancelButton;
+    }
+
+    private void replaceComponent(Container oldComponent, Container newComponent) {
+        Container container = oldComponent.getParent();
+        container.remove(oldComponent);
+        container.add(newComponent);
         this.mainWindow.validate();
         this.mainWindow.repaint();
     }

@@ -16,6 +16,7 @@ public class SimulatedAnnealing implements Search {
     private double tempChange = 0.999;
 
     private double gpaImportance = 0.5;
+    private boolean run;
 
     private Visualization visual;
 
@@ -27,10 +28,11 @@ public class SimulatedAnnealing implements Search {
     }
 
     public SolutionPermutation solve(List<Student> studentList, List<Project> projectList) {
+        run = true;
         SolutionPermutation s0 = createSolutionPermutation(studentList, projectList);
         double temp = InitialTemp;
 
-        while(temp > 1) {
+        while(temp > 1 && this.run) {
             SolutionPermutation s1 = modify(s0, temp);
 
             if(s1.getEnergy(gpaImportance) < s0.getEnergy(gpaImportance))
@@ -44,6 +46,10 @@ public class SimulatedAnnealing implements Search {
         }
 
         return s0;
+    }
+
+    public void cancel() {
+        this.run = false;
     }
 
     public void setParameters(List<JSlider> sliders) {

@@ -16,6 +16,7 @@ public class HillClimbing implements Search {
 
     private int N = 50;
     private double gpaImportance = 0.5;
+    private boolean run;
 
     private Visualization visual;
 
@@ -27,11 +28,12 @@ public class HillClimbing implements Search {
     }
 
     public SolutionPermutation solve(List<Student> studentList, List<Project> projectList) {
+        this.run = true;
         SolutionPermutation s0 = createSolutionPermutation(studentList, projectList);
         SolutionPermutation s1;
         int runLoop = 0;
 
-        while(runLoop == 0) {
+        while(runLoop == 0 && this.run) {
             s1 = iterate(s0);
             if(s0 == s1)
                 runLoop = 1;
@@ -45,6 +47,10 @@ public class HillClimbing implements Search {
         }
 
         return s0;
+    }
+
+    public void cancel() {
+        this.run = false;
     }
 
     public void setParameters(List<JSlider> sliders) {
