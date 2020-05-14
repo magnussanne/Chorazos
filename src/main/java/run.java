@@ -612,9 +612,17 @@ public class run {
 
                 if (r == JFileChooser.APPROVE_OPTION) {
                     File file = fc.getSelectedFile();
-                    textInput t = new textInput(file, ",");
+                    textInput t = null;
+                    if(fc.getName(file).toLowerCase().endsWith(".csv")) {
+                        t = new textInput(file, ",");
+                    } else if(fc.getName(file).toLowerCase().endsWith(".tsv")) {
+                        t = new textInput(file, "\t");
+                    } else {
+                        showMessageDialog(null, "Error: File format\nFile must be of a CSV or TSV format");
+                        r = JFileChooser.CANCEL_OPTION;
+                    }
 
-                    if(t.stopError()) {
+                    if(r == JFileChooser.APPROVE_OPTION && t.stopError()) {
                         showMessageDialog(null, "Error: Missing Columns\n" + t.getStopError());
                         r = JFileChooser.CANCEL_OPTION;
                     }
