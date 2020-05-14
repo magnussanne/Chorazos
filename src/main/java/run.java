@@ -165,11 +165,11 @@ public class run {
         c.ipady = 40;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 3;
+        c.gridwidth = 6;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider p = new JSlider(JSlider.HORIZONTAL, 1000, 40000, 1000);
-
+        c.gridwidth = 3;
         p.setMajorTickSpacing(2000);
         p.setPaintTicks(true);
 
@@ -363,11 +363,11 @@ public class run {
         c.ipady = 40;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 3;
+        c.gridwidth = 6;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
-
+        c.gridwidth = 3;
         changes.setMajorTickSpacing(10);
         changes.setPaintTicks(true);
 
@@ -378,6 +378,7 @@ public class run {
         changes.setLabelTable( changesLabelTable );
 
         changes.setPaintLabels(true);
+
         c.ipady = 0;
         c.gridy = 1;
         c.gridx = 0;
@@ -391,7 +392,7 @@ public class run {
         c.gridy = 3;
         container.add(changes, c);
         JSlider temp = new JSlider(JSlider.HORIZONTAL, 0, 1000000, 500000);
-
+        c.ipady = 0;
         temp.setMajorTickSpacing(100000);
         temp.setPaintTicks(true);
 
@@ -508,11 +509,11 @@ public class run {
         c.ipady = 40;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 3;
+        c.gridwidth = 6;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
-
+        c.gridwidth = 3;
         changes.setMajorTickSpacing(10);
         changes.setPaintTicks(true);
 
@@ -536,7 +537,7 @@ public class run {
         c.gridy = 3;
         container.add(changes, c);
         JSlider gpa = new JSlider();
-
+        c.ipady = 0;
         gpa.setMajorTickSpacing(10);
         gpa.setPaintTicks(true);
 
@@ -656,6 +657,8 @@ public class run {
         runButton.addActionListener(e -> {
             if(this.projectList == null || this.studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
+            } else if(this.visual.isRunning()) {
+                showMessageDialog(null, "Another search is already running. Please cancel that search to start a new one.");
             } else {
                 this.runningThread = new Thread(new Runnable() {
                     @Override
@@ -678,12 +681,14 @@ public class run {
         } catch (NullPointerException n) {}
 
         this.visual.resetGeneration();
+        this.visual.startRunning();
         algorithm.setParameters(sliders);
 
         SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
 
         summary = new Summary(output);
         replaceComponent(this.visual, this.summary);
+        this.visual.stopRunning();
         replaceComponent(cancel, run, c);
     }
 
@@ -692,6 +697,7 @@ public class run {
 
         cancelButton.addActionListener(e -> {
             algorithm.cancel();
+            this.visual.stopRunning();
             replaceComponent(cancelButton, runButton, c);
         });
 

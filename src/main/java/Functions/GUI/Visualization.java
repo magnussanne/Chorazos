@@ -22,10 +22,12 @@ public class Visualization extends JPanel {
     private int solutionSize;
     private static int Generation;
     private int function;
+    private boolean running;
 
     private long time;
 
     public Visualization() {
+        this.running = false;
         setPreferredSize(new Dimension(500, 500));
         this.time = System.currentTimeMillis();
 
@@ -43,6 +45,18 @@ public class Visualization extends JPanel {
 
     public void resetGeneration() {
         this.Generation = 1;
+    }
+
+    public boolean isRunning() {
+        return this.running;
+    }
+
+    public void startRunning() {
+        this.running = true;
+    }
+
+    public void stopRunning() {
+        this.running = false;
     }
 
     public void drawSolution(int function, SolutionPermutation solution) {
