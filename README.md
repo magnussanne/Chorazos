@@ -105,13 +105,15 @@ The animation shows the dots on the left hand side, which represent the students
 side, which represent the project. The user is also given frequent updates of how the search is going at the bottom of the screen. If
 the user decides they are happy with the solution based on these updates they can press the cancel button and export the solution at the
 stage it was when the cancel button was pressed. This tells the user how many students have been allocated a valid project at the time of 
-the search. Once the program has finished a window pops up with the results of the search and the user then has the option to export the 
-solution as a .csv to a location of their chosing on their computer. If the user decides to choose advanced they have the option of which 
-algorithm they would like to use for the search. The advanced settings include functionality that allows for the user to change the parameters
-of the search, for example they can change the population size in a genetic algorithm search or the initial temperature in a simulated 
+the search. Once the program has finished running a final summary of the solution appears and the solution is shown in a table. This table is
+colour coded, so if the student gets a top 5 preference the row will appear as white and the lower the allocated project is on the students 
+preference list the more red the row will appear, a dark red row implies that the student did not get one of their preferences. The user then has 
+the option to export the solution as a .csv to a location of their chosing on their computer. If the user decides to choose advanced they have 
+the option of which algorithm they would like to use for the search. The advanced settings include functionality that allows for the user to 
+change the parameters of the search, for example they can change the population size in a genetic algorithm search or the initial temperature in a simulated 
 annealing search. We also allow the user to decide the influence that GPA has on the solution, so if the slider is at its max the students GPA
 will fully influence the decision of project allocation and if it is at its minimum the students GPA will have no influence on project allocation. 
 If the user wishes to use the default parameters they can tick the box at the top of the window. The default values are the values we found to give 
 the best solution with the most efficient runtime. Once the parameters have been decided the user can run the program. Once the program is run using 
 advanced settings it is the same as using the simple settings. We have implemented measures into the program to make sure that the application is 
-fully accessible while the search is being performed and it does not freeze on the user.
+fully accessible while the search is being performed and it does not freeze on the user. 
