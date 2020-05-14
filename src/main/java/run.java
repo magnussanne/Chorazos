@@ -168,7 +168,7 @@ public class run {
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider p = new JSlider(JSlider.HORIZONTAL, 1000, 40000, 1000);
-        c.gridwidth = 3;
+        c.gridwidth = 1;
         p.setMajorTickSpacing(2000);
         p.setPaintTicks(true);
 
@@ -186,7 +186,7 @@ public class run {
         c.gridx = 1;
         container.add(simple1, c);
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 0;
+        c.gridwidth = 6;
         c.ipady = 0;
         c.gridy = 2;
         c.gridx = 0;
@@ -366,7 +366,7 @@ public class run {
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
-        c.gridwidth = 3;
+        c.gridwidth = 1;
         changes.setMajorTickSpacing(10);
         changes.setPaintTicks(true);
 
@@ -513,7 +513,7 @@ public class run {
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
-        c.gridwidth = 3;
+        c.gridwidth = 1;
         changes.setMajorTickSpacing(10);
         changes.setPaintTicks(true);
 
