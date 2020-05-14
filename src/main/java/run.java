@@ -166,11 +166,11 @@ public class run {
         c.ipady = 40;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 3;
+        c.gridwidth = 6;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider p = new JSlider(JSlider.HORIZONTAL, 1000, 40000, 1000);
-
+        c.gridwidth = 3;
         p.setMajorTickSpacing(2000);
         p.setPaintTicks(true);
 
@@ -364,11 +364,11 @@ public class run {
         c.ipady = 40;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 3;
+        c.gridwidth = 6;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
-
+        c.gridwidth = 3;
         changes.setMajorTickSpacing(10);
         changes.setPaintTicks(true);
 
@@ -381,8 +381,7 @@ public class run {
         changes.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 0;
-        c.ipady = 0;
+
         c.gridy = 1;
         c.gridx = 0;
         container.add(useDefault, c);
@@ -394,7 +393,7 @@ public class run {
         c.gridy = 3;
         container.add(changes, c);
         JSlider temp = new JSlider(JSlider.HORIZONTAL, 0, 1000000, 500000);
-
+        c.ipady = 0;
         temp.setMajorTickSpacing(100000);
         temp.setPaintTicks(true);
 
@@ -511,11 +510,11 @@ public class run {
         c.ipady = 40;
         c.gridx = 0;
         c.gridy = 0;
-        c.gridwidth = 3;
+        c.gridwidth = 6;
         c.anchor = GridBagConstraints.PAGE_START;
         container.add(loadFileButton(), c);
         JSlider changes = new JSlider();
-
+        c.gridwidth = 3;
         changes.setMajorTickSpacing(10);
         changes.setPaintTicks(true);
 
@@ -528,8 +527,7 @@ public class run {
         changes.setPaintLabels(true);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 0;
-        c.ipady = 0;
+
         c.gridy = 1;
         container.add(useDefault, c);
         c.gridx = 1;
@@ -540,7 +538,7 @@ public class run {
         c.gridy = 3;
         container.add(changes, c);
         JSlider gpa = new JSlider();
-
+        c.ipady = 0;
         gpa.setMajorTickSpacing(10);
         gpa.setPaintTicks(true);
 
