@@ -386,6 +386,7 @@ public class run {
         c.gridx = 1;
         container.add(simple2, c);
         c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 6;
         c.gridx = 0;
         c.gridy = 2;
         container.add(changesLabel, c);
@@ -531,6 +532,7 @@ public class run {
         c.gridx = 1;
         container.add(simple3, c);
         c.fill = GridBagConstraints.HORIZONTAL;
+        c.gridwidth = 6;
         c.gridx = 0;
         c.gridy = 2;
         container.add(changesLabel, c);
