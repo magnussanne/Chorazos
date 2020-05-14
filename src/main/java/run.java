@@ -293,7 +293,7 @@ public class run {
 
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
-        c.gridwidth = 1;
+        c.gridwidth = 6;
         c.weightx = 0.5;
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
@@ -447,7 +447,7 @@ public class run {
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
-        c.gridwidth = 1;
+        c.gridwidth = 6;
         c.weightx = 0.5;
         c.gridy = 10;
         c.anchor = GridBagConstraints.PAGE_END;
@@ -557,7 +557,7 @@ public class run {
         container.add(gpa, c);
         c.fill = GridBagConstraints.HORIZONTAL;
         c.ipady = 40;
-        c.gridwidth = 1;
+        c.gridwidth = 6;
         c.weightx = 0.5;
         c.gridy = 6;
         c.anchor = GridBagConstraints.PAGE_END;
