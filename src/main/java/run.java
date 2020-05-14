@@ -660,6 +660,8 @@ public class run {
         runButton.addActionListener(e -> {
             if(this.projectList == null || this.studentList == null) {
                 showMessageDialog(null, "No inputs to run\nPlease input values to create a solution");
+            } else if(this.visual.isRunning()) {
+                showMessageDialog(null, "Another search is already running. Please cancel that search to start a new one.");
             } else {
                 this.runningThread = new Thread(new Runnable() {
                     @Override
@@ -682,12 +684,14 @@ public class run {
         } catch (NullPointerException n) {}
 
         this.visual.resetGeneration();
+        this.visual.startRunning();
         algorithm.setParameters(sliders);
 
         SolutionPermutation output = algorithm.solve(this.studentList, this.projectList);
 
         summary = new Summary(output);
         replaceComponent(this.visual, this.summary);
+        this.visual.stopRunning();
         replaceComponent(cancel, run, c);
     }
 
@@ -696,6 +700,7 @@ public class run {
 
         cancelButton.addActionListener(e -> {
             algorithm.cancel();
+            this.visual.stopRunning();
             replaceComponent(cancelButton, runButton, c);
         });
 
