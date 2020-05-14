@@ -128,7 +128,6 @@ public class run {
         return cards;
     }
 
-
     private JPanel gaPanel(JButton simple1) throws IOException{
         JPanel container = new JPanel();
         GeneticAlgorithm ga = new GeneticAlgorithm(this.visual);
@@ -180,8 +179,8 @@ public class run {
         pLabelTable.put( new Integer( 40000 ), new JLabel("40,000") );
         p.setLabelTable( pLabelTable );
 
-
         p.setPaintLabels(true);
+        c.ipady = 0;
         c.gridy = 1;
         c.gridx = 0;
         container.add(useDefault, c);
@@ -379,15 +378,13 @@ public class run {
         changes.setLabelTable( changesLabelTable );
 
         changes.setPaintLabels(true);
-
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
         c.gridx = 0;
         container.add(useDefault, c);
         c.gridx = 1;
         container.add(simple2, c);
+        c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(changesLabel, c);
@@ -527,13 +524,12 @@ public class run {
 
         changes.setPaintLabels(true);
 
-        c.fill = GridBagConstraints.HORIZONTAL;
-        c.gridwidth = 0;
         c.ipady = 0;
         c.gridy = 1;
         container.add(useDefault, c);
         c.gridx = 1;
         container.add(simple3, c);
+        c.fill = GridBagConstraints.HORIZONTAL;
         c.gridx = 0;
         c.gridy = 2;
         container.add(changesLabel, c);
