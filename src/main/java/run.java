@@ -87,7 +87,7 @@ public class run {
         c.gridy = 14;
         c.anchor = GridBagConstraints.PAGE_END;
 
-        JSlider p = new JSlider();
+        JSlider p = new JSlider(0, 10000, 1000);
         JSlider m = new JSlider();
         JSlider n = new JSlider();
         JSlider r = new JSlider();
@@ -95,8 +95,8 @@ public class run {
         JSlider gpa = new JSlider();
 
         p.setValue(1000);
-        m.setValue(32);
-        n.setValue(100);
+        m.setValue(50);
+        n.setValue(50);
         r.setValue(15);
         e.setValue(15);
         gpa.setValue(50);
