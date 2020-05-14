@@ -69,7 +69,7 @@ public class run {
         c.fill = GridBagConstraints.HORIZONTAL;
         c.weighty = 1.0;
         c.weightx = 0.5;
-        c.ipady = 40;
+        c.ipady = 190;
         c.gridx = 0;
         c.gridy = 0;
         c.gridwidth = 3;
@@ -78,11 +78,10 @@ public class run {
 
         JButton advanced = new JButton("Advanced Settings");
         advanced.addActionListener(e -> cardLayout.next(cards));
-        c.gridy = 7;
+        c.gridy = 10;
         simpleLayout.add(advanced, c);
 
         c.fill = GridBagConstraints.HORIZONTAL;
-        c.ipady = 40;
         c.gridwidth = 1;
         c.weightx = 0.5;
         c.gridy = 14;
