@@ -6,6 +6,7 @@ Gearoid Lynch 17459176
 
 To Run:
 
+
 Assignment 1:
 To generate the test files we read the data from the staff members spreadsheet and generated projects by 
 assigning a general statement to one of the staff members research areas, for example "An app that...". 
@@ -92,9 +93,6 @@ times. The animation shows the dots on the left hand side, which represent the s
 side, which represent the project. Once the program has finished a window pops up with the results of the search and the user then has 
 the option to export the solution as a .csv to a location of their chosing on their computer.
 
-NOTE: The application is run from a jar file that is located in the SampleOutput folder, the path is "C:\Chorazos\Chorazos\SampleOutput".
-It can also be ran from run.java which is located at "C:\Chorazos\Chorazos\src\main\java\run.java"
-
 Assignment 8/Final ReadMe:
 This is a final write up of our application. We decided to add functionality to make our app extremely user friendly. We allow the user to
 decide between using simple settings and advanced settings. When the app is launched the user is brought to the simple settings which is 
@@ -116,4 +114,7 @@ will fully influence the decision of project allocation and if it is at its mini
 If the user wishes to use the default parameters they can tick the box at the top of the window. The default values are the values we found to give 
 the best solution with the most efficient runtime. Once the parameters have been decided the user can run the program. Once the program is run using 
 advanced settings it is the same as using the simple settings. We have implemented measures into the program to make sure that the application is 
-fully accessible while the search is being performed and it does not freeze on the user. 
+fully accessible while the search is being performed and it does not freeze on the user. The user is only allowed to run one search at a time.
+
+NOTE: The application is run from a jar file that is located in the SampleOutput folder, the path is "C:\Chorazos\Chorazos\SampleOutput".
+It can also be ran from run.java which is located at "C:\Chorazos\Chorazos\src\main\java\run.java"
