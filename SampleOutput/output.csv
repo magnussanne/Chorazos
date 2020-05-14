@@ -1,0 +1,107 @@
+Student Number, Student Name, Project Title
+14453522, Aung San Suu Kyi, PLongWritable-centre estimation from audio signals (speech and music)
+14453522, Christopher Columbus, PaperMill: A Visual Interface For Managing Research Paper Collections
+15205902, Bobby Fischer, Sabermetrics and Machine Learning
+15206138, Bob Marley, Reading Support App for Children with Dyslexia
+15522923, Andy Warhol, Connected Vehicles for Greener Traffic
+15522923, Stephen Jay Gould, Equestrian Dressage Tutor
+16205665, Bill Clinton, Fitness By You: Discovering What Works
+16209984, Brad Pitt, Smart Routing Support for Bike Rental Schemes
+16210030, Eliot Ness, How good is reinforcement learning for optimisation problems?
+16210546, Bridget Jones, Synthetically Trained Deep Learning Parser for Hand Drawn Tree Graphs
+16210639, Adam Smith, A Word Lexicon Builder Using Neural Word Embeddings
+16210698, Atticus Finch, A web platform for running visualisation experiments
+16210705, Archie Bunker, Pennies from heaven: capitalizing on open banking data to improve mental health
+17210556, Bill Gates, Gaming Price Haven
+18210030, Buck Rogers, Beyond Good and Evil
+18210698, Che Guevara, but I thought they were all the same...
+18210705, Charles Dickens, Paranoid? Who? Me?
+21200042, Cleopatra O'Sullivan, k-Nearest Neighbour speedup
+21200047, Carl Sagan, 'What is the computer seeing?' - a cooperative photo-driven game 
+21200055, Carrie Bradshaw, Standalone Software Metrics Tool 
+21200060, Cicero O'Reilly, PlasticAWARE - A Mobile App for Reducing Plastic Pollution when Shopping
+21200070, Carl Lewis, Techniques to Support Spatially and Temporally Constrained Decisions
+21200091, Charlie Parker, Failure to Race
+21200092, Buzz Lightyear, Predicting Protein Contact Maps post-Google
+21200120, Charles Darwin, A School Time Tabling Distributed Web Application
+21200161, Colin Farrell, Learning shortest path tours to all pubs in UK
+21200174, Christopher Hitchens, Secure Service Migration and Offloading Protocol for Cloud and Edge Computing Platforms
+21200181, Clark Gable, Spatial Decision Support Tools
+21200189, Christian Bale, Factorisation Machines for Recommendation at Industrial Scale
+21200221, Clark Kent, Give Your Skills: Volunteer Platform for Project Management
+21200240, Emperor Caligula Smith, Duncannon Fort Visitor Experience: Digital Visitor Guide Design +ACY- Development
+21200254, Giacomo Casanova, Deep Learning for protein subcellular localisation prediction
+21200277, Colonel Sanders, Finding the Minimum Number of Sudoku Clues Through Information Theory
+21200283, Captain Ahab Murphy, Automatic generation of a visual timeline from dates
+21200487, Bruce Wayne, Classifying and Recommending Product Reviews
+21200502, Charles Atlas, Web-based intelligent knowledge-based energy retrofit recommendation system
+21200695, Chuck Norris, Forecasting Electricity Load for Commercial Buildings 
+21200861, Cardinal Richelieu, An Attentive Twitter Bot
+21200936, Charlie Chaplin, Real World Federated Learning
+21201041, Charlemagne, Open Source Data Ingestion Engine for Sensor Data
+21201163, Confucius Li, Exploratory Fairness Analysis
+21201185, Copernicus Walesa,  mental health +ACY- wellbeing: visualizing the change in online media's discussion of mental health
+21201672, Clint Eastwood, An Assessment of Wet Bias in Weather Forecasts
+21201847, Buzz Aldrin, Searching for Mental Wellbeing
+21202960, Cary Grant, Visualisation and exploration of the look-and-say sequence
+21203812, Cameron Diaz, Data augmentation using GANs for small image dataset
+21203925, Buddha Higgins,  Diversity and Pairwise Recommendations
+21204208, Charles Foster Kane, Server Cluster Energy Management and Carbon Reduction
+21204223, Enrico Caruso, Pic(k) how you feel: an image-based assessment of mental health
+21204505, Cosmo Kramer, A Health-aware Food Recommended System 
+21204865, Bruce Springsteen, Water analysis using hyper spectral imaging
+21208113, Courtney Love, Optimization of Resource Constrained IoT Platform Performance for Facilitating Diverse Security Services Leveraging MEC Edge Provisions 
+21208114, Charlie Brown, Multi-criteria Recommender System
+22200042, Bart Simpson, Event Correlation for Service Computing using Spark SQL
+22200047, Andrew Lloyd Webber, Agent-based version management of replicated software in large enterprises
+22200055, Angelina Jolie, Supervised learning framework for maximum clique enumeration
+22200060, Babe Ruth, Error Correction Coding for the Z-Channel
+22200070, Allan Quatermain, Wireless Network Connections as a Proxy for Human Presence
+22200075, Boba Fett, Rocket League Bots
+22200091, Arthur Conan Doyle, 3D VR Baby
+22200092, Alan Greenspan, Energy Predictive Model for Multi-threaded Data-parallel applications on Multicore CPUs
+22200109, Bob Dylan, Interpretable models for gene sensitivity in cancer cell lines
+22200120, Antonio Vivaldi, Paying (a little) Attention to Sarcasm
+22200123, Britney Spears, Teaching CBT techniques with reinforcement conditioning.
+22200134, John Wilkes Booth, Embeddings for geospatial ontology representation
+22200138, Abraham Lincoln, LexiGrow
+22200161, Barack Obama, Time tabling optimisation
+22200161, Bear Grylls, Active Learning and Text Classification for Analysing Rock Climbing Data 
+22200169, Audrey Hepburn, Predicting fire brigade call outs for Dublin city
+22200174, Austin Powers, Tia Lip-Sync-II
+22200222, Barry White, Visualising Harmony: Graphing Music Signals
+22200240, Alan Sugar, Capturing movement data using mobile phones
+22200254, Emma Bovary, Network Analysis of the Global Football Transfer Market
+22200277, Ben Affleck, AI Coaching
+22200283, Alec Baldwin,  Visualisation of Soil Data in Smart Farming
+22200326, Bill Cosby, Fulfillment Centre Simulation
+22200465, Adam Sandler, UAV Trajectory Analysis
+22200487, Al Bundy, Social Networks via Strategic Games
+22200502, Anton Chekov, ACME - Aspect Model Explainer for Top N Recommendation
+22200695, Ayn Rand, P-centre estimation from audio signals (speech and music)
+22200701, Bruce Lee, Vulnerability Assessment of the Internet of Things (IoT) in the Irish Context
+22200849, Leonard Cohen, Plant Phenotyping
+22200861, Alfred Hitchcock, Data Warehouse Design and Schema for Healthcare data Analytics
+22200936, Arnold Schwarzenegger, Duncannon Fort Visitor Experience: User Location Capability
+22200996, Billy Crystal, High-Precision GPS Correctional Data Broadcaster
+22201041, Anthony Bourdain, A Tool for Automated Security Refactorings
+22201108, Tina Fey, Understanding and predicting fire brigade response times for Dublin city
+22201163, Benedict Arnold, An online courses recommender system using a non personalised approach
+22201165, Benjamin Franklin, 
+22201278, Bing Crosby, Intent Classification - Better than Luis?
+22201398, Billy Bob Thornton, Playlist Recommendation Based on Concert Setlist Analysis
+22201647, Al Pacino, CO2AWARE - A Mobile App for Reducing Carbon Footprint
+22201672, Basil Fawlty, Simulation of Hadoop Task Scheduling Algorithms in Distributed Computing Environments
+22202960, Anna Karenina, A Lightweight Blockchain-based Solution for Auditable Software
+22203151, Daniel Day-Lewis, Performance Comparison of Streaming Applications over Spark and Storm
+22203812, Albert Einstein, Collective Portrait - passive smart photo frame that aggregates faces
+22203890, Bertie Wooster, Chatbots as Ethical Data Collectors
+22203925, Al Gore, SimilarSpeak
+22204163, Brian Wilson, Spoilers Begone: Identifying and Hiding Movie Spoilers in Online Text
+22204208, Ariel Sharon, Duncannon Fort Visitor Experience: Augmented Reality Content Engine
+22204223, Ann Coulter, Lunacy
+22204505, Benny Hill, Smart controlling green buildings for reducing carbon footprint emissions
+22204865, Adam West, Identfying Twitter Bots  
+22208094, Bill Murray, GanRecommender
+22208113, Al Capone, Bayesian Personalised Ranking for Accuracy
+22208114, Aristotle Onasis, Age-Related Differences in Speech
