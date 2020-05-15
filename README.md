@@ -6,7 +6,7 @@ Gearoid Lynch 17459176
 
 ## To Run:
 Ensure you have a current version of Java installed on your machine.\
-Double click the application file, Chorazos.jar in the SampleOutput folder, or, in your terminal environment, type\
+Double click the application file, Chorazos.jar in the Assignment Submission folder, or, in your terminal environment, type\
 $java -jar Chorazos.java
 
 
