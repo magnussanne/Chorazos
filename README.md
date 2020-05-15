@@ -6,7 +6,7 @@ Gearoid Lynch 17459176
 
 ## To Run:
 Ensure you have a current version of Java installed on your machine.\
-Double click the application file, Chorazos.jar in the SampleOutput folder, or, in your terminal enviromnet, type\
+Double click the application file, Chorazos.jar in the SampleOutput folder, or, in your terminal environment, type\
 $java -jar Chorazos.java
 
 
@@ -28,7 +28,6 @@ To test our work we created two test classes, CreateTestCase and ReadTestCase. C
 and runs our generate spreadsheet file. It generates both .xlsx and .csv files.
 ReadTestCase reads in all the projects and members of staff and then points the members of staff to the projects they put forward
 and then the class reads in students and points the students to their preferred projects.
-
 
 ### Assignment 3:
 We made a Solution class to generate and store random solutions. The code is ran from the 
@@ -124,4 +123,7 @@ will fully influence the decision of project allocation and if it is at its mini
 If the user wishes to use the default parameters they can tick the box at the top of the window. The default values are the values we found to give 
 the best solution with the most efficient runtime. Once the parameters have been decided the user can run the program. Once the program is run using 
 advanced settings it is the same as using the simple settings. We have implemented measures into the program to make sure that the application is 
-fully accessible while the search is being performed and it does not freeze on the user. 
+fully accessible while the search is being performed and it does not freeze on the user. The user is only allowed to run one search at a time.
+
+NOTE: The application is run from a jar file that is located in the SampleOutput folder, the path is "C:\Chorazos\Chorazos\SampleOutput".
+It can also be ran from run.java which is located at "C:\Chorazos\Chorazos\src\main\java\run.java"
